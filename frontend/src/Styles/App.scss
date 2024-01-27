@@ -1,0 +1,34 @@
+$rich-black: #020202;
+$anti-flash: #f1f1f1f1;
+$sonic-silver: #797979;
+$onyx: #383838;
+$black: #000000;
+$white: #ffffff;
+
+html {
+  /* The default font size in most browsers is 16 pixels.
+     This means the base font size becomes 10 pixels (62.5% of 16 pixels). */
+  font-size: 62.5%;
+}
+body {
+  background-color: $rich-black;
+  color: white;
+  font-size: 1.5rem;
+}
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+//? Scrollbar customization for Webkit browsers (Chrome, Safari) 
+::-webkit-scrollbar {
+  width: 7px; /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: $rich-black; /* bg color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1d1d1d; /* bg color of the scrollbar thumb (scroller) */
+  border-radius: 10px; /* border radius for the thumb */
+}
