@@ -1,5 +1,5 @@
 import express from "express";
-import { getMenu, postMenuItem, deleteMenuItem } from "../controllers/controllers.js"
+import { getMenu, postMenuItem, deleteMenuItem } from "../controllers/menu.controller.js"
 
 const router = express.Router();
 

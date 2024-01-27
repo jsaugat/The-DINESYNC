@@ -10,7 +10,7 @@ app.use(
     credentials: true,
   })
 );
-// requests come from differenct sources like url, json, body/ form
+// requests come from different sources like url, json, body/ form
 app.use(express.json({ limit: "16kb" }));
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(express.static("public")); // public directory in your project will be used to serve static files like pdf, images, html, css and other assets

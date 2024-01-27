@@ -1,10 +1,10 @@
-import express from "express";
-import dotenv from "dotenv";
-import router from "./src/routes/router.js";
-import connectDB from "./src/database/connection.js";
 import { app } from "./app.js";
+import dotenv from "dotenv";
+import connectDB from "./src/database/connection.js";
+import router from "./src/routes/router.js";
+import userRoutes from "./src/routes/user.routes.js"
 
-dotenv.config({ path: "./env" }); // can use process.env now
+dotenv.config(); // can use process.env now
 const port = process.env.PORT || 6900;
 
 
@@ -17,12 +17,13 @@ app.use("/", (req, res, next) => {
 });
 // ROUTES middleware
 app.use("/app", router);
+app.use("/app/user", userRoutes);
 
 
 //? Database connection
 connectDB()
   .then(() => {
-    app.on((err) => console.error(`Sorry!, Express couldn't talk to database`, err) );
+    app.on("error", (error) => console.error(`Sorry!, Express couldn't talk to database`, error) );
     app.listen(port, () => console.log(`👁️  WATCHING PORT : http://localhost:${port}`));
   })
   .catch((error) => {
