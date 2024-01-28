@@ -18,8 +18,7 @@ function HomePage() {
           <div className="text-right w-full">DINING EXPERIENCE</div>
         </div>
         {/* Hero Image z-none */}
-        <figure className="bg-hero-image w-[40%] mt-44 mb-16 h-[45rem] bg-cover "></figure>
-
+        <figure className="bg-hero-image h-[40rem] w-[60rem] mt-44 mb-16 bg-cover bg-left"></figure>
         <div className="flex flex-col gap-16">
           <p className="text-[2rem] max-w-[47.8rem text-left">
             Reserve your table for an exquisite dining experience and
@@ -54,9 +53,7 @@ function HomePage() {
           </div>
         </div>
       </section>
-      <section className={`${sectionStyle} h-50screen bg-darkGray`}></section>
-      {/* <section className={`${sectionStyle}  bg-blue-300`}></section>
-      <section className={`${lastSectionStyle}  bg-red-400`}></section> */}
+      <section className={`bg-darkGray ${sectionStyle} h-screen w-[80%] mx-auto my-96`}></section>
     </Container>
   );
 }

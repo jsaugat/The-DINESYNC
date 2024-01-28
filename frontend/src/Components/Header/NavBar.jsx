@@ -5,7 +5,7 @@ import { Logo, CallToAction } from "/src/master";
 const NavBar = () => {
 
   return (
-    <nav className="fixed z-50 w-full top-0 nav-menu flex px-[5rem] justify-between py-[1.5rem] border-b border-onyx/20 backdrop-blur-md"> 
+    <nav className="fixed z-50 w-full top-0 nav-menu flex px-[5rem] justify-between items-center py-[1.5rem] border-b border-onyx backdrop-blur-md"> 
       {/* logo */}
       <Logo />
       {/* menu */}

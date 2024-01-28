@@ -15,7 +15,10 @@ export default {
         darkGray: "#1F1F1F"
       },
       backgroundImage: {
-        'hero-image': "url('/src/assets/hero.webp')",
+        'hero-image': "url('/src/assets/hero75.jpg')",
+      },
+      aspectRatio: {
+        '4/3': '4 / 3',
       }
     },
   },

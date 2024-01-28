@@ -1,7 +1,7 @@
 //* import MODELS to apply model METHODS like "find","create" etc...
 
 import mongoose from "mongoose"; // used in '!mongoose.Types.ObjectId.isValid(id)'
-import { MenuItem } from "../models/allModels.js";
+import { MenuItem } from "../models/models.js";
 
 // get menu items
 const getMenu = async (req, res) => {

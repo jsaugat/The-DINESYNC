@@ -1,9 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-function Logo() {
+function Logo({ logoStyle, DineSync}) {
+  const scrollToTop = () => window.scroll({ top: 0, behavior: smooth })
+
   return (
-    <NavLink to="">
+    <NavLink to="" onClick={scrollToTop}>
       <div className="flex items-center gap-4 cursor-pointer">
         {/* icon */}
         <svg
@@ -12,6 +14,7 @@ function Logo() {
           viewBox="0 0 24 25"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className={`${logoStyle}`}
         >
           <path
             d="M0 0.5H5.82717C9.04542 0.5 11.6543 3.10891 11.6543 6.32717C11.6543 9.54542 9.04542 12.1543 5.82717 12.1543H0V0.5Z"
@@ -31,7 +34,7 @@ function Logo() {
           />
         </svg>
         {/* text */}
-        <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-r to-gray-400 from-white ">
+        <h2 className={`text-5xl mix-blend-difference font-medium text-transparent bg-clip-text bg-gradient-to-r to-gray-400 from-white ${DineSync}`}>
           DineSync
         </h2>
       </div>

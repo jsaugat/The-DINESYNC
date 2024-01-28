@@ -22,7 +22,7 @@ const userSchema = new Schema(
   { timestamps: true }
 );
 
-//? static signup method - signup validator
+//? static signup method, use it as User.sigup() - signup validator
 userSchema.statics.signup = async function (email, password) {
   //! VALIDATION
   if (!email || !password) {

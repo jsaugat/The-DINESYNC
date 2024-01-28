@@ -20,7 +20,7 @@ function Footer() {
           to="/"
           onClick={scrollToTop}
         >
-          <Logo />
+          <Logo logoStyle="h-[4rem] w-[4rem]" DineSync="text-[5.2rem]"  />
         </NavLink>
 
         <div className="flex gap-[10rem]">
@@ -56,8 +56,9 @@ function Footer() {
           to={location.pathname + location.search}
           onClick={scrollToTop}
         >
-          <span className="flex gap-2">
+          <div className="back-to-top flex gap-2">
             <svg
+              className="back-to-top-arrow"
               width="18"
               height="13"
               viewBox="0 0 18 13"
@@ -77,8 +78,8 @@ function Footer() {
                 stroke-width="1.5"
               />
             </svg>
-            <span>Back to top</span>
-          </span>
+            <span className="linimate">Back to top</span>
+          </div>
         </NavLink>
       </div>
       <div className="text-2xl text-sonicSilver flex justify-between px-[10.4rem] py-4">
