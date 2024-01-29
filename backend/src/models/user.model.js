@@ -22,9 +22,10 @@ const userSchema = new Schema(
   { timestamps: true }
 );
 
-//? static signup method, use it as User.sigup() - signup validator
+//? signup validator - static signup method, use it as User.sigup().
 userSchema.statics.signup = async function (email, password) {
-  //! VALIDATION
+
+  //* validation >>>>>
   if (!email || !password) {
     throw Error("All fields must be filled!");
   }
@@ -39,10 +40,14 @@ userSchema.statics.signup = async function (email, password) {
   if (exists) {
     throw Error("Email already in use");
   }
+  //* <<<< validation
   // no access of 'res' here so used Error instead
-  const salt = await bcrypt.genSalt(10); // 10 - no. of rounds/ cost of salt
+
+  // add salt
+  const salt = await bcrypt.genSalt(10); // 10 rounds or cost of salt
+  // hash the 'password + salt'
   const hash = await bcrypt.hash(password, salt);
-  // -> create document in db
+  // create document in db
   const user = await this.create({ email, password: hash });
   return user;
 };
