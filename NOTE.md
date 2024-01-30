@@ -12,3 +12,9 @@ password: jsaugat_
 - Receives the HTTP request, processes it through the appropriate route and controller, interacts with the database (if needed), and sends back an HTTP response.
 3. **Client (React App):** 
 - Receives the HTTP response, processes the data, and updates the UI as necessary.
+
+
+## User Authentication
+### Login
+- take email and password from request.body
+- if email exists, compare the password. if matches, create a token and send as response.
