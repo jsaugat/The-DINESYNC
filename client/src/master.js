@@ -1,21 +1,21 @@
 import App from "./App";
 // header
-import Logo from "./Components/Mini/Logo";
-import NavBar from "./Components/Header/NavBar";
+import Logo from "./myComponents/Mini/Logo";
+import NavBar from "./myComponents/Header/NavBar";
 // footer
-import Footer from "./Components/Footer/Footer"
+import Footer from "./myComponents/Footer/Footer"
 // container
-import Container from "./Components/Container/Container";
+import Container from "./myComponents/Container/Container";
 // pages
 import HomePage from "./Pages/HomePage";
 import AboutPage from "./Pages/AboutPage";
 import ReservationPage from "./Pages/ReservationPage";
 import MenuPage from "./Pages/MenuPage";
 import ContactPage from "./Pages/ContactPage";
-// components
-import CallToAction from "./Components/Mini/CallToAction";
+// mycomponents
+import CallToAction from "./myComponents/Mini/CallToAction";
 import PointerBall from "./Motion/PointerBall";
-import BookingForm from "./Components/Mini/BookingForm"
+import BookingForm from "./myComponents/Mini/BookingForm"
 
 export {
   App,

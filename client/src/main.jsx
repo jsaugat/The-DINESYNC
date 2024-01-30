@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./Styles/index.scss";
+import "./Styles/globals.scss";
 import { App, HomePage, AboutPage, ReservationPage, MenuPage, ContactPage } from "./master.js";
 import {
   Route,

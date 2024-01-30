@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Logo, CallToAction } from "/src/master";
+import { Button } from "@/components/ui/button"
 
 const NavBar = () => {
 
@@ -17,7 +18,7 @@ const NavBar = () => {
         {/* button */}
         <li className="book-btn">
           <NavLink to="/booking">
-            <CallToAction className="bg-transparent">Reservation</CallToAction>
+            <Button variant="outline">Reservation</Button>
           </NavLink>
         </li>
       </ul>

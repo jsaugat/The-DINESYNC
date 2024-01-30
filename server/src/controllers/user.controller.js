@@ -10,7 +10,17 @@ const createToken = (_id) => {
 //? LOGIN user
 const loginUser = async (req, res) => {
   // async because, we'll communicate with db here
-  res.json(req.method);
+  const { email, password } = req.body;
+  // pass the retrieved email and pwd to the signup validator to 'backend\src\models\user.model.js'
+  const foundUser = await User.login(email, password);
+  //! client req > validation > return { email, hashedPassword } as 'user'
+  foundUser
+    .then((user) => {
+      // create a token
+      const token = createToken(user._id);
+      res.status(200).json({ email, token });
+    })
+    .catch((error) => res.status(400).json({ error: error.message }));
 };
 
 //? SIGNUP user
@@ -18,7 +28,7 @@ const signupUser = async (req, res) => {
   // retrieve email and pwd from the client request body
   const { email, password } = req.body;
   // pass the retrieved email and pwd to the signup validator to 'backend\src\models\user.model.js'
-  const user = User.signup(email, password); 
+  const user = User.signup(email, password);
   //! client req > validation > return { email, hashedPassword } as 'user'
   user
     .then((user) => {

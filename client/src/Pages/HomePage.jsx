@@ -13,7 +13,7 @@ function HomePage() {
         className={`${sectionStyle} text-center flex justify-evenly items-center h-screen mx-auto`}
       >
         {/* Header z-10 */}
-        <div className="absolute top-10 z-10 w-[90rem] text-9xl text-left leading-none pointer-events-none">
+        <div className="absolute font-montreal top-10 z-10 w-[90rem] text-9xl text-left leading-none pointer-events-none">
           ELEVATE YOUR <br />{" "}
           <div className="text-right w-full">DINING EXPERIENCE</div>
         </div>
@@ -53,7 +53,7 @@ function HomePage() {
           </div>
         </div>
       </section>
-      <section className={`bg-darkGray ${sectionStyle} h-screen w-[80%] mx-auto my-96`}></section>
+      <section className={`bg-zinc-900 ${sectionStyle} h-screen w-[80%] mx-auto my-96`}></section>
     </Container>
   );
 }

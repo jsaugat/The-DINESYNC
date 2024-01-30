@@ -7,7 +7,7 @@ import { Outlet } from "react-router-dom";
 function App() {
   // const [hovered, setHovered] = useState(false)
   return (
-    <main className="relative">
+    <main className="relative font-SFPro">
       {/* Green blob */}
       {/* <svg
         className="absolute z-[-1] -left-[35rem] -top-[3rem]"

@@ -34,7 +34,7 @@ function Logo({ logoStyle, DineSync}) {
           />
         </svg>
         {/* text */}
-        <h2 className={`text-5xl mix-blend-difference font-medium text-transparent bg-clip-text bg-gradient-to-r to-gray-400 from-white ${DineSync}`}>
+        <h2 className={`text-5xl mix-blend-difference font-medium text-transparent bg-clip-text bg-gradient-to-r to-gray-400 from-white font-montreal ${DineSync}`}>
           DineSync
         </h2>
       </div>
