@@ -5,7 +5,6 @@ import { Footer, NavBar, PointerBall } from "./master";
 import { Outlet } from "react-router-dom";
 
 function App() {
-  // const [hovered, setHovered] = useState(false)
   return (
     <main className="relative font-SFPro">
       {/* Green blob */}
