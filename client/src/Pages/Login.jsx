@@ -11,7 +11,7 @@ function Login() {
     console.log(email, password);
   };
 
-  const inputCSS = "rounded-lg px-4 py-1 bg-transparent border border-onyx/70 focus:ring-white/20 focus:border-white/20 w-[300px]"
+  const inputCSS = "rounded-lg px-4 py-2 bg-transparent border border-onyx/70 focus:ring-white/20 focus:border-white/20 w-[300px]"
 
   return (
     <Container>
