@@ -1,12 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-function Logo({ logoStyle, DineSync}) {
+function Logo({ logoStyle, DineSync, className}) {
   const scrollToTop = () => window.scroll({ top: 0, behavior: smooth })
 
   return (
     <NavLink to="" onClick={scrollToTop}>
-      <div className="flex items-center gap-4 cursor-pointer">
+      <div className={`flex items-center gap-4 cursor-pointer ${className}`}>
         {/* icon */}
         <svg
           width="24"

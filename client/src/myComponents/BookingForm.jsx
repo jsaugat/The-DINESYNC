@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { CallToAction } from "../../master/";
+import { CallToAction } from "@/master";
 
 // submit button animation
 const StyledBookButton = styled.button`

@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../Mini/Logo.jsx";
+import Logo from "../Logo.jsx";
 import { NavLink, useLocation } from "react-router-dom";
 
 function Footer() {
