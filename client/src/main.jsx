@@ -21,7 +21,7 @@ import {
 
 const routes = createRoutesFromElements(
   <Route path="/" element={<App />}>
-    {/* these children are gonna be displayed using <Outlet /> */}
+    {/* these children are displayed using <Outlet /> */}
     <Route path="" element={<HomePage />} />
     <Route path="about" element={<AboutPage />} />
     <Route path="menu" element={<MenuPage />} />

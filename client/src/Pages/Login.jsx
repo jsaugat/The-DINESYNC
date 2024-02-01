@@ -15,8 +15,9 @@ function Login() {
 
   return (
     <Container>
-    <form className="signup h-[80vh] flex flex-col items-start justify-center border border-onyx/50 rounded-[30px] w-fit px-24 py-24 mx-auto" onSubmit={handleSubmit}>
-      <h3 className="text-5xl mb-12 mx-auto font-semibold">Log in</h3>
+    <form className="h-[74vh] flex flex-col justify-around border border-onyx/0 rounded-[30px] w-fit px-24 py-24 mx-auto" onSubmit={handleSubmit}>
+      <h3 className="text-6xl font-semibold">Log in</h3>
+      <div className="flex flex-col items-start">
       <label htmlFor="" className="mb-2">Email</label>
       <input
         type="email"
@@ -33,7 +34,8 @@ function Login() {
         placeholder="Password"
         className={`${inputCSS}`}
       />
-      <Button variant="secondary" className="mt-16">Login</Button>
+      <Button variant="secondary" className="mt-16 w-full">Login</Button>
+      </div>
     </form>
     </Container>
   );

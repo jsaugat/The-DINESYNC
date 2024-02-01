@@ -10,15 +10,15 @@ const NavBar = () => {
         {/* logo */}
         <Logo className="mr-6"/>
       <ul className="flex gap-12 items-center">
-        <li ><NavLink to="/">Home</NavLink></li>
-        <li ><NavLink to="/about">About us</NavLink></li>
-        <li ><NavLink to="/contact">Contact</NavLink></li>
-        <li ><NavLink to="/menu">The Menu</NavLink></li>
-        <li ><NavLink to="/booking">Reservation</NavLink></li>
+        <li ><NavLink to="">Home</NavLink></li>
+        <li ><NavLink to="about">About us</NavLink></li>
+        <li ><NavLink to="contact">Contact</NavLink></li>
+        <li ><NavLink to="menu">The Menu</NavLink></li>
+        <li ><NavLink to="booking">Reservation</NavLink></li>
       </ul>
       <section className="space-x-3">
-        <NavLink to={"/login"}><Button variant="login">Login</Button></NavLink>
-        <NavLink to={"/signup"}><Button variant="secondary">Signup</Button></NavLink>
+        <NavLink to={"login"}><Button variant="login">Login</Button></NavLink>
+        <NavLink to={"signup"}><Button variant="secondary">Signup</Button></NavLink>
       </section>
     </nav>
   );
