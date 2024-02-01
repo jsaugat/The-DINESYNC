@@ -14,8 +14,8 @@ const NavBar = () => {
   return (
     <nav className="fixed z-50 w-full top-0 nav-menu flex px-[5rem] justify-between items-center py-[1.5rem] border-b border-onyx backdrop-blur-md font-montreal"> 
       {/* menu */}
-        {/* logo */}
-        <Logo className="mr-6"/>
+      {/* logo */}
+      <Logo className="mr-6"/>
       <ul className="flex gap-12 items-center">
         <li ><NavLink to="">Home</NavLink></li>
         <li ><NavLink to="about">About us</NavLink></li>
