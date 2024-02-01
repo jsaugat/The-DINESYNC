@@ -11,7 +11,7 @@ import {
   Login,
   Signup
 } from "./master.js";
-import { AuthContextProvider } from "@/context/AuthContext.jsx";
+import { AuthContextProvider } from "./context/AuthContext.jsx";
 import {
   Route,
   RouterProvider,
