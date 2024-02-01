@@ -27,6 +27,7 @@ export const AuthContextProvider = ({ children }) => {
       dispatch({ type: "LOGIN", payload: user})
     }
   }, [])
+  //TODO: go to backend code and create middlewares for protecting data from unauthorized users.
 
   console.log("AuthContext state:", state);
 
@@ -36,3 +37,5 @@ export const AuthContextProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+

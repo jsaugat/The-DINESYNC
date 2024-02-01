@@ -1,11 +1,9 @@
 import express from 'express';
-const router = express.Router();
-// controlers
-import { loginUser, signupUser } from "../controllers/user.controller.js"
- 
+import { loginUser, signupUser } from "../controllers/user.controller.js" // controlers
+
+const router = express.Router(); 
 //? login route - POST request
 router.post("/login", loginUser)
-
 //? signup route - POST request 
 router.post("/signup", signupUser)
 

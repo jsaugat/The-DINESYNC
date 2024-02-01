@@ -10,7 +10,7 @@ export const useLogin = () => {
     setIsLoading(true); // loading state during request
     setError(null); // reset the error on request
     try {
-      const response = await fetch("/app/user/login", {
+      const response = await fetch("/api/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

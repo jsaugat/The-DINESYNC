@@ -16,8 +16,8 @@ app.use("/", (req, res, next) => {
   next();
 });
 // ROUTES middleware
-app.use("/app", router);
-app.use("/app/user", userRoutes);
+app.use("/api", router);
+app.use("/api/user", userRoutes);
 
 
 //? Database connection
