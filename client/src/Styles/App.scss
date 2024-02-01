@@ -20,7 +20,7 @@ $white: #ffffff;
 html {
   /* The default font size in most browsers is 16 pixels.
   This means the base font size becomes 10 pixels (62.5% of 16 pixels). */
-  font-size: 62.5%;
+  font-size: 62.5%; 
 }
 body {
   background-color: $rich-black;
@@ -31,9 +31,10 @@ body {
   margin: 0 auto;
   text-align: center;
 }
+// form error message style
 .error{
   font-weight: 500;
-  color: red;
+  color: rgb(255, 41, 41);
   background-color: rgb(36, 0, 0);
   border: 1px solid hsl(0, 100%, 50%, 0.5);
   border-radius: 5px;
@@ -41,4 +42,8 @@ body {
   margin: 10px auto;
   width: 100%;
   pointer-events: none;
+}
+// reservation form
+form{
+  
 }
