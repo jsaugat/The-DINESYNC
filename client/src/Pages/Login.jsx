@@ -17,8 +17,8 @@ function Login() {
 
   return (
     <Container>
-    <form className="h-[74vh] flex flex-col justify-around border border-onyx/0 rounded-[30px] w-fit px-24 py-24 mx-auto" onSubmit={handleLogin}>
-      <h3 className="text-6xl font-semibold">Log in</h3>
+    <form className="h-[74vh] flex flex-col justify-start border border-onyx/50 rounded-[30px] w-fit px-24 py-24 mx-auto" onSubmit={handleLogin}>
+      <h3 className="text-6xl font-semibold mb-[5rem]">Log in</h3>
       <div className="flex flex-col items-start">
       <label htmlFor="" className="mb-2">Email</label>
       <input
