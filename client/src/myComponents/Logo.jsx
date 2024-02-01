@@ -2,7 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 function Logo({ logoStyle, DineSync, className}) {
-  const scrollToTop = () => window.scroll({ top: 0, behavior: smooth })
+  const scrollToTop = () => 
+    window.scroll({ top: 0, behavior: smooth })
 
   return (
     <NavLink to="" onClick={scrollToTop}>
