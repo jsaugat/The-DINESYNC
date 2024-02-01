@@ -44,6 +44,11 @@ const NavBar = () => {
             <NavLink to={"signup"}><Button variant="secondary">Signup</Button></NavLink>
           </div>)
         }
+        {/* 
+          //! we have another issue while refreshing page: the AuthContext becomes { user: null }
+          //todo: update the AuthContext with useEffect({}, []) hook to check localstorage and login if user { email, token } exists, on initial load.
+         */}
+          
       </section>
       
     </nav>
