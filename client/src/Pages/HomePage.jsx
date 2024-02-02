@@ -25,7 +25,7 @@ function HomePage() {
             rx="320.234"
             ry="115.739"
             transform="rotate(-16.669 633.976 468.732)"
-            fill="cyan"
+            fill="green"
           />
         </g>
         <defs>
