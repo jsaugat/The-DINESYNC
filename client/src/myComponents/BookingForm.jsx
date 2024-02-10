@@ -34,7 +34,6 @@ function BookingForm({ availableTimes, updateTimes }) {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guestsNum, setGuestsNum] = useState(0);
-  const [occasion, setOccasion] = useState("");
 
   const handleDateChange = (e) => {
     const selectedDate = e.target.value;
@@ -52,7 +51,7 @@ function BookingForm({ availableTimes, updateTimes }) {
 
   return (
     <form
-      className="h-[74vh] w-fit mx-auto flex flex-col justify-center items-start gap-9 border border-onyx/60 rounded-[3rem] py-4 px-14"
+      className="h-[74vh] w-[50rem] mx-auto flex flex-col justify-center items-start gap-9 border border-onyx/60 rounded-[3rem] py-4 px-14"
       onSubmit={(e) => e.preventDefault()}
     >
       {/* date */}
@@ -98,20 +97,7 @@ function BookingForm({ availableTimes, updateTimes }) {
           className={`${boxStyles} ${inputStyles}`}
         />
       </div>
-      {/* occasion */}
-      <div className="w-full text-left space-y-2 flex flex-col">
-        <label htmlFor="occasion">Occasion</label>
-
-        <select
-          id="occasion"
-          className={`${boxStyles} text-white`}
-          value={occasion}
-          onChange={(e) => setOccasion(e.target.value)}
-        >
-          <option className="text-black">Birthday</option>
-          <option className="text-black">Anniversary</option>
-        </select>
-      </div>
+    
       {/* submit btn */}
       <StyledBookButton
         type="submit"

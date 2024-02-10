@@ -5,7 +5,7 @@ import NavBar from "./myComponents/Header/NavBar";
 // footer
 import Footer from "./myComponents/Footer/Footer"
 // container
-import Container from "./myComponents/Container/Container";
+import Container from "./myComponents/Container";
 // pages
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
