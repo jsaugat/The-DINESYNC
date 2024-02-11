@@ -18,9 +18,3 @@ password: jsaugat_
 ### Login
 - take email and password from request.body
 - if email exists, compare the password. if matches, create a token and send as response.
-
-
-
-
-
-fuck dfdfdfdddfdfdfdfdfdfdfddddddddffdf
