@@ -1,4 +1,4 @@
-usename: jsaugat_
+username: jsaugat_
 password: jsaugat_
 
 ##### `express.json()` 
