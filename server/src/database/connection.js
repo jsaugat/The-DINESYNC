@@ -4,7 +4,7 @@ const connectDB = async () => {
   try {
     const connectionInstance = await mongoose.connect(process.env.MONGODB_URI);
     console.log(
-      `\n SUCCESS :: MongoDB Connected, \n DB HOST: ${connectionInstance.connection.host}`
+      `\n SUCCESS :: MONGODB Connected, \n DB HOST: ${connectionInstance.connection.host}`
     );
     // connection.host: while working on production or development, lets us know which host I'm connected to
   } catch (error) {

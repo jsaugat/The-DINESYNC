@@ -15,10 +15,23 @@ app.use("/", (req, res, next) => {
   console.log("Request Body -> " + JSON.stringify(req.body));
   next();
 });
+
 // ROUTES middlewares
 app.use("/api/auth", authRoute);
 // app.use("/api/users", usersRoute);
 app.use("/api/tables", tablesRoute);
+
+// ERROR Handler middleware
+app.use((err, req, res, next) => {
+  const errorMessage = err.message || "Something went wrong";
+  const status = err.status;
+  return res.status(status).json({
+    success: false,
+    status: status,
+    message: errorMessage,
+    stack: err.stack
+  });
+})
 
 //? Database connection
 app.on("error", (error) =>

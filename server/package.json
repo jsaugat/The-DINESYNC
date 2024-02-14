@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon ./src/index.js",
-    "seedTables": "node ./src/seeds/tables.js"
+    "seed-tables": "node ./src/seeds/tables.js"
   },
   "author": "",
   "license": "ISC",

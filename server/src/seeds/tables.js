@@ -26,6 +26,11 @@ const tableData = [
   { number: 13, capacity: 8, location: "dining", isReserved: false },
   { number: 14, capacity: 2, location: "dining", isReserved: false },
   { number: 15, capacity: 4, location: "dining", isReserved: false },
+  { number: 16, capacity: 8, location: "dining", isReserved: false },
+  { number: 17, capacity: 8, location: "dining", isReserved: false },
+  { number: 18, capacity: 2, location: "dining", isReserved: false },
+  { number: 19, capacity: 2, location: "dining", isReserved: false },
+  { number: 20, capacity: 4, location: "dining", isReserved: false },
 ]
 
 // Function to seed tables with a specified number of Faker-generated data
@@ -47,7 +52,14 @@ const seedTables = async (tableData) => {
 };
 
 // Connect to the database
-mongoose.connect(process.env.MONGODB_URI);
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => {
+    console.log('SEED: MongoDB connected');
+  })
+  .catch((error) => {
+    console.error('SEED: MongoDB connection error:', error);
+  });
 
 // Seed tables with 15 pre-generated data
 seedTables(tableData)
