@@ -1,7 +1,7 @@
 import { app } from "./app.js";
 import dotenv from "dotenv";
 import connectDB from "./database/connection.js";
-// import usersRoutes from "./routes/users.js";
+import usersRoute from "./routes/users.js";
 import authRoute from "./routes/auth.js"
 import tablesRoute from "./routes/tables.js"
 
@@ -18,7 +18,7 @@ app.use("/", (req, res, next) => {
 
 // ROUTES middlewares
 app.use("/api/auth", authRoute);
-// app.use("/api/users", usersRoute);
+app.use("/api/users", usersRoute);
 app.use("/api/tables", tablesRoute);
 
 // ERROR Handler middleware

@@ -1,6 +1,4 @@
 import express from "express";
-import Table from "../models/Table.js";
-import { createError } from "../utils/error.js";
 import { createTable, getTable, getTables, updateTable, deleteTable } from "../controllers/table.controller.js";
 
 const router = express.Router();
