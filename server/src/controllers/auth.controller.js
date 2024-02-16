@@ -32,7 +32,7 @@ export const login = async (req, res, next) => {
 
     // rename password to userPassword to prevent error as password already destructured above
     // exclude isAdmin and password in the response for safety against potential hackers.
-    const { password: userPassword, isAdmin, ...otherDetails } = user._doc;
+    const { password: userPassword, ...otherDetails } = user._doc;
 
   //? step 4 : Set HTTP-only cookie w/ the generated token value
     res

@@ -23,7 +23,7 @@ const tableSchema = new Schema(
     },
     reservations: [
       {
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId, // 1:18:53 in lama dev 
         ref: "Reservation",
       },
     ],
