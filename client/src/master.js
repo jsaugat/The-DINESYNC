@@ -11,12 +11,11 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ReservationPage from "./pages/ReservationPage";
 import MenuPage from "./pages/MenuPage";
-import ContactPage from "./pages/ContactPage";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 // components
 import CallToAction from "./components/CallToAction";
-import PointerBall from "./Motion/PointerBall";
+import PointerBall from "./components/Motion/PointerBall";
 import BookingForm from "./components/BookingForm"
 
 export {
@@ -28,7 +27,6 @@ export {
   AboutPage,
   ReservationPage,
   MenuPage,
-  ContactPage,
   Login,
   Signup,
   Logo,

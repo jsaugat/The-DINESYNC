@@ -6,16 +6,16 @@ export const useLogin = () => {
   const [error, setError] = useState(null);
   const { dispatch } = useAuthContext();
 
-  const login = async (email, password) => {
+  const login = async (username, email, password) => {
     setIsLoading(true); // loading state during request
     setError(null); // reset the error on request
     try {
-      const response = await fetch("/api/user/login", {
+      const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, email, password }),
       });
       const json = await response.json();
 

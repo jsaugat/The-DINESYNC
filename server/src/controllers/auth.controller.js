@@ -17,10 +17,10 @@ const createToken = (_id, isAdmin) => {
 
 // LOGIN
 export const login = async (req, res, next) => {
-  const { username, password } = req.body;
+  const { username, email, password } = req.body;
   try {
   //? step 1 : Find user
-    const user = await User.findOne({ username });
+    const user = await User.findOne({ username, email });
     if (!user) return next(createError(404, "User not found"));
 
   //? step 2 : Verify password (if user is found)
@@ -58,6 +58,7 @@ export const register = async (req, res, next) => {
       password: hash,
     });
     res.status(201).json({ newUser });
+    console.log('signup requested')
   } catch (err) {
     next(err);
   }

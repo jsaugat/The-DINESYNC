@@ -7,7 +7,6 @@ import {
   AboutPage,
   ReservationPage,
   MenuPage,
-  ContactPage,
   Login,
   Signup
 } from "./master.js";
@@ -26,7 +25,6 @@ const routes = createRoutesFromElements(
     <Route path="about" element={<AboutPage />} />
     <Route path="menu" element={<MenuPage />} />
     <Route path="booking" element={<ReservationPage />} />
-    <Route path="contact" element={<ContactPage />} />
     <Route path="login" element={<Login />} />
     <Route path="signup" element={<Signup />} />
   </Route>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useSignup } from "../hooks/useSignup.js";
 
 function Signup() {
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { signup, isLoading, error } = useSignup();
@@ -11,7 +12,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await signup(email, password);
+    await signup(username, email, password);
   };
 
   const inputCSS =
@@ -26,6 +27,16 @@ function Signup() {
         <h3 className="text-6xl font-semibold mb-[5rem]">Sign up</h3>
         <div className="flex flex-col items-start">
           <label htmlFor="" className="mb-2">
+            Username
+          </label>
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Username"
+            className={`${inputCSS}`}
+          />
+          <label htmlFor="" className="mb-2 mt-5">
             Email
           </label>
           <input

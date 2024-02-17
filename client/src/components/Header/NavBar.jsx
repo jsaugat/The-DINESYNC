@@ -19,25 +19,23 @@ const NavBar = () => {
       <ul className="flex gap-12 items-center">
         <li ><NavLink to="">Home</NavLink></li>
         <li ><NavLink to="about">About us</NavLink></li>
-        <li ><NavLink to="contact">Contact</NavLink></li>
+        {/* <li ><NavLink to="contact">Contact</NavLink></li> */}
         <li ><NavLink to="menu">The Menu</NavLink></li>
         <li ><NavLink to="booking">Reservation</NavLink></li>
       </ul>
       <section>
-
-        {/* //? when is user logged in */}
+        {/* //? when user is logged in */}
         {user && (
           <div className="space-x-4">
             {/* // user.email is VALID when user is logged in
                 // user.email is NULL when user is not logged in 
                 //! you will see error if you render user.email when it is null :)
             */}
-            <span className="font-medium text-green-400">{user.email}</span>
+            <span className="font-medium text-green-400">{user.username}</span>
             <Button variant="login" onClick={()=> logout()}>Logout</Button>
           </div>
         )}
-
-        {/* //! when is user not logged in */}
+        {/* //! when user is not logged in */}
         {!user && (
           <div className="space-x-4">
             <NavLink to={"login"}><Button variant="login">Login</Button></NavLink>

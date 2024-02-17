@@ -13,15 +13,15 @@ export const useSignup = () => {
   const [isLoading, setIsLoading] = useState(null);
   const { dispatch } = useAuthContext();
 
-  const signup = async (email, password) => {
+  const signup = async (username, email, password) => {
     setIsLoading(true);
     setError(null);
 
     try {
-      const response = await fetch("/api/user/signup", {
+      const response = await fetch("/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, email, password }),
       });
       const json = await response.json();
 
@@ -37,12 +37,12 @@ export const useSignup = () => {
     } catch (error) {
       console.error("SHIT!! ERROR DURING SIGNUP:", error);
       setIsLoading(false);
-      setError("Network or server error occurred");
+      setError("Network or server error occurreddd");
     }
   };
 
   return { signup, isLoading, error };
   //? signup - signup
-  //? isLoading - to disable signup button when its isLoading
+  //? isLoading - to disable signup button when it isLoading
   //? error - to display error
 };

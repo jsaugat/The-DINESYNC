@@ -29,14 +29,7 @@ const reservationSchema = new mongoose.Schema({
     type: String,
     enum: ["Pending", "Confirmed", "Cancelled"],
     default: "Pending",
-  },
-  specialRequests: {
-    type: String,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+  }
+}, { timestamps: true });
 
 export default mongoose.model("Reservation", reservationSchema);
