@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/shadcn/ui/button";
 import { Container } from "../master.js";
 import { useState } from "react";
 import { useSignup } from "../hooks/useSignup.js";

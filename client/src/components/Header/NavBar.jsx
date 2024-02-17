@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Logo } from "/src/master";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/shadcn/ui/button"
 import { useLogout } from "@/hooks/useLogout.js";
 import { useAuthContext } from "@/hooks/useAuthContext.js";
 

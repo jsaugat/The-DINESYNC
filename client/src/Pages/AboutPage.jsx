@@ -16,7 +16,7 @@ function AboutPage() {
             unparalleled ease. Elevate your dining adventures with DineSync –
             where every bite is a celebration!
           </h5>
-        </div>
+        </div>  
       </section>
     </Container>
   );
