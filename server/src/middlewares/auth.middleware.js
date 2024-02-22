@@ -12,10 +12,10 @@ export const shield = asyncHandler(async function (req, res, next) {
        * if token is valid   @returns an object representing the 'decoded payload of the JWT'
        * if token is invalid @throws  an error that's why wrapped in try-catch block
        */
-      const decoded = jwt.verify(token, process.env.JWT_SECRET); // returns {_id}
+      const decodedPayload = jwt.verify(token, process.env.JWT_SECRET); // returns {_id}
       // retrieve user-info from db based on decoded._id and assign it to a new 'user' prop in req obj.
       // req.user can be utilized by downstream middlwares or route handlers.
-      req.user = await User.findById(decoded._id).select("-password");
+      req.user = await User.findById(decodedPayload._id).select("-password");
       next();
     } catch (error) {
       handleUnauthorized(res, "Invalid token");
