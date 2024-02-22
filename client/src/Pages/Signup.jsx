@@ -1,18 +1,15 @@
 import { Button } from "@/shadcn/ui/button";
 import { Container } from "../master.js";
 import { useState } from "react";
-import { useSignup } from "../hooks/useSignup.js";
 
 function Signup() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { signup, isLoading, error } = useSignup();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await signup(username, email, password);
   };
 
   const inputCSS =

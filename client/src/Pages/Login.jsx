@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { Container } from "../master";
 import { Button } from "@/shadcn/ui/button";
-import { useLogin } from "@/hooks/useLogin.js";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login, error, isLoading } = useLogin();
 
   const handleLogin = async (e) => {
     e.preventDefault();

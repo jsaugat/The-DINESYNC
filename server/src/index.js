@@ -34,15 +34,13 @@ app.use((error, req, res, next) => {
   });
 });
 
-//? Database connection
-app.on("error", (error) =>
-  console.error(`Sorry!, Express couldn't talk to database`, error)
-);
-app.listen(port, async () => {
-  try {
-    await connectDB();
-    console.log(`👁️  WATCHING PORT : http://localhost:${port}`);
-  } catch (error) {
-    console.error("connectDB error: ", error);
-  }
-});
+//? Database connection : async function returns a Promise
+connectDB()
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`👁️  WATCHING PORT : http://localhost:${port}`);
+    });
+  })
+  .catch((error) => {
+    console.error(`Sorry!, Express couldn't talk to database`, error);
+  });

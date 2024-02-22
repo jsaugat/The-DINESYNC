@@ -10,7 +10,6 @@ import {
   Login,
   Signup
 } from "./master.js";
-import { AuthContextProvider } from "./context/AuthContext.jsx";
 import {
   Route,
   RouterProvider,
@@ -34,8 +33,6 @@ const router = createBrowserRouter(routes);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthContextProvider>
       <RouterProvider router={router} />
-    </AuthContextProvider>
   </React.StrictMode>
 );

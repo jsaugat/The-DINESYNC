@@ -10,7 +10,7 @@ function HomePage() {
   return (
     <>
     {/* BLOB */}
-    <svg
+    {/* <svg
         className="absolute z-[-1] -left-[35rem] "
         width="1200"
         height="1200"
@@ -51,7 +51,7 @@ function HomePage() {
             />
           </filter>
         </defs>
-    </svg>
+    </svg> */}
     <Container className="relative space-y-5">
       <section
         className={`${sectionStyle} text-center flex justify-evenly items-center h-screen mx-auto`}
