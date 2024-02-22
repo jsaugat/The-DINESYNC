@@ -3,13 +3,11 @@ import { Container } from "../master";
 import { Button } from "@/shadcn/ui/button";
 
 function Login() {
-  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    await login(username, email, password);
   };
 
   const inputCSS =
@@ -23,16 +21,6 @@ function Login() {
       >
         <h3 className="text-6xl font-semibold mb-[5rem]">Log in</h3>
         <div className="flex flex-col items-start">
-          <label htmlFor="" className="mb-2">
-            Username
-          </label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Username"
-            className={`${inputCSS}`}
-          />
           <label htmlFor="" className="mb-2 mt-5">
             Email
           </label>
@@ -54,14 +42,14 @@ function Login() {
             className={`${inputCSS}`}
           />
           <Button
-            disabled={isLoading}
+            // disabled={isLoading}
             variant="secondary"
             className="mt-16 w-full"
           >
             Login
           </Button>
         </div>
-        {error && <div className="error">{error}</div>}
+        {/* {error && <div className="error">{error}</div>} */}
       </form>
     </Container>
   );

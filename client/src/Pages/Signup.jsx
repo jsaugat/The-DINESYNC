@@ -9,7 +9,6 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
   };
 
   const inputCSS =
@@ -53,11 +52,15 @@ function Signup() {
             placeholder="Password"
             className={`${inputCSS}`}
           />
-        <Button variant="secondary" className="mt-16 w-full" disabled={isLoading}>
-          Sign up
-        </Button>
+          <Button
+            variant="secondary"
+            className="mt-16 w-full"
+            // disabled={isLoading}
+          >
+            Sign up
+          </Button>
         </div>
-        {error && <div className="error">{error}</div>}
+        {/* {error && <div className="error">{error}</div>} */}
       </form>
     </Container>
   );
