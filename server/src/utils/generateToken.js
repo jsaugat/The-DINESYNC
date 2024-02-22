@@ -1,10 +1,11 @@
 import jwt from "jsonwebtoken";
 
 const generateToken = (res, _id) => {
-  // jwt.sign(payload, secret, options)
+  //? jwt.sign(payload, secret, options)
   const token = jwt.sign({ _id }, process.env.JWT_SECRET, {
     expiresIn: "30d",
   });
+  //? cookie(name, token, options)
   res.cookie("jwt", token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production", // HTTPS is used only in production
