@@ -22,17 +22,18 @@ app.use("/api/tables", tablesRoute);
 app.use("/api/users", usersRoute);
 
 // ERROR Handler middleware : triggered if there's an error passed to next() in any previous middleware or route handler.
-app.use((error, req, res, next) => {
-  const message = error.message || "Something went wrong";
-  const status = error.status;
+// app.use((error, req, res, next) => {
+//   const message = error.message || "Something went wrong";
+//   const status = error.status;
 
-  return res.status(status).json({
-    success: false,
-    status,
-    message,
-    stack: error.stack,
-  });
-});
+//   return res.status(status).json({
+//     success: false,
+//     status,
+//     message,
+//     stack: error.stack,
+//   });
+// });
+//
 
 //? Database connection : async function returns a Promise
 connectDB()
