@@ -24,6 +24,7 @@ const authUser = asyncHandler(async (req, res, next) => {
   }
 });
 
+
 export {
   authUser,
   registerUser,

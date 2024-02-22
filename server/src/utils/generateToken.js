@@ -5,7 +5,7 @@ const generateToken = (res, _id) => {
   const token = jwt.sign({ _id }, process.env.JWT_SECRET, {
     expiresIn: "30d",
   });
-  //? cookie(name, token, options)
+  //? cookie(name, token, options), set an http cookie named 'jwt'
   res.cookie("jwt", token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production", // HTTPS is used only in production
