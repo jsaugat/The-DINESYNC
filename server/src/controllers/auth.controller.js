@@ -64,14 +64,53 @@ const registerUser = asyncHandler(async (req, res, next) => {
  */
 const logoutUser = asyncHandler(async (req, res, next) => {
   // this code clears or deletes a cookie named "jwt" by setting an empty value and an expiration date in the past. This effectively removes the cookie from the client's browser.
-  res.clearCookie('jwt')
+  res.clearCookie("jwt");
   res.status(200).json({ message: "User logged out" });
+});
+
+/**
+ * @desc    Get user profile
+ * @route   POST /api/users/profile
+ * @access  Private
+ */
+const getUserProfile = asyncHandler(async (req, res, next) => {
+  const { _id, name, email } = req.user; // from shield
+  res.status(200).json({ _id, name, email });
+});
+
+/**
+ * @desc    Update user profile
+ * @route   PUT /api/users/profile
+ * @access  Private
+ */
+const updateUserProfile = asyncHandler(async (req, res, next) => {
+  // req.user doesn't include password property so following approach is better for updateUserProfile -->
+  const { _id } = req.user; // from shield from authUser controller
+  const { name, email, password } = req.body; // from react form
+  const user = await User.findById(_id);
+  if (user) {
+    user.name = name || user.name;
+    user.email = email || user.email;
+
+    if (password) {
+      user.password = password;
+    }
+    const updatedUser = await user.save();
+    res.status(200).json({
+      _id: updatedUser._id,
+      name: updatedUser.name,
+      email: updatedUser.email,
+    });
+  } else {
+    res.status(404);
+    throw new Error("User not found");
+  }
 });
 
 export {
   authUser,
   registerUser,
   logoutUser,
-  // getUserProfile,
-  // updateUserProfile,
+  getUserProfile,
+  updateUserProfile,
 };
