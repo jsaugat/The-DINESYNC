@@ -8,7 +8,7 @@ export const shield = asyncHandler(async function (req, res, next) {
   } else {
     try {
       /**
-       * @function 'decoded' - 
+       * @function 'decodedPayload' - 
        * if token is valid   @returns an object representing the 'decoded payload of the JWT'
        * if token is invalid @throws  an error that's why wrapped in try-catch block
        */
