@@ -1,9 +1,9 @@
 import { app } from "./app.js";
 import dotenv from "dotenv";
 import connectDB from "./database/connection.js";
-import usersRoute from "./routes/users.js";
+// import usersRoute from "./routes/users.js";
 import authRoute from "./routes/auth.js";
-import tablesRoute from "./routes/tables.js";
+// import tablesRoute from "./routes/tables.js";
 
 dotenv.config(); // can use process.env now
 const port = process.env.PORT || 6900;
@@ -18,8 +18,8 @@ app.use("/", (req, res, next) => {
 
 // ROUTES middlewares
 app.use("/api/auth", authRoute);
-app.use("/api/tables", tablesRoute);
-app.use("/api/users", usersRoute);
+// app.use("/api/tables", tablesRoute);
+// app.use("/api/users", usersRoute);
 
 // ERROR Handler middleware : triggered if there's an error passed to next() in any previous middleware or route handler.
 // app.use((error, req, res, next) => {
