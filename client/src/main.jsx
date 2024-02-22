@@ -3,10 +3,10 @@ import ReactDOM from "react-dom/client";
 import "./Styles/globals.scss";
 import {
   App,
-  HomePage,
-  AboutPage,
-  ReservationPage,
-  MenuPage,
+  Home,
+  About,
+  Reservation,
+  Menu,
   Login,
   Signup
 } from "./master.js";
@@ -20,10 +20,10 @@ import {
 const routes = createRoutesFromElements(
   <Route path="/" element={<App />}>
     {/* these children are displayed using <Outlet /> */}
-    <Route path="" element={<HomePage />} />
-    <Route path="about" element={<AboutPage />} />
-    <Route path="menu" element={<MenuPage />} />
-    <Route path="booking" element={<ReservationPage />} />
+    <Route path="" element={<Home />} />
+    <Route path="about" element={<About />} />
+    <Route path="menu" element={<Menu />} />
+    <Route path="booking" element={<Reservation />} />
     <Route path="login" element={<Login />} />
     <Route path="signup" element={<Signup />} />
   </Route>

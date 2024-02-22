@@ -7,14 +7,14 @@ import Footer from "./components/Footer/Footer"
 // container
 import Container from "./components/Container";
 // pages
-import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
-import ReservationPage from "./pages/ReservationPage";
-import MenuPage from "./pages/MenuPage";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Reservation from "./pages/Reservation";
+import Menu from "./pages/Menu";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 // components
-import CallToAction from "./components/CallToAction";
+import CallToAction from "./components/Button";
 import PointerBall from "./components/Motion/PointerBall";
 import BookingForm from "./components/BookingForm"
 
@@ -23,10 +23,10 @@ export {
   NavBar,
   Footer,
   Container,
-  HomePage,
-  AboutPage,
-  ReservationPage,
-  MenuPage,
+  Home,
+  About,
+  Reservation,
+  Menu,
   Login,
   Signup,
   Logo,

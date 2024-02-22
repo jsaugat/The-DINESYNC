@@ -1,6 +1,6 @@
 import React from "react";
 
-function CallToAction({
+function Button({
   children,
   type = "button", // 'type' is needed to specify "submit" button sometimes
   textColor = "white",
@@ -19,4 +19,4 @@ function CallToAction({
   );
 }
 
-export default CallToAction;
+export default Button;
