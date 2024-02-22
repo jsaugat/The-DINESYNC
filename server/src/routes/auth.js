@@ -6,6 +6,8 @@ import {
   getUserProfile,
   updateUserProfile,
 } from "../controllers/auth.controller.js";
+import { shield } from "../middlewares/auth.middleware.js";
+
 const router = express.Router();
 
 router.post("/", authUser);
