@@ -1,5 +1,5 @@
 import asyncHandler from "express-async-handler";
-import User from "../models/User";
+import User from "../models/User.js";
 import generateToken from "../utils/generateToken.js";
 
 /**
@@ -8,7 +8,7 @@ import generateToken from "../utils/generateToken.js";
  *  @access  Public
  */
 const authUser = asyncHandler(async (req, res, next) => {
-  const { email, password } = req.body; // from react form
+  const { email, password } = req.body; // login form
   const user = await User.findOne({ email });
   // if user exists and password matches.
   if (user && (await user.passwordMatches(password))) {
@@ -30,7 +30,7 @@ const authUser = asyncHandler(async (req, res, next) => {
  * @access  Public
  */
 const registerUser = asyncHandler(async (req, res, next) => {
-  const { name, email, password } = req.body;
+  const { name, email, password } = req.body; // signup form
   const userExists = await User.findOne({ email });
   if (userExists) {
     res.status(400);
@@ -57,10 +57,21 @@ const registerUser = asyncHandler(async (req, res, next) => {
   }
 });
 
+/**
+ * @desc    Logout user
+ * @route   POST /api/users/logout
+ * @access  Public
+ */
+const logoutUser = asyncHandler(async (req, res, next) => {
+  // this code clears or deletes a cookie named "jwt" by setting an empty value and an expiration date in the past. This effectively removes the cookie from the client's browser.
+  res.clearCookie('jwt')
+  res.status(200).json({ message: "User logged out" });
+});
+
 export {
   authUser,
   registerUser,
   logoutUser,
-  getUserProfile,
-  updateUserProfile,
+  // getUserProfile,
+  // updateUserProfile,
 };
