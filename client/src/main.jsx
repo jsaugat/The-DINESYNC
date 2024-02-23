@@ -8,7 +8,7 @@ import {
   Reservation,
   Menu,
   Login,
-  Signup
+  Signup,
 } from "./master.js";
 import {
   Route,
@@ -16,6 +16,8 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
+import store from "./store.js";
+import { Provider } from "react-redux";
 
 const routes = createRoutesFromElements(
   <Route path="/" element={<App />}>
@@ -33,6 +35,8 @@ const router = createBrowserRouter(routes);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <Provider store={store}>
       <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
