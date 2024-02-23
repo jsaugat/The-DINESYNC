@@ -27,7 +27,7 @@ function Signup() {
         className="h-[84vh] flex flex-col justify-start border border-onyx/60 rounded-[30px] w-fit px-24 py-24 mx-auto"
         onSubmit={signupHandler}
       >
-        <h3 className="text-6xl font-semibold mb-[4rem]">Sign up</h3>
+        <h3 className="text-6xl font-semibold mb-[3rem]">Sign up</h3>
         <div className="flex flex-col items-start">
           <label htmlFor="" className="mb-2">
             Name
@@ -66,7 +66,7 @@ function Signup() {
           <input
             type="password"
             value={confirmPassword}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             placeholder="Confirm Password"
             className={`${inputCSS}`}
           />

@@ -11,7 +11,7 @@ function Footer() {
     });
   }
   return (
-    <div className="h-[200px] mt-[3rem] text-left">
+    <div className="h-[200px] mt-[4rem] text-left">
       <div className="border border-y-onyx border-x-0 h-[27.5rem] px-[10.4rem] py-[6.4rem] flex justify-between items-start">
         {/* Logo */}
         <NavLink

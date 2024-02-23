@@ -14,7 +14,11 @@ password: jsaugat_
 - Receives the HTTP response, processes the data, and updates the UI as necessary.
 
 
-## User Authentication
-### Login
-- take email and password from request.body
-- if email exists, compare the password. if matches, create a token and send as response.
+## RTK Slices
+### authSlice
+- deals with LocalStorage stuffs: 
+  - take user data from api and store them in localStorage and auth-state and remove from LocalStorage on  logout
+  - deals with user id, name, email
+  - does not deal with token (i.e. stored in http cookie)
+### userApiSlice
+- deals in making requests to backend api to authenticate or login, register, get profile, update profile

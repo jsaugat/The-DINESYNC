@@ -99,13 +99,13 @@
   }
 }
 
-//? Footer
+//? back-to-top
 .back-to-top-arrow {
   transform: translateY(3px);
   transition: transform 0.3s ease-in-out;
 
   .back-to-top:hover & {
-    transform: translateY(-6px);
+    transform: translateY(-1px);
   }
 }
 
