@@ -1,12 +1,19 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Container } from "../master";
 import { Button } from "@/shadcn/ui/button";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const ref = useRef(null);
 
-  const handleLogin = async (e) => {
+  useEffect(() => {
+    ref.current.focus()
+  }, [])
+  
+
+  const loginHandler = async (e) => {
     e.preventDefault();
   };
 
@@ -16,10 +23,10 @@ function Login() {
   return (
     <Container>
       <form
-        className="h-[74vh] flex flex-col justify-start border border-onyx/50 rounded-[30px] w-fit px-24 py-24 mx-auto"
-        onSubmit={handleLogin}
+        className="h-[84vh] flex flex-col justify-start border border-onyx/50 rounded-[30px] w-fit px-24 py-24 mx-auto"
+        onSubmit={loginHandler}
       >
-        <h3 className="text-6xl font-semibold mb-[5rem]">Log in</h3>
+        <h3 className="text-6xl font-semibold mb-[4rem]">Log in</h3>
         <div className="flex flex-col items-start">
           <label htmlFor="" className="mb-2 mt-5">
             Email
@@ -28,7 +35,8 @@ function Login() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
+            placeholder="example@email.com"
+            ref={ref}
             className={`${inputCSS}`}
           />
           <label htmlFor="" className="mb-2 mt-5">
@@ -48,6 +56,9 @@ function Login() {
           >
             Login
           </Button>
+        </div>
+        <div className="mt-12 text-[1.55rem]">
+           New Customer ? <Link to="/signup" className="text-blue-500">Register</Link>
         </div>
         {/* {error && <div className="error">{error}</div>} */}
       </form>

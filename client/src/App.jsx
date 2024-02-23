@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <main className="relative font-SFPro">
+    <main className="relative font-SFPro font-normal">
       {/* Cursor ball */}
       {/* <PointerBall /> */}
       {/* fixed Navigation */}

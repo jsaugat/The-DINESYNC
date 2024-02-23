@@ -5,7 +5,7 @@ function AboutPage() {
   return (
     <Container>
       <section>
-        <div className="flex justify-around items-center h-[70vh]">
+        <div className="flex justify-around items-center h-[84vh]">
           <h2 className="text-[2rem]">Who we are</h2>
           <h5 className="text-[2rem] w-1/2 text-left">
             At DineSync, we've curated a unique blend of convenience and

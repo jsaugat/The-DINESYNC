@@ -10,8 +10,8 @@ module.exports = {
   prefix: "",
   theme: {
     fontFamily: {
-      'SFPro': 'SF Pro Display, sans-serif',
-      'montreal': 'PP Neue Montreal, sans-serif',
+      'SFPro': ['SF Pro Display', 'sans-serif'],
+      'montreal': ['PP Neue Montreal', 'sans-serif'],
     },
     container: {
       center: true,
