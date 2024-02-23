@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import connectDB from "./database/connection.js";
 // import usersRoute from "./routes/users.js";
 import authRoute from "./routes/auth.js";
+import { notFoundHandler, errorHandler } from "./middlewares/error.middleware.js";
 // import tablesRoute from "./routes/tables.js";
 
 dotenv.config(); // can use process.env now
@@ -20,6 +21,10 @@ app.use("/", (req, res, next) => {
 app.use("/api/auth", authRoute);
 // app.use("/api/tables", tablesRoute);
 // app.use("/api/users", usersRoute);
+
+// 404 and error handler middlewares
+app.use(notFoundHandler);
+app.use(errorHandler);
 
 // ERROR Handler middleware : triggered if there's an error passed to next() in any previous middleware or route handler.
 // app.use((error, req, res, next) => {
