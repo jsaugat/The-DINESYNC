@@ -35,7 +35,7 @@ function Login() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="example@email.com"
+            placeholder="Email"
             ref={ref}
             className={`${inputCSS}`}
           />
@@ -58,7 +58,7 @@ function Login() {
           </Button>
         </div>
         <div className="mt-12 text-[1.55rem]">
-           New Customer ? <Link to="/signup" className="text-blue-500">Register</Link>
+           New Customer ? <Link to="/signup" className="text-blue-500 hover:underline">Create an account</Link>
         </div>
         {/* {error && <div className="error">{error}</div>} */}
       </form>

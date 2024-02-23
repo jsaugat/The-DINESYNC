@@ -36,7 +36,7 @@ function Signup() {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Your Name"
+            placeholder="Name"
             ref={ref}
             className={`${inputCSS}`}
           />
@@ -47,7 +47,7 @@ function Signup() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="example@email.com"
+            placeholder="Email"
             className={`${inputCSS}`}
           />
           <label htmlFor="" className="mb-2 mt-5">
@@ -79,7 +79,7 @@ function Signup() {
           </Button>
         </div>
         <div className="mt-12 text-[1.55rem]">
-          Already have an account ? <Link to="/login" className="text-blue-500">Login</Link>
+          Already have an account ? <Link to="/login" className="text-blue-500 hover:underline">Login</Link>
         </div>
         {/* {error && <div className="error">{error}</div>} */}
       </form>
