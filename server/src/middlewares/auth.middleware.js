@@ -1,4 +1,6 @@
 import asyncHandler from "express-async-handler";
+import jwt from "jsonwebtoken";
+import User from "../models/User.js";
 
 export const shield = asyncHandler(async function (req, res, next) {
   let token = req.cookies.jwt;
@@ -17,8 +19,8 @@ export const shield = asyncHandler(async function (req, res, next) {
       // req.user can be utilized by downstream middlwares or route handlers.
       req.user = await User.findById(decodedPayload._id).select("-password");
       next();
-    } catch (error) {
-      handleUnauthorized(res, "Invalid token");
+    } catch (err) {
+      handleUnauthorized(res, err.message || "Invalid token");
     }
   }
 });

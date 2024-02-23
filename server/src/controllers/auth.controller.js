@@ -36,11 +36,7 @@ const registerUser = asyncHandler(async (req, res, next) => {
     res.status(400);
     throw Error("User already exists");
   }
-  const user = await User.create({
-    name,
-    email,
-    password,
-  });
+  const user = await User.create({ name, email, password });
   // if user is successfully created
   if (user) {
     // generate jwt and set a cookie using it

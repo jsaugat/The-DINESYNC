@@ -4,7 +4,7 @@ import {
   registerUser,
   logoutUser,
   getUserProfile,
-  // updateUserProfile,
+  updateUserProfile,
 } from "../controllers/auth.controller.js";
 import { shield } from "../middlewares/auth.middleware.js";
 
