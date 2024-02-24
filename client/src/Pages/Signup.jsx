@@ -1,7 +1,15 @@
 import { Button } from "@/shadcn/ui/button";
 import { Container } from "../master.js";
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { useRegisterMutation } from "@/slices/usersApiSlice.js";
+import { setCredentials } from "@/slices/authSlice.js"; // after hitting backend api and getting data we gotta set it to STATE and LOCAL-STORAGE
+// toast
+import { useToast } from "@/shadcn/ui/use-toast";
+import { ToastAction } from "@/shadcn/ui/toast";
+// loader
+import Loader from "@/components/Loader";
 
 function Signup() {
   const [name, setName] = useState("");
@@ -9,13 +17,47 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const ref = useRef(null);
+  useEffect(() => {
+    ref.current.focus();
+  }, []);
+
+  const { userInfo } = useSelector((state) => state.auth);
+  const { toast } = useToast();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [register, { isLoading }] = useRegisterMutation();
 
   useEffect(() => {
-    ref.current.focus()
-  }, [])
+    if (userInfo) navigate("/");
+  }, [navigate, userInfo]);
 
   const signupHandler = async (e) => {
     e.preventDefault();
+    if (password !== confirmPassword) {
+      toast({
+        variant: "minimal",
+        title: "Passwords do not match.",
+        description: "Please try again.",
+        action: <ToastAction altText="Try again">Try again</ToastAction>,
+        className: "px-7 py-4",
+      });
+      return;
+    } else {
+      try {
+        const res = await register({ name, email, password }).unwrap();
+        dispatch(setCredentials({ ...res }));
+        navigate("/");
+      } catch (error) {
+        console.log(error?.data?.message || error.error);
+        toast({
+          variant: "minimal",
+          title: error?.data?.message || error.error,
+          description: "Please try again.",
+          action: <ToastAction altText="Try again">Try again</ToastAction>,
+          className: "px-7 py-4",
+        });
+      }
+    }
   };
 
   const inputCSS =
@@ -79,7 +121,10 @@ function Signup() {
           </Button>
         </div>
         <div className="mt-12 text-[1.55rem]">
-          Already have an account ? <Link to="/login" className="text-blue-500 hover:underline">Login</Link>
+          Already have an account ?{" "}
+          <Link to="/login" className="text-blue-500 hover:underline">
+            Login
+          </Link>
         </div>
         {/* {error && <div className="error">{error}</div>} */}
       </form>

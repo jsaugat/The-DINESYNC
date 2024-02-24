@@ -30,7 +30,7 @@ function Login() {
 
   useEffect(() => {
     if (userInfo) navigate("/");
-  }, [userInfo]);
+  }, [navigate, userInfo]);
 
   const loginHandler = async (e) => {
     e.preventDefault();

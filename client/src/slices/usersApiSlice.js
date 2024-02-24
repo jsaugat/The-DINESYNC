@@ -23,6 +23,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({ // inject endpoints to t
         method: "POST",
       })
     }),
+    update
   }),
 })
 

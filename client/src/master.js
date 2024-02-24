@@ -13,10 +13,12 @@ import Reservation from "./pages/Reservation";
 import Menu from "./pages/Menu";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
+import Profile from "./pages/Profile.jsx";
 // components
 import CallToAction from "./components/Button";
 import PointerBall from "./components/Motion/PointerBall";
 import BookingForm from "./components/BookingForm"
+import PrivateRoute from "./components/PrivateRoute"
 
 export {
   App,
@@ -29,8 +31,10 @@ export {
   Menu,
   Login,
   Signup,
+  Profile,
   Logo,
   CallToAction,
   PointerBall,
-  BookingForm
+  BookingForm,
+  PrivateRoute
 };
