@@ -7,7 +7,7 @@ module.exports = {
     './app/**/*.{js,jsx}',
     './src/**/*.{js,jsx}',
   ],
-  prefix: "",
+  darkMode: 'selector',
   theme: {
     fontFamily: {
       'SFPro': ['SF Pro Display', 'sans-serif'],

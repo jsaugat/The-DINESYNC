@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
-    <main className="relative font-SFPro font-normal">
+    <main className="relative font-montreal font-normal tracking-wide">
       {/* Cursor ball */}
       {/* <PointerBall /> */}
       {/* fixed Navigation */}
