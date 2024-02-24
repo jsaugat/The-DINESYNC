@@ -40,7 +40,7 @@ export default function AccountDropdown({ userInfo }) {
         {/* User solid icon */}
         <div className="flex gap-4">
           <UserSolid />
-          <span>{userInfo.name}</span>
+          <span className="font-medium">{userInfo.name}</span>
         </div>
         <svg
           className={`w-4 h-4 ms-3 transition-all ease-in-out ${

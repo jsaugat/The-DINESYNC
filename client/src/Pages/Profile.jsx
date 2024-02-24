@@ -1,7 +1,6 @@
 import { Button } from "@/shadcn/ui/button";
 import { Container } from "../master.js";
 import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useUpdateProfileMutation } from "@/slices/usersApiSlice.js";
 import { setCredentials } from "@/slices/authSlice.js"; // after hitting backend api and getting data we gotta set it to STATE and LOCAL-STORAGE
@@ -25,7 +24,6 @@ function Profile() {
   const [updateProfile, { isLoading }] = useUpdateProfileMutation();
   const { toast } = useToast();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   useEffect(() => {
     setName(userInfo.name);
@@ -60,7 +58,7 @@ function Profile() {
           title: error?.data?.message || error.error,
           description: "Something went wrong.",
           action: <ToastAction altText="Try again">Try again</ToastAction>,
-          className: "px-7 py-4",
+          className: "px-7 py-4 text-left",
         });
       }
     }
@@ -75,7 +73,14 @@ function Profile() {
         className="h-[84vh] flex flex-col justify-start border border-onyx/60 rounded-[30px] w-fit px-24 py-24 mx-auto"
         onSubmit={signupHandler}
       >
-        <h3 className="text-6xl font-semibold mb-[3rem]">Update Your Profile</h3>
+        <h3 
+          className="text-6xl font-medium mb-[3rem]"
+          style={{
+            background: "linear-gradient(to right, #ffffff,  #8B8B8B)",
+            webkitBackgroundClip: "text",
+            color: "transparent",
+          }}
+        >Update Your Profile</h3>
         <div className="flex flex-col items-start">
           <label htmlFor="" className="mb-2">
             Name
