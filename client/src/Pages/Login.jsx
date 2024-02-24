@@ -63,11 +63,11 @@ function Login() {
       >
         <h3
           className="text-6xl font-semibold mb-[4rem]"
-          style={{
-            background: "linear-gradient(to right, #ffffff,  #8B8B8B)",
-            webkitBackgroundClip: "text",
-            color: "transparent",
-          }}
+          // style={{
+          //   background: "linear-gradient(to right, #ffffff, #ffffff, #8B8B8B)",
+          //   webkitBackgroundClip: "text",
+          //   color: "transparent",
+          // }}
         >
           Log in
         </h3>

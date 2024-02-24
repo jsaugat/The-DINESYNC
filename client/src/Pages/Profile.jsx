@@ -43,7 +43,12 @@ function Profile() {
       return;
     } else {
       try {
-        const res = await updateProfile({ _id: userInfo._id, name, email, password }).unwrap();
+        const res = await updateProfile({
+          _id: userInfo._id,
+          name,
+          email,
+          password,
+        }).unwrap();
         dispatch(setCredentials(res));
         toast({
           variant: "minimal",
@@ -73,14 +78,16 @@ function Profile() {
         className="h-[84vh] flex flex-col justify-start border border-onyx/60 rounded-[30px] w-fit px-24 py-24 mx-auto"
         onSubmit={signupHandler}
       >
-        <h3 
-          className="text-6xl font-medium mb-[3rem]"
+        <h3
+          className="text-6xl font-semibold mb-[3rem]"
           style={{
             background: "linear-gradient(to right, #ffffff,  #8B8B8B)",
             webkitBackgroundClip: "text",
             color: "transparent",
           }}
-        >Update Your Profile</h3>
+        >
+          Update Your Profile
+        </h3>
         <div className="flex flex-col items-start">
           <label htmlFor="" className="mb-2">
             Name
