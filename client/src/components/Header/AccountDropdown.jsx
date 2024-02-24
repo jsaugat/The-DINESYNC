@@ -14,9 +14,9 @@ export default function AccountDropdown({ userInfo }) {
 
   const [logout] = useLogoutMutation();
 
-  const logoutHandler = async () => {
+  const logoutHandler = async (e) => {
+    e.preventDefault();
     try {
-      console.log("here");
       await logout().unwrap(); // make logout API call and unwrap the Promise
       dispatch(clearCredentials()); // clear STATE and LOCALSTORAGE
       navigate("/");
@@ -27,18 +27,21 @@ export default function AccountDropdown({ userInfo }) {
 
   return (
     <main className="flex flex-col justify-center gap-2">
+      {/* Account Button */}
       <button
         onClick={() => setDropdownOpen(!dropdownOpen)}
         onBlur={() => setDropdownOpen(false)}
-        className={`flex gap-2 items-center border border-onyx px-5 py-2 text-black rounded-full ${
+        className={`flex gap-2 items-center justify-between min-w-60 border border-onyx px-5 py-2 text-black rounded-full ${
           dropdownOpen
             ? "dark:text-white dark:ring-1 dark:ring-white"
             : "dark:text-white"
         } hover:ring-white hover:ring-1 md:me-0 `}
       >
         {/* User solid icon */}
-        <UserSolid />
-        <span>{userInfo.name}</span>
+        <div className="flex gap-4">
+          <UserSolid />
+          <span>{userInfo.name}</span>
+        </div>
         <svg
           className={`w-4 h-4 ms-3 transition-all ease-in-out ${
             dropdownOpen ? "rotate-180" : " "
@@ -58,15 +61,16 @@ export default function AccountDropdown({ userInfo }) {
         </svg>
       </button>
       {/* Dropdown menu */}
-      <div
+      <section
         className={`${
-          dropdownOpen ? "block" : "hidden"
-        } top-[90%] right-10 z-10 text-left text-2xl bg-white dark:bg-black divide-y divide-onyx border border-onyx rounded-lg shadow w-fit`}
+          dropdownOpen ? "block" : "opacity-0"
+        } absolute top-[90%] right-20 z-50 text-left text-2xl bg-white dark:bg-black divide-y divide-onyx border border-onyx rounded-lg w-fit`}
       >
         <div className="px-7 py-5 text-gray-900 dark:text-white cursor-default">
           <div className="truncate font-medium">My Account</div>
           <div className="truncate text-blue-500">{userInfo.email}</div>
         </div>
+
         <div className="p-2">
           <Link
             to="/profile"
@@ -77,13 +81,13 @@ export default function AccountDropdown({ userInfo }) {
         </div>
         <div className="p-2">
           <button
-            className="block px-5 py-2 hover:text-red-500 text-neutral-400 rounded-md w-full text-left"
             onClick={logoutHandler}
+            className="block px-5 py-2 hover:text-red-500 rounded-md w-full text-left"
           >
             Log out
           </button>
         </div>
-      </div>
+      </section>
     </main>
   );
 }
