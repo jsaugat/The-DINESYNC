@@ -9,6 +9,8 @@ import {
   Menu,
   Login,
   Signup,
+  Profile,
+  PrivateRoute,
 } from "./master.js";
 import {
   Route,
@@ -28,6 +30,10 @@ const routes = createRoutesFromElements(
     <Route path="booking" element={<Reservation />} />
     <Route path="login" element={<Login />} />
     <Route path="signup" element={<Signup />} />
+    {/* Private Route */}
+    <Route path="" element={<PrivateRoute />}>
+      <Route path="profile" element={<Profile />} />
+    </Route>
   </Route>
 );
 
