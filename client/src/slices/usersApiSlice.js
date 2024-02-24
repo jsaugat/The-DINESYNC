@@ -5,7 +5,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({ // inject endpoints to t
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (data) => ({ // data is going to be email, pw etc.
-        url: `${USERS_URL}/login`,
+        url: `${USERS_URL}`,
         method: "POST",
         body: data,
       }) 
