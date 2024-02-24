@@ -3,6 +3,8 @@ import "./Styles/App.scss";
 import "./Styles/animation.scss";
 import { Footer, NavBar, PointerBall } from "./master";
 import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -11,10 +13,11 @@ function App() {
       {/* <PointerBall /> */}
       {/* fixed Navigation */}
       <NavBar />
+      <ToastContainer />
       {/* variable Body */}
       <Outlet />
       {/* Footer */}
-      <Footer/>
+      <Footer />
     </main>
   );
 }
