@@ -3,7 +3,7 @@ import { Container } from "../master.js";
 import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useRegisterMutation } from "@/slices/usersApiSlice.js";
+import { useUpdateProfileMutation } from "@/slices/usersApiSlice.js";
 import { setCredentials } from "@/slices/authSlice.js"; // after hitting backend api and getting data we gotta set it to STATE and LOCAL-STORAGE
 // toast
 import { useToast } from "@/shadcn/ui/use-toast";
@@ -22,6 +22,7 @@ function Profile() {
   }, []);
 
   const { userInfo } = useSelector((state) => state.auth);
+  const [updateProfile, { isLoading }] = useUpdateProfileMutation();
   const { toast } = useToast();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -43,7 +44,25 @@ function Profile() {
       });
       return;
     } else {
-      console.log("submiited")
+      try {
+        const res = await updateProfile({ _id: userInfo._id, name, email, password }).unwrap();
+        dispatch(setCredentials(res));
+        toast({
+          variant: "minimal",
+          title: "Profile Updated",
+          description: "Thank you.",
+          // action: <ToastAction altText="Try again">Try again</ToastAction>,
+          className: "px-7 py-4",
+        });
+      } catch (error) {
+        toast({
+          variant: "minimal",
+          title: error?.data?.message || error.error,
+          description: "Something went wrong.",
+          action: <ToastAction altText="Try again">Try again</ToastAction>,
+          className: "px-7 py-4",
+        });
+      }
     }
   };
 
@@ -99,6 +118,7 @@ function Profile() {
             placeholder="Confirm Password"
             className={`${inputCSS}`}
           />
+          {isLoading && <Loader />}
           <Button
             variant="antiFlashWhite"
             className="mt-16 w-full"
