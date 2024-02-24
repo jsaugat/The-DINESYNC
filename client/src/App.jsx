@@ -3,8 +3,8 @@ import "./Styles/App.scss";
 import "./Styles/animation.scss";
 import { Footer, NavBar, PointerBall } from "./master";
 import { Outlet } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { Toaster } from "@/shadcn/ui/toaster"
+import "@/Styles/App.scss"
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       {/* <PointerBall /> */}
       {/* fixed Navigation */}
       <NavBar />
-      <ToastContainer />
+      <Toaster />
       {/* variable Body */}
       <Outlet />
       {/* Footer */}

@@ -1,4 +1,4 @@
-import { apiSlice } from "./apiSlice"; // import parent
+import { apiSlice } from "./apiSlice"; // the Parent of slices 
 import { USERS_URL } from "@/constants";
 
 export const usersApiSlice = apiSlice.injectEndpoints({ // inject endpoints to the apiSlice parent
@@ -10,9 +10,16 @@ export const usersApiSlice = apiSlice.injectEndpoints({ // inject endpoints to t
         body: data,
       }) 
     }),
+    logout: builder.mutation({
+      query: () => ({
+        url: `${USERS_URL}/logout`,
+        method: "POST",
+      })
+    })
   }),
 })
 
 export const {
-  useLoginMutation
+  useLoginMutation,
+  useLogoutMutation
 } = usersApiSlice;

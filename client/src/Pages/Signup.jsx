@@ -71,7 +71,7 @@ function Signup() {
             className={`${inputCSS}`}
           />
           <Button
-            variant="secondary"
+            variant="antiFlashWhite"
             className="mt-16 w-full"
             // disabled={isLoading}
           >

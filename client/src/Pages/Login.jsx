@@ -5,7 +5,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux"; // to get user data from state and also dispatch
 import { useLoginMutation } from "@/slices/usersApiSlice"; // hit backend api
 import { setCredentials } from "@/slices/authSlice"; // after hitting backend api and getting data we gotta set it to STATE and LOCAL-STORAGE
-import { toast } from "react-toastify";
+import "../Styles/App.scss"
+// toast
+import { useToast } from "@/shadcn/ui/use-toast"
+import { ToastAction } from "@/shadcn/ui/toast";
+// loader
+import Loader from "@/components/Loader";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -15,6 +20,7 @@ function Login() {
     ref.current.focus();
   }, []);
 
+  const { toast } = useToast()
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -36,7 +42,13 @@ function Login() {
       navigate("/");
     } catch (err) {
       console.log(err?.data?.message || err.error);
-      toast.error(err?.data?.message || err.error)
+      toast({
+        variant: "minimal",
+        title: err?.data?.message || err.error,
+        description: "There was a problem in your request.",
+        action: <ToastAction altText="Try again">Try again</ToastAction>,
+        className: "px-7 py-4",
+      })
     }
   };
 
@@ -72,9 +84,10 @@ function Login() {
             placeholder="Password"
             className={`${inputCSS}`}
           />
+          {isLoading && <Loader />}
           <Button
-            // disabled={isLoading}
-            variant="secondary"
+            disabled={isLoading}
+            variant="antiFlashWhite"
             className="mt-16 w-full"
           >
             Login

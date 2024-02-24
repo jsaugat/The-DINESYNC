@@ -20,8 +20,8 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         // my styles
-        login: 
-          "border border-onyx hover:bg-onyx",
+        minimal: "border border-onyx hover:bg-onyx",
+        antiFlashWhite: "bg-[#e8e8e8] text-black shadow-sm hover:bg-[#e8e8e8]/80"
       },
       size: {
         default: "h-9 px-6 py-7",
