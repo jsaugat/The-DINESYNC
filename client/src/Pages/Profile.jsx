@@ -79,14 +79,14 @@ function Profile() {
         onSubmit={signupHandler}
       >
         <h3
-          className="text-6xl font-semibold mb-[3rem]"
-          style={{
-            background: "linear-gradient(to right, #ffffff,  #8B8B8B)",
-            webkitBackgroundClip: "text",
-            color: "transparent",
-          }}
+          className="text-6xl font-medium mb-[4rem]"
+          // style={{
+          //   background: "linear-gradient(to right, #ffffff,  #8B8B8B)",
+          //   webkitBackgroundClip: "text",
+          //   color: "transparent",
+          // }}
         >
-          Update Your Profile
+          Update Details
         </h3>
         <div className="flex flex-col items-start">
           <label htmlFor="" className="mb-2">

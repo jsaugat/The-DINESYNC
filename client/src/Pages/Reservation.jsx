@@ -61,8 +61,8 @@ function ReservationPage() {
 
   return (
     <Container>
-      <h1
-        className="text-6xl py-10 pb-16"
+      <h3
+        className="text-6xl font-medium my-[3rem] mt-[13rem]"
         style={{
           background: "linear-gradient(to right, #ffffff,  #8B8B8B)",
           webkitBackgroundClip: "text",
@@ -70,7 +70,7 @@ function ReservationPage() {
         }}
       >
         Make a Reservation
-      </h1>
+      </h3>
       <section className="flex justify-center">
         <Calendar />
         <BookingForm
@@ -78,13 +78,13 @@ function ReservationPage() {
           updateTimes={updateTimes}
         />
       </section>
-        {/* submit btn */}
-        <StyledBookButton
-          type="submit"
-          className="border border-white/50 mb-20 mt-32 py-4 px-6 w-fit mx-auto text-4xl font-medium"
-        >
-          Confirm Reservation
-        </StyledBookButton>
+      {/* submit btn */}
+      <StyledBookButton
+        type="submit"
+        className="border border-white/50 mb-20 mt-32 py-4 px-6 w-fit mx-auto text-4xl font-medium"
+      >
+        Confirm Reservation
+      </StyledBookButton>
     </Container>
   );
 }

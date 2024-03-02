@@ -36,7 +36,6 @@ function Login() {
     try {
       //? Step1: hit backend api and retrieve data
       const res = await login({ email, password }).unwrap(); // unwrap unwraps the promise?
-
       //? Step2: dispatch
       dispatch(setCredentials({ ...res }));
       navigate("/");
