@@ -68,26 +68,26 @@ export default function AccountDropdown({ userInfo }) {
       <section
         className={`${
           dropdownOpen ? "block" : "opacity-0"
-        } absolute top-[90%] right-20 z-50 text-left text-2xl bg-white dark:bg-black divide-y divide-onyx border border-onyx rounded-lg w-fit`}
+        } absolute top-[100%] right-20 z-50 text-left text-2xl bg-white dark:bg-neutral-900 divide-y divide-onyx border border-onyx rounded-3xl w-fit pt-4`}
       >
         <div className="px-7 py-5 text-gray-900 dark:text-white cursor-default">
           <div className="truncate font-medium">My Account</div>
-          <div className="truncate text-blue-500">{userInfo.email}</div>
+          <div className="truncate text-googleBlue">{userInfo.email}</div>
         </div>
 
         <div className="p-2">
           <Link
-            to="/profile"
+            to="/profile/personal-info"
             className="px-5 py-2 hover:bg-neutral-800 rounded-md flex items-center gap-4"
           >
             <SettingsIcon sx={{ fontSize: 18 }} />
-            <span>Edit Profile</span>
+            <span>Profile</span>
           </Link>
         </div>
         <div className="p-2">
           <button
             onClick={logoutHandler}
-            className="px-5 py-2 hover:text-red-500 rounded-md w-full text-left flex items-center gap-4"
+            className="px-5 py-2 hover:text-[#f74557] rounded-md w-full text-left flex items-center gap-4"
           >
             <LogoutIcon sx={{ fontSize: 18 }}  />
             <span>Log out</span>
