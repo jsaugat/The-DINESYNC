@@ -39,10 +39,17 @@ function Login() {
       //? Step2: dispatch
       dispatch(setCredentials({ ...res }));
       navigate("/");
+      toast({
+        variant: "minimal",
+        title: `Logged in as ${res.name}`,
+        description: "There was a problem in your request.",
+        action: <ToastAction altText="Try again">Try again</ToastAction>,
+        className: "px-7 py-4",
+      });
     } catch (err) {
       console.log(err?.data?.message || err.error);
       toast({
-        variant: "minimal",
+        variant: "destructive",
         title: err?.data?.message || err.error,
         description: "There was a problem in your request.",
         action: <ToastAction altText="Try again">Try again</ToastAction>,

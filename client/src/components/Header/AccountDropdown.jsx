@@ -5,6 +5,10 @@ import { useLogoutMutation } from "@/slices/usersApiSlice";
 import { clearCredentials } from "@/slices/authSlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+// icons
+import LogoutIcon from "@mui/icons-material/Logout";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 export default function AccountDropdown({ userInfo }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -74,17 +78,19 @@ export default function AccountDropdown({ userInfo }) {
         <div className="p-2">
           <Link
             to="/profile"
-            className="block px-5 py-2 hover:bg-neutral-900 rounded-md"
+            className="px-5 py-2 hover:bg-neutral-800 rounded-md flex items-center gap-4"
           >
-            Edit Profile
+            <SettingsIcon sx={{ fontSize: 18 }} />
+            <span>Edit Profile</span>
           </Link>
         </div>
         <div className="p-2">
           <button
             onClick={logoutHandler}
-            className="block px-5 py-2 hover:text-red-500 rounded-md w-full text-left"
+            className="px-5 py-2 hover:text-red-500 rounded-md w-full text-left flex items-center gap-4"
           >
-            Log out
+            <LogoutIcon sx={{ fontSize: 18 }}  />
+            <span>Log out</span>
           </button>
         </div>
       </section>
