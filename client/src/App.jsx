@@ -7,6 +7,7 @@ import { Toaster } from "@/shadcn/ui/toaster"
 import "@/Styles/App.scss"
 
 function App() {
+  // const [isFooterHidden, setIsFooterHidden] = useState(false);
   return (
     <main className="relative font-montreal font-normal tracking-wide">
       {/* Cursor ball */}

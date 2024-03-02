@@ -22,6 +22,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        googleBlue: "#9bbff4",
         onyx: "#383838",
         sonicSilver: "#797979",
         antiFlash: "#f1f1f1",

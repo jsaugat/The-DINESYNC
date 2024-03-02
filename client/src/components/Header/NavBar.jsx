@@ -19,6 +19,7 @@ const NavBar = () => {
         <li><NavLink to="about">About us</NavLink></li>
         <li><NavLink to="menu">The Menu</NavLink></li>
         <li><NavLink to="booking">Reservation</NavLink></li>
+        <li><NavLink to="profile/orders">Orders</NavLink></li>
       </ul>
       {/* account info */}
       <section>
