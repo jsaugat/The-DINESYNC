@@ -117,7 +117,7 @@ function Signup() {
             className="mt-12 w-full"
             // disabled={isLoading}
           >
-            Sign up
+            Create an Account
           </Button>
         </div>
         <div className="mt-6">

@@ -10,11 +10,11 @@ const NavBar = () => {
   const dispatch = useDispatch();
 
   return (
-    <nav className="fixed z-50 w-full top-0 nav-menu flex px-[5rem] justify-between items-center py-[1rem] border-b border-onyx backdrop-blur-md text-base">
+    <nav className="fixed z-50 w-full top-0 nav-menu flex px-[5rem] justify-between items-center py-[1rem] border-b border-white/10 bg-gradient-to-r from-black/70 to-transparent backdrop-blur-md text-base">
       {/* logo */}
       <Logo />
       {/* menu */}
-      <ul className="Navbar flex gap-6 items-center text-[.9rem] font-light">
+      <ul className="Navbar flex gap-6 items-center text-[.9rem]">
         <li>
           <NavLink
             to=""

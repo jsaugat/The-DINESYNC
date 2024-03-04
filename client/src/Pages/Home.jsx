@@ -1,6 +1,10 @@
+import { Button } from "@/shadcn/ui/button";
 import { Container } from "../master";
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+// Aceternity
+import { cn } from "@/utils/cn";
+import { Spotlight } from "@/components/ui/Spotlight";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -9,8 +13,8 @@ function HomePage() {
   // const lastSectionStyle = "top-[95.7px] h-[80vh] w-full rounded-[30px]";
   return (
     <>
-    {/* BLOB */}
-    {/* <svg
+      {/* BLOB */}
+      {/* <svg
         className="absolute z-[-1] -left-[35rem] "
         width="1200"
         height="1200"
@@ -52,53 +56,97 @@ function HomePage() {
           </filter>
         </defs>
     </svg> */}
-    <Container className="relative space-y-5">
-      <section
-        className={`${sectionStyle} text-center flex justify-evenly items-center h-screen mx-auto`}
-      >
-        {/* Header z-10 */}
-        <div className="absolute top-10 z-10 w-[56.25rem] text-7xl text-left leading-none pointer-events-none font-geistSans tracking-tight">
-          ELEVATE YOUR <br />{" "}
-          <div className="text-right w-full">DINING EXPERIENCE</div>
-        </div>
-        {/* Hero Image z-none */}
-        <figure className="bg-hero-image h-[25rem] w-[37.5rem] mt-44 mb-16 bg-cover bg-left"></figure>
-        <div className="flex flex-col gap-16">
-          <p className="text-[1.2rem] max-w-[47.8rem text-left ">
-            Reserve your table for an exquisite dining experience and
-            <br /> explore our mouthwatering menu and order your favorite
-            <br /> dishes with just a click.
-          </p>
-          {/* RESERVE A TABLE CTA */}
-          <div className="flex items-center gap-5 cursor-pointer" onClick={()=> navigate("/booking")}>
-            {/* arrowball */}
-            <svg
-              width="50"
-              height="50"
-              viewBox="0 0 50 50"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="25" cy="25" r="24.5" stroke="#F1F1F1" />
-              <path
-                d="M14 25H36"
-                stroke="white"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M25 14L36 25L25 36"
-                stroke="white"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <span className="linimate text-[1.2rem] ">RESERVE A TABLE</span>
+      <Container className="relative space-y-5">
+        <Spotlight
+          className="absolute -z-20 -top-40 left-0 md:left-60 md:-top-20"
+          fill="Aquamarine"
+        />
+        <section
+          className={`${sectionStyle} text-center flex justify-evenly items-center h-screen mx-auto`}
+        >
+          {/* Header z-10 */}
+          <div className="absolute top-10 z-10 w-[56.25rem] text-7xl text-left leading-none pointer-events-none font-montreal tracking-tight">
+            ELEVATE YOUR <br />{" "}
+            <div className="text-right w-full">DINING EXPERIENCE</div>
           </div>
-        </div>
-      </section>
-      <section className={`bg-zinc-900 ${sectionStyle} h-screen w-[80%] mx-auto my-96`}></section>
-    </Container>
+          {/* Hero Image z-none */}
+          <figure className="bg-hero-image h-[25rem] w-[37.5rem] mt-44 mb-16 bg-cover bg-left"></figure>
+          <div className="flex flex-col gap-16">
+            <p className="text-[1.2rem] max-w-[47.8rem text-left font-montreal">
+              Reserve your table for an exquisite dining experience and
+              <br /> explore our mouthwatering menu and order your favorite
+              <br /> dishes with just a click.
+            </p>
+            {/* RESERVE A TABLE CTA */}
+            <div
+              className="flex items-center gap-2 cursor-pointer"
+              onClick={() => navigate("/booking")}
+            >
+              {/* arrowball */}
+              {/* transparend svg */}
+              {/* <svg
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                fill="white"
+                xmlns="http://www.w3.org/2000/svg"
+                className="reserve-arrow-svg"
+              >
+                <circle cx="25" cy="25" r="24.5" stroke="#F1F1F1" />
+                <g className="arrow-group">
+                  <path
+                    d="M14 25H36"
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M25 14L36 25L25 36"
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg> */}
+              {/* bg-white svg */}
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="25" cy="25" r="25" fill="#D9D9D9" />
+                <path
+                  d="M14 25H36"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M25 14L36 25L25 36"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              {/* <span className="linimate text-[1.2rem] ">RESERVE A TABLE</span> */}
+              <Button
+                variant="minimal"
+                className="reserve-a-table rounded-full text-base font- py-7 px-7 border-2 border-onyx"
+              >
+                Reserve a Table
+              </Button>
+            </div>
+          </div>
+        </section>
+        <section
+          className={`bg-zinc-900 ${sectionStyle} h-screen w-[80%] mx-auto my-96`}
+        ></section>
+      </Container>
     </>
   );
 }

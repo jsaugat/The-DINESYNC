@@ -1,3 +1,4 @@
+import { Spotlight } from "@/components/ui/Spotlight";
 import { Container } from "../master";
 import React from "react";
 
@@ -5,6 +6,10 @@ function AboutPage() {
   return (
     <Container>
       <section>
+        <Spotlight
+          className="absolute -z-20 -top-40 left-0 md:left-60 md:-top-20"
+          fill="white"
+        />
         <div className="flex justify-around items-center h-[84vh]">
           <h2 className="text-2xl">Who we are</h2>
           <h5 className="text-xl w-1/2 text-left">
@@ -16,7 +21,7 @@ function AboutPage() {
             unparalleled ease. Elevate your dining adventures with DineSync –
             where every bite is a celebration!
           </h5>
-        </div>  
+        </div>
       </section>
     </Container>
   );

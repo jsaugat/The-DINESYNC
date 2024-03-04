@@ -75,7 +75,7 @@ function Login() {
           //   color: "transparent",
           // }}
         >
-          Log in
+          Log In
         </h3>
         <div className="flex flex-col items-start">
           <label htmlFor="" className="mb-1 mt-3 font-medium">
@@ -105,7 +105,7 @@ function Login() {
             variant="antiFlashWhite"
             className="mt-14 w-full"
           >
-            Login
+            Log in
           </Button>
         </div>
         <div className="mt-12">
