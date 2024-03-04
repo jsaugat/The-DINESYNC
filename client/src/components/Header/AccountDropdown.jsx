@@ -31,23 +31,24 @@ export default function AccountDropdown({ userInfo }) {
 
   return (
     <main className="flex flex-col justify-center gap-2">
-      {/* Account Button */}
+      {/* //? Account Button */}
       <button
         onClick={() => setDropdownOpen(!dropdownOpen)}
         onBlur={() => setDropdownOpen(false)}
-        className={`flex gap-2 items-center justify-between min-w-60 border border-onyx px-5 py-2 text-black rounded-full ${
+        className={`flex gap-2 items-center justify-between min-w-40 border border-onyx px-4 py-2 text-black rounded-full ${
           dropdownOpen
             ? "dark:text-white dark:ring-1 dark:ring-white"
             : "dark:text-white"
         } hover:ring-white hover:ring-1 md:me-0 `}
       >
         {/* User solid icon */}
-        <div className="flex gap-4">
+        <div className="flex gap-2">
           <UserSolid />
           <span className="font-normal">{userInfo.name}</span>
         </div>
+        {/* Down Arrow */}
         <svg
-          className={`w-4 h-4 ms-3 transition-all ease-in-out ${
+          className={`w-3 h-3 ms-3 transition-all ease-in-out ${
             dropdownOpen ? "rotate-180" : " "
           }`}
           aria-hidden="true"
@@ -68,9 +69,9 @@ export default function AccountDropdown({ userInfo }) {
       <section
         className={`${
           dropdownOpen ? "block" : "opacity-0"
-        } absolute top-[100%] right-20 z-50 text-left text-2xl bg-white dark:bg-neutral-900 divide-y divide-onyx border border-onyx rounded-3xl w-fit pt-4`}
+        } absolute top-[100%] right-20 z-50 text-left bg-white dark:bg-cardBlack divide-y divide-onyx border border-onyx rounded-md w-fit pt-1`}
       >
-        <div className="px-7 py-5 text-gray-900 dark:text-white cursor-default">
+        <div className="px-6 py-2 text-gray-900 dark:text-white cursor-default">
           <div className="truncate font-medium">My Account</div>
           <div className="truncate text-googleBlue">{userInfo.email}</div>
         </div>
@@ -78,7 +79,7 @@ export default function AccountDropdown({ userInfo }) {
         <div className="p-2">
           <Link
             to="/profile/personal-info"
-            className="px-5 py-2 hover:bg-neutral-800 rounded-md flex items-center gap-4"
+            className="px-4 py-1 hover:bg-neutral-800 rounded-sm flex items-center gap-4"
           >
             <SettingsIcon sx={{ fontSize: 18 }} />
             <span>Profile</span>
@@ -87,7 +88,7 @@ export default function AccountDropdown({ userInfo }) {
         <div className="p-2">
           <button
             onClick={logoutHandler}
-            className="px-5 py-2 hover:text-[#f74557] rounded-md w-full text-left flex items-center gap-4"
+            className="px-4 py-1 hover:text-[#f74557] rounded-md w-full text-left flex items-center gap-4"
           >
             <LogoutIcon sx={{ fontSize: 18 }}  />
             <span>Log out</span>

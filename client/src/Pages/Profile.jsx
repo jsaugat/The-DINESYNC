@@ -14,9 +14,9 @@ export default function Profile() {
     <Container>
       <main className="relative flex items-start mb-[8.5rem]">
         {/* Left Nav Box */}
-        <nav className="relative left-[30rem] flex flex-col items-start">
-          <h3 className="text-5xl my-10">Account</h3>
-          <ul className="profile-nav w-[300px] text-2xl space-y-4 grid grid-col-1">
+        <nav className="relative left-[18.75rem] flex flex-col items-start">
+          <h3 className="text-3xl my-6">Account</h3>
+          <ul className="profile-nav w-[300px] text-base space-y-2 grid grid-col-1">
             <NavLink
               to={"/profile/personal-info"}
               className={({ isActive, isPending }) =>

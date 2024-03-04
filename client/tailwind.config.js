@@ -2,16 +2,21 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
   ],
-  darkMode: 'selector',
+  darkMode: "selector",
+  darkMode: "class",
   theme: {
     fontFamily: {
-      'SFPro': ['SF Pro Display', 'sans-serif'],
-      'montreal': ['PP Neue Montreal', 'sans-serif'],
+      SFPro: ["SF Pro Display", "sans-serif"],
+      montreal: ["PP Neue Montreal", "sans-serif"],
+      haasGrotesk: ["Neue Haas Grotesk Display Pro", "sans-serif"],
+      neueRegrade: ["Neue Regrade", "sans-serif"],
+      geistSans: ["var(--font-geist-sans)"],
+      geistMono: ["var(--font-geist-mono)"],
     },
     container: {
       center: true,
@@ -27,6 +32,7 @@ module.exports = {
         sonicSilver: "#797979",
         antiFlash: "#f1f1f1",
         richBlack: "#020202",
+        cardBlack: "#0A0A0A",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -81,9 +87,9 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        'hero-image': "url('/src/assets/hero75.jpg')"
-      }
+        "hero-image": "url('/src/assets/hero75.jpg')",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

@@ -61,17 +61,17 @@ function Signup() {
   };
 
   const inputCSS =
-    "rounded-lg px-4 py-2 bg-transparent border border-onyx/70 focus:ring-white/20 focus:border-white/20 w-[350px]";
+    "rounded-lg px-3 py-1 bg-transparent border border-onyx/70 focus:ring-white/20 focus:border-white/20 w-[350px]";
 
   return (
     <Container>
       <form
-        className="h-[84vh] flex flex-col justify-start border border-onyx/60 rounded-[30px] w-fit px-24 py-24 mx-auto"
+        className="h-[84vh] flex flex-col justify-start border border-onyx/70 rounded-[30px] w-fit px-14 py-14 mx-auto"
         onSubmit={signupHandler}
       >
-        <h3 className="text-6xl font-semibold mb-[3rem]">Sign up</h3>
+        <h3 className="text-4xl font-semibold mb-[2rem]">Sign up</h3>
         <div className="flex flex-col items-start">
-          <label htmlFor="" className="mb-2">
+          <label htmlFor="" className="mb-2 font-medium">
             Name
           </label>
           <input
@@ -82,7 +82,7 @@ function Signup() {
             ref={ref}
             className={`${inputCSS}`}
           />
-          <label htmlFor="" className="mb-2 mt-5">
+          <label htmlFor="" className="mb-1 mt-3 font-medium">
             Email
           </label>
           <input
@@ -92,7 +92,7 @@ function Signup() {
             placeholder="Email"
             className={`${inputCSS}`}
           />
-          <label htmlFor="" className="mb-2 mt-5">
+          <label htmlFor="" className="mb-1 mt-3 font-medium">
             Password
           </label>
           <input
@@ -102,7 +102,7 @@ function Signup() {
             placeholder="Password"
             className={`${inputCSS}`}
           />
-          <label htmlFor="" className="mb-2 mt-5">
+          <label htmlFor="" className="mb-1 mt-3 font-medium">
             Confirm Password
           </label>
           <input
@@ -114,13 +114,13 @@ function Signup() {
           />
           <Button
             variant="antiFlashWhite"
-            className="mt-16 w-full"
+            className="mt-12 w-full"
             // disabled={isLoading}
           >
             Sign up
           </Button>
         </div>
-        <div className="mt-12 text-[1.55rem]">
+        <div className="mt-6">
           Already have an account ?{" "}
           <Link to="/login" className="text-blue-500 hover:underline">
             Login

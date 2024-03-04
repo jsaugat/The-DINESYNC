@@ -5,11 +5,13 @@ import { Footer, NavBar, PointerBall } from "./master";
 import { Outlet } from "react-router-dom";
 import { Toaster } from "@/shadcn/ui/toaster"
 import "@/Styles/App.scss"
+// import { GeistSans } from 'geist/font/sans';
+// import { GeistMono } from 'geist/font/mono';
 
 function App() {
   // const [isFooterHidden, setIsFooterHidden] = useState(false);
   return (
-    <main className="relative font-montreal font-normal tracking-wide">
+    <main className={`relative`}>
       {/* Cursor ball */}
       {/* <PointerBall /> */}
       {/* fixed Navigation */}

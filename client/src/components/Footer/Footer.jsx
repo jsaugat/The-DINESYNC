@@ -11,20 +11,23 @@ function Footer() {
     });
   }
   return (
-    <div className="h-[200px] mt-[4rem] text-left">
-      <div className="border border-y-onyx border-x-0 h-[27.5rem] px-[10.4rem] py-[6.4rem] flex justify-between items-start">
+    <div className="mt-[4rem] text-left">
+      <div className="border border-y-onyx border-x-0 h-[20.5rem] px-[10.4rem] py-[6.4rem] flex justify-between items-start">
         {/* Logo */}
         <NavLink
           to="/"
           onClick={scrollToTop}
         >
-          <Logo logoStyle="h-[4rem] w-[4rem]" DineSync="text-[5.2rem]"  />
+          <Logo 
+            logoStyle="h-[2.5rem] w-[2.5rem]" 
+            DineSync="text-4xl"
+          />
         </NavLink>
 
         <div className="flex gap-[10rem]">
           {/* Navigation */}
           <div className="nav-menu ">
-            <h3 className="text-2xl uppercase">Navigation</h3>
+            <h3 className="text-base font-medium uppercase">Navigation</h3>
             <ul className="flex flex-col mt-5 gap-2">
               <li className="w-fit">
                 <NavLink to="/">Home</NavLink>
@@ -42,7 +45,7 @@ function Footer() {
           </div>
           {/* Contacts */}
           <div>
-            <h3 className="text-2xl uppercase">Contacts</h3>
+            <h3 className="text-base font-medium uppercase">Contacts</h3>
             <ul className="flex flex-col mt-5 ">
               <li>info@dinesync.com</li>
               <li>+977 9841586912</li>
@@ -80,7 +83,7 @@ function Footer() {
           </div>
         </NavLink>
       </div>
-      <div className="text-2xl text-sonicSilver flex justify-between px-[10.4rem] py-4">
+      <div className="text-[0.95rem] text-sonicSilver flex justify-between px-[10.4rem] py-4">
         <p>&copy;2024. All rights reserved.</p>
         <p>Designed by Saugat Joshi</p>
       </div>

@@ -59,16 +59,16 @@ function Login() {
   };
 
   const inputCSS =
-    "rounded-lg px-4 py-2 bg-transparent border border-onyx/70 focus:ring-white/20 focus:border-white/20 w-[350px]";
+    "rounded-lg px-3 py-1 bg-transparent border border-onyx/70 focus:ring-white/20 focus:border-white/20 w-[350px]";
 
   return (
     <Container>
       <form
-        className="h-[84vh] flex flex-col justify-start border border-onyx/50 rounded-[30px] w-fit px-24 py-24 mx-auto"
+        className="h-[84vh] flex flex-col justify-start border border-onyx/50 rounded-[30px] w-fit px-14 py-14 mx-auto"
         onSubmit={loginHandler}
       >
         <h3
-          className="text-6xl font-semibold mb-[4rem]"
+          className="text-4xl font-semibold mb-[4rem]"
           // style={{
           //   background: "linear-gradient(to right, #ffffff, #ffffff, #8B8B8B)",
           //   webkitBackgroundClip: "text",
@@ -78,37 +78,37 @@ function Login() {
           Log in
         </h3>
         <div className="flex flex-col items-start">
-          <label htmlFor="" className="mb-2 mt-5">
+          <label htmlFor="" className="mb-1 mt-3 font-medium">
             Email
           </label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
+            placeholder=""
             ref={ref}
             className={`${inputCSS}`}
           />
-          <label htmlFor="" className="mb-2 mt-5">
+          <label htmlFor="" className="mb-1 mt-3 font-medium">
             Password
           </label>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
+            placeholder=""
             className={`${inputCSS}`}
           />
           {isLoading && <Loader />}
           <Button
             disabled={isLoading}
             variant="antiFlashWhite"
-            className="mt-16 w-full"
+            className="mt-14 w-full"
           >
             Login
           </Button>
         </div>
-        <div className="mt-12 text-[1.55rem]">
+        <div className="mt-12">
           New Customer ?{" "}
           <Link to="/signup" className="text-blue-500 hover:underline">
             Create an account

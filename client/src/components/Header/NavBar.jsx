@@ -10,16 +10,51 @@ const NavBar = () => {
   const dispatch = useDispatch();
 
   return (
-    <nav className="fixed z-50 w-full top-0 nav-menu flex px-[5rem] justify-between items-center py-[1.5rem] border-b border-onyx backdrop-blur-md">
+    <nav className="fixed z-50 w-full top-0 nav-menu flex px-[5rem] justify-between items-center py-[1rem] border-b border-onyx backdrop-blur-md text-base">
       {/* logo */}
-      <Logo className="mr-6" />
+      <Logo />
       {/* menu */}
-      <ul className="flex gap-12 items-center">
-        <li><NavLink to="">Home</NavLink></li>
-        <li><NavLink to="about">About us</NavLink></li>
-        <li><NavLink to="menu">The Menu</NavLink></li>
-        <li><NavLink to="booking">Reservation</NavLink></li>
-        <li><NavLink to="profile/orders">Orders</NavLink></li>
+      <ul className="Navbar flex gap-6 items-center text-[.9rem] font-light">
+        <li>
+          <NavLink
+            to=""
+            className={({ isActive }) => isActive ? "text-white" : "text-neutral-400" }
+          >
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="about"
+            className={({ isActive }) => isActive ? "text-white" : "text-neutral-400" }
+          >
+            About us
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="menu"
+            className={({ isActive }) => isActive ? "text-white" : "text-neutral-400" }
+          >
+            The Menu
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="booking"
+            className={({ isActive}) => isActive ? "text-white" : "text-neutral-400" }
+          >
+            Reservation
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="profile/orders"
+            className={({ isActive }) => isActive ? "text-white" : "text-neutral-400" }
+          >
+            Orders
+          </NavLink>
+        </li>
       </ul>
       {/* account info */}
       <section>
@@ -30,10 +65,10 @@ const NavBar = () => {
           //? LOGGED OUT State
           <div className="space-x-4">
             <NavLink to={"login"}>
-              <Button variant="minimal">Login</Button>
+              <Button variant="minimal">Log In</Button>
             </NavLink>
             <NavLink to={"signup"}>
-              <Button variant="antiFlashWhite">Signup</Button>
+              <Button variant="antiFlashWhite">Sign Up</Button>
             </NavLink>
           </div>
         )}

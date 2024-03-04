@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { DatePicker } from "@/master";
 
 function BookingForm() {
   const [guestsNum, setGuestsNum] = useState(0);
@@ -20,9 +21,10 @@ function BookingForm() {
 
   return (
     <form
-      className="flex flex-col justify-center items-start gap-9 rounded-[3rem] py-4 px-14"
+      className="flex flex-col justify-start bg-cardBlack border border-onyx/60 rounded-2xl w-fit px-14 py-14"
       onSubmit={(e) => e.preventDefault()}
     >
+      <DatePicker />
       {/* Table ID */}
       <div className="w-full text-left space-y-2 flex flex-col">
         <label>Table Number</label>

@@ -6,8 +6,8 @@ function AboutPage() {
     <Container>
       <section>
         <div className="flex justify-around items-center h-[84vh]">
-          <h2 className="text-[2rem]">Who we are</h2>
-          <h5 className="text-[2rem] w-1/2 text-left">
+          <h2 className="text-2xl">Who we are</h2>
+          <h5 className="text-xl w-1/2 text-left">
             At DineSync, we've curated a unique blend of convenience and
             culinary delight. From hassle-free table reservations to effortless
             food ordering, our app ensures you savor every moment. Discover a

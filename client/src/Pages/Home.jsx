@@ -57,14 +57,14 @@ function HomePage() {
         className={`${sectionStyle} text-center flex justify-evenly items-center h-screen mx-auto`}
       >
         {/* Header z-10 */}
-        <div className="absolute font-montreal top-10 z-10 w-[90rem] text-9xl text-left leading-none pointer-events-none">
+        <div className="absolute top-10 z-10 w-[56.25rem] text-7xl text-left leading-none pointer-events-none font-geistSans tracking-tight">
           ELEVATE YOUR <br />{" "}
           <div className="text-right w-full">DINING EXPERIENCE</div>
         </div>
         {/* Hero Image z-none */}
-        <figure className="bg-hero-image h-[40rem] w-[60rem] mt-44 mb-16 bg-cover bg-left"></figure>
+        <figure className="bg-hero-image h-[25rem] w-[37.5rem] mt-44 mb-16 bg-cover bg-left"></figure>
         <div className="flex flex-col gap-16">
-          <p className="text-[1.9rem] max-w-[47.8rem text-left font-montreal">
+          <p className="text-[1.2rem] max-w-[47.8rem text-left ">
             Reserve your table for an exquisite dining experience and
             <br /> explore our mouthwatering menu and order your favorite
             <br /> dishes with just a click.
@@ -93,7 +93,7 @@ function HomePage() {
                 stroke-linejoin="round"
               />
             </svg>
-            <span className="linimate text-[1.6rem] ">RESERVE A TABLE</span>
+            <span className="linimate text-[1.2rem] ">RESERVE A TABLE</span>
           </div>
         </div>
       </section>

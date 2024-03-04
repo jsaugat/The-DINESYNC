@@ -1,6 +1,6 @@
 import { BookingForm, Container } from "../master";
 import React, { useReducer, useState } from "react";
-import Calendar from "../components/Calendar/index.jsx";
+import Calendar from "../components/ReactCalendar/index.jsx";
 import styled from "styled-components";
 
 // submit button animation
@@ -9,7 +9,8 @@ const StyledBookButton = styled.button`
   z-index: 0;
   overflow: hidden;
   transition: all 0.2s ease-out;
-  border-radius: 8px;
+  border-radius: 50px;
+  padding: 1rem 2rem;
 
   &::after {
     content: "";
@@ -19,7 +20,7 @@ const StyledBookButton = styled.button`
     left: 0;
     width: 100%;
     height: 0%;
-    border-radius: 8px;
+    border-radius: 50px;
     background-color: white;
     transition: all 0.2s ease-out;
   }
@@ -61,18 +62,9 @@ function ReservationPage() {
 
   return (
     <Container>
-      <h3
-        className="text-6xl font-medium my-[3rem] mt-[13rem]"
-        style={{
-          background: "linear-gradient(to right, #ffffff,  #8B8B8B)",
-          webkitBackgroundClip: "text",
-          color: "transparent",
-        }}
-      >
-        Make a Reservation
-      </h3>
+      <h3 className="text-4xl my-10 mt-32 text-white">Make a Reservation</h3>
       <section className="flex justify-center">
-        <Calendar />
+        {/* <Calendar /> */}
         <BookingForm
           availableTimes={availableTimes}
           updateTimes={updateTimes}
@@ -81,7 +73,7 @@ function ReservationPage() {
       {/* submit btn */}
       <StyledBookButton
         type="submit"
-        className="border border-white/50 mb-20 mt-32 py-4 px-6 w-fit mx-auto text-4xl font-medium"
+        className="border border-white/60 mb-20 mt-11 py-2 px-3 w-fit mx-auto text-xl font-medium bg-gradient from-cardBlack to-green-600"
       >
         Confirm Reservation
       </StyledBookButton>

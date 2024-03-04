@@ -76,9 +76,9 @@ export default function PersonalInfo() {
   return (
     <>
       <section className="flex flex-col items-start mx-auto">
-        <h3 className="text-5xl my-10 text-white">Update Details</h3>
+        <h3 className="text-3xl my-6 mb-4 text-white">Update Details</h3>
         <form
-          className="flex flex-col justify-start border border-onyx/60 rounded-2xl w-fit px-24 py-24"
+          className="flex flex-col justify-start bg-cardBlack border border-onyx/60 rounded-xl w-fit px-14 py-14"
           onSubmit={updateHandler}
         >
           <div className="flex flex-col items-start">
@@ -93,7 +93,7 @@ export default function PersonalInfo() {
               ref={ref}
               className={`${inputCSS}`}
             />
-            <label htmlFor="" className="mb-2 mt-5">
+            <label htmlFor="" className="mb-1 mt-3">
               Email
             </label>
             <input
@@ -103,7 +103,7 @@ export default function PersonalInfo() {
               placeholder="Email"
               className={`${inputCSS}`}
             />
-            <label htmlFor="" className="mb-2 mt-5">
+            <label htmlFor="" className="mb-1 mt-3">
               Change Password
             </label>
             <input
@@ -113,7 +113,7 @@ export default function PersonalInfo() {
               placeholder="New Password"
               className={`${inputCSS}`}
             />
-            <label htmlFor="" className="mb-2 mt-5">
+            <label htmlFor="" className="mb-1 mt-3">
               Confirm New Password
             </label>
             <input
@@ -126,7 +126,7 @@ export default function PersonalInfo() {
             {isLoading && <Loader />}
             <Button
               variant="antiFlashWhite"
-              className="mt-16 w-full"
+              className="mt-10 w-full"
               // disabled={isLoading}
             >
               Save

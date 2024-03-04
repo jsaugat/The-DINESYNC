@@ -21,12 +21,10 @@ import BookingForm from "./components/BookingForm";
 import PrivateRoute from "./components/PrivateRoute";
 import PersonalInfo from "./components/PersonalInfo.jsx";
 import Orders from "./components/Orders.jsx";
+import DatePicker from "./components/DatePicker";
 
 export {
-  App,
-  NavBar,
-  Footer,
-  Container,
+  // Pages
   Home,
   About,
   Reservation,
@@ -34,11 +32,19 @@ export {
   Login,
   Signup,
   Profile,
+  // Main Components
+  App,
+  NavBar,
+  Footer,
+  Container,
+  // Components
   PersonalInfo,
   Orders,
   Logo,
   CallToAction,
   PointerBall,
   BookingForm,
+  DatePicker,
+  // Route Protector
   PrivateRoute,
 };
