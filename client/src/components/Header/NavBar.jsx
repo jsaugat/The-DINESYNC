@@ -10,7 +10,7 @@ const NavBar = () => {
   const dispatch = useDispatch();
 
   return (
-    <nav className="fixed z-50 w-full top-0 nav-menu flex px-[5rem] justify-between items-center py-[1rem] border-b border-white/10 bg-gradient-to-r from-black/70 to-transparent backdrop-blur-md text-base">
+    <nav className="fixed z-[1000] w-full top-0 nav-menu flex px-[5rem] justify-between items-center py-[1rem] border-b border-white/10 bg-gradient-to-r from-black/40 to-transparent backdrop-blur-sm">
       {/* logo */}
       <Logo />
       {/* menu */}

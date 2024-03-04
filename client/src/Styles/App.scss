@@ -18,15 +18,17 @@ $google-blue: #9bbff4;
   border-radius: 10px; /* border radius for the thumb */
 }
 
+/* The default font size in most browsers is 16 pixels.
+This means the base font size becomes 10 pixels (62.5% of 16 pixels). */
+
 html {
-  /* The default font size in most browsers is 16 pixels.
-  This means the base font size becomes 10 pixels (62.5% of 16 pixels). */
   font-family: "Geist";
+  background-color: $rich-black;
 }
 body {
-  background-color: $rich-black;
   color: white;
-  // font-size: 1.5rem;
+  height: 100vh;
+  background-color: transparent;
 }
 #root {
   margin: 0 auto;

@@ -51,3 +51,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </Provider>
   </React.StrictMode>
 );
+
+// document.documentElement.classList.add('dark:bg-grid-white/[0.08]', 'bg-grid-black/[0.2]');

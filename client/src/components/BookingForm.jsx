@@ -15,7 +15,7 @@ function BookingForm() {
 
   // styles
   const boxStyles =
-    "px-3 py-1 rounded-xl bg-transparent border border-onyx w-full w-[30rem]";
+    "px-3 py-1 rounded-md bg-transparent border border-onyx w-full w-[30rem]";
   const labelStyles = "ml-0";
   const inputStyles = "";
 
@@ -24,14 +24,15 @@ function BookingForm() {
       className="flex flex-col justify-start bg-cardBlack border border-onyx/60 rounded-2xl w-fit px-14 py-14"
       onSubmit={(e) => e.preventDefault()}
     >
+      {/* The Date Picker */}
       <DatePicker />
       {/* Table ID */}
-      <div className="w-full text-left space-y-2 flex flex-col">
+      <div className="w-full text-left space-y-2 flex flex-col mt-2">
         <label>Table Number</label>
         <input type="number" className={`${boxStyles} ${inputStyles}`} />
       </div>
       {/* Number of guests */}
-      <div className="w-full text-left space-y-2 flex flex-col">
+      <div className="w-full text-left space-y-2 flex flex-col mt-2">
         <label htmlFor="guests" className={`${labelStyles}`}>
           Number of guests
         </label>

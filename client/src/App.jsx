@@ -12,7 +12,7 @@ function App() {
   // const [isFooterHidden, setIsFooterHidden] = useState(false);
   return (
     <main className={`relative`}>
-      <div className="absolute h-1/2 w-full -z-20 dark:bg-grid-white/[0.08] bg-grid-black/[0.2] pointer-events-none">
+      <div className="absolute h-full w-full -z-20 dark:bg-grid-white/[0.08] bg-grid-black/[0.2] pointer-events-none">
         {/* VIGNETTE -----> */}
         <div className="absolute -z-10 pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         {/* <----- VIGNETTE */}
