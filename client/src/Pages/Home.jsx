@@ -1,4 +1,6 @@
-import { Button } from "@/shadcn/ui/button";
+// import { Button } from "@/shadcn/ui/button";
+import { Button } from "../components/ui/moving-border";
+
 import { Container } from "../master";
 import React from "react";
 import { useNavigate } from "react-router-dom";
@@ -57,10 +59,9 @@ function HomePage() {
         </defs>
     </svg> */}
       <Container className="relative space-y-5 ">
-        
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"
-          fill="Aquamarine"
+          fill="Turquoise"
         />
         <section
           className={`${sectionStyle} text-center flex justify-evenly items-center h-screen mx-auto`}
@@ -73,7 +74,7 @@ function HomePage() {
           {/* Hero Image z-none */}
           <figure className="bg-hero-image z-50 h-[25rem] w-[37.5rem] mt-44 mb-16 bg-cover bg-left"></figure>
           <div className="flex flex-col gap-16">
-            <p className="text-[1.2rem] max-w-[47.8rem text-left font-montreal">
+            <p className="text-[1.2rem] max-w-[47.8rem text-left font-montreal mt-20">
               Reserve your table for an exquisite dining experience and
               <br /> explore our mouthwatering menu and order your favorite
               <br /> dishes with just a click.
@@ -110,36 +111,39 @@ function HomePage() {
                 </g>
               </svg> */}
               {/* bg-white svg */}
-              <svg
+              {/* <svg
                 width="50"
                 height="50"
                 viewBox="0 0 50 50"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                className="border border-gray-600 rounded-full"
               >
-                <circle cx="25" cy="25" r="25" fill="#D9D9D9" />
+                <circle cx="25" cy="25" r="25" fill="" />
                 <path
                   d="M14 25H36"
-                  stroke="black"
+                  stroke="white"
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
                 <path
                   d="M25 14L36 25L25 36"
-                  stroke="black"
+                  stroke="white"
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
-              </svg>
-
-              {/* <span className="linimate text-[1.2rem] ">RESERVE A TABLE</span> */}
+              </svg> */}
+              {/* //? Moving Border Button */}
               <Button
-                variant="maximal"
-                className="reserve-a-table rounded-full text-base font- py-7 px-7 border-2 border-onyx"
+                borderRadius="10rem"
+                className={
+                  "text-[1.1rem] bg-black/[0] hover:bg-gradient-to-l hover:from-teal-950 hover:to-black transition-all ease-in-out delay-150 border-onyx"
+                }
+                duration={"2500"}
               >
-                Reserve a Table
+                Reserve A Table
               </Button>
             </div>
           </div>

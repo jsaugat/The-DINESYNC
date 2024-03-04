@@ -1,7 +1,9 @@
 import { BookingForm, Container } from "../master";
 import React, { useReducer, useState } from "react";
-import Calendar from "../components/ReactCalendar/index.jsx";
+// import Calendar from "../components/ReactCalendar/index.jsx";
 import styled from "styled-components";
+import "../Styles/App.scss";
+import { Button } from "../components/ui/moving-border";
 
 // submit button animation
 const StyledBookButton = styled.button`
@@ -21,7 +23,7 @@ const StyledBookButton = styled.button`
     width: 100%;
     height: 0%;
     border-radius: 50px;
-    background-color: white;
+    background-color: #f1f1f1;
     transition: all 0.2s ease-out;
   }
 
@@ -71,12 +73,19 @@ function ReservationPage() {
         />
       </section>
       {/* submit btn */}
-      <StyledBookButton
+      {/* <StyledBookButton
         type="submit"
-        className="border border-white/60 mb-20 mt-11 py-2 px-3 w-fit mx-auto text-xl font-medium bg-gradient from-cardBlack to-green-600"
+        className="border border-white/60 mb-20 mt-11 py-2 px-3 w-fit mx-auto text-xl font-medium"
       >
         Confirm Reservation
-      </StyledBookButton>
+      </StyledBookButton> */}
+      <Button
+        borderRadius="10rem"
+        // className="bg-white text-xl w-fit text-black dark:text-white border-neutral-200 dark:border-onyx dark:bg-gradient-to-br dark:from-gray-800 dark:to-black transition-all duration-300 hover:dark:bg-gradient-to-bl hover:dark:to-black hover:dark:from-gray-600"
+        className={"text-[1.1rem] bg-black/30 hover:bg-gradient-to-bl hover:from-neutral-800 hover:to-black transition-all ease-in-out delay-150 border-onyx"}
+      >
+        Confirm Reservation
+      </Button>
     </Container>
   );
 }

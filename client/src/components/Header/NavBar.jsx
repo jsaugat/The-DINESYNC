@@ -14,7 +14,7 @@ const NavBar = () => {
       {/* logo */}
       <Logo />
       {/* menu */}
-      <ul className="Navbar flex gap-6 items-center text-[.9rem]">
+      <ul className="Navbar flex gap-6 items-center text-[0.9rem] font-light">
         <li>
           <NavLink
             to=""
