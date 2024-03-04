@@ -61,12 +61,12 @@ function Signup() {
   };
 
   const inputCSS =
-    "rounded-lg px-3 py-1 bg-transparent border border-onyx/70 focus:ring-white/20 focus:border-white/20 w-[350px]";
+    "rounded-lg px-3 py-1 bg-transparent border border-onyx/70 focus:ring-white/20 focus:border-white/20 w-[350px] placeholder-neutral-500";
 
   return (
     <Container>
       <form
-        className="h-[84vh] flex flex-col justify-start border border-onyx/70 rounded-[30px] w-fit px-14 py-14 mx-auto"
+        className="h-[84vh] flex flex-col justify-start bg-cardBlack border border-onyx/70 rounded-[30px] w-fit px-14 py-14 mx-auto text-[.9rem]"
         onSubmit={signupHandler}
       >
         <h3 className="text-4xl font-semibold mb-[2rem]">Sign up</h3>

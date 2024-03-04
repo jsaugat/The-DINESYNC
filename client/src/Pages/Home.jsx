@@ -56,9 +56,10 @@ function HomePage() {
           </filter>
         </defs>
     </svg> */}
-      <Container className="relative space-y-5">
+      <Container className="relative space-y-5 ">
+        
         <Spotlight
-          className="absolute -z-20 -top-40 left-0 md:left-60 md:-top-20"
+          className="-top-40 left-0 md:left-60 md:-top-20"
           fill="Aquamarine"
         />
         <section
@@ -70,7 +71,7 @@ function HomePage() {
             <div className="text-right w-full">DINING EXPERIENCE</div>
           </div>
           {/* Hero Image z-none */}
-          <figure className="bg-hero-image h-[25rem] w-[37.5rem] mt-44 mb-16 bg-cover bg-left"></figure>
+          <figure className="bg-hero-image z-50 h-[25rem] w-[37.5rem] mt-44 mb-16 bg-cover bg-left"></figure>
           <div className="flex flex-col gap-16">
             <p className="text-[1.2rem] max-w-[47.8rem text-left font-montreal">
               Reserve your table for an exquisite dining experience and
@@ -135,7 +136,7 @@ function HomePage() {
 
               {/* <span className="linimate text-[1.2rem] ">RESERVE A TABLE</span> */}
               <Button
-                variant="minimal"
+                variant="maximal"
                 className="reserve-a-table rounded-full text-base font- py-7 px-7 border-2 border-onyx"
               >
                 Reserve a Table

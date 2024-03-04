@@ -64,7 +64,7 @@ function Login() {
   return (
     <Container>
       <form
-        className="h-[84vh] flex flex-col justify-start border border-onyx/50 rounded-[30px] w-fit px-14 py-14 mx-auto"
+        className="h-[84vh] flex flex-col justify-start bg-cardBlack border border-onyx/50 rounded-[30px] w-fit px-14 py-14 mx-auto text-[.9rem]"
         onSubmit={loginHandler}
       >
         <h3

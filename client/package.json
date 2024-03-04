@@ -29,6 +29,7 @@
     "framer-motion": "^11.0.8",
     "glamor": "^2.20.40",
     "gsap": "^3.12.5",
+    "mini-svg-data-uri": "^1.4.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.1",
     "react-calendar": "^4.8.0",

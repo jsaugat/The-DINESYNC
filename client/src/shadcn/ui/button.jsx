@@ -21,6 +21,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         // custom buttons
         minimal: "bg-cardBlack border border-onyx text-white shadow hover:bg-neutral-800",
+        maximal: "bg-cardBlack border border-onyx text-white shadow hover:bg-white hover:text-black hover:border-antiFlash",
         antiFlashWhite: "bg-antiFlash text-black shadow hover:bg-neutral-400",
 
       },
