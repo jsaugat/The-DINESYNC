@@ -4,6 +4,7 @@ import React, { useReducer, useState } from "react";
 import styled from "styled-components";
 import "../Styles/App.scss";
 import { Button } from "../components/ui/moving-border";
+import { Spotlight } from "@/components/ui/Spotlight";
 
 // import reactElementToJSXString from "react-element-to-jsx-string";
 // import { toast, Toaster } from "sonner";
@@ -67,7 +68,11 @@ function ReservationPage() {
   ];
 
   return (
-    <Container>
+    <Container className="relative">
+      <Spotlight
+        className="absolute -top-40 left-0 md:left-60 md:-top-20 -z-5"
+        fill="DarkSlateGray"
+      />
       <h3 className="text-4xl my-10 mt-32 text-white">Make a Reservation</h3>
       <section className="flex justify-center mb-12">
         {/* <Calendar /> */}
@@ -91,7 +96,7 @@ function ReservationPage() {
       >
         Confirm Reservation
       </Button> */}
-      <button className="animate-shimmer h-12 px-6 py-4 border border-onyx bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium text-white transition-colors hover:shadow-2xl hover:shadow-slate-600 hover:border-slate-500 focus:outline-none focus:ring focus:ring-neutral-800 inline-flex  items-center justify-center rounded-full">
+      <button className="animate-shimmer h-14 px-6 py-4 border border-onyx bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium text-white transition-colors hover:shadow-2xl hover:shadow-slate-600 hover:border-slate-500 focus:outline-none focus:ring focus:ring-neutral-800 inline-flex  items-center justify-center rounded-full">
         Confirm Reservation
       </button>
     </Container>

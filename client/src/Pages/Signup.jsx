@@ -61,17 +61,17 @@ function Signup() {
   };
 
   const inputCSS =
-    "rounded-lg px-3 py-1 bg-transparent border border-onyx/70 focus:ring-white/20 focus:border-white/20 w-[350px] placeholder-neutral-500";
+    "rounded-sm px-2 py-1 bg-transparent border border-onyx/70 focus:ring-white/20 focus:border-white/10 w-[20rem] placeholder-neutral-700";
 
   return (
     <Container>
       <form
-        className="h-[84vh] flex flex-col justify-start bg-cardBlack border border-onyx/70 rounded-[30px] w-fit px-14 py-14 mx-auto text-[.9rem]"
+        className="h-[84vh] flex flex-col justify-start bg-cardBlack border border-onyx/70 rounded-[30px] w-fit px-14 py-10 mx-auto text-[.9rem]"
         onSubmit={signupHandler}
       >
         <h3 className="text-4xl font-semibold mb-[2rem]">Sign up</h3>
         <div className="flex flex-col items-start">
-          <label htmlFor="" className="mb-2 font-medium">
+          <label htmlFor="" className="mb-2 ">
             Name
           </label>
           <input
@@ -82,7 +82,7 @@ function Signup() {
             ref={ref}
             className={`${inputCSS}`}
           />
-          <label htmlFor="" className="mb-1 mt-3 font-medium">
+          <label htmlFor="" className="mb-1 mt-3 ">
             Email
           </label>
           <input
@@ -92,7 +92,7 @@ function Signup() {
             placeholder="Email"
             className={`${inputCSS}`}
           />
-          <label htmlFor="" className="mb-1 mt-3 font-medium">
+          <label htmlFor="" className="mb-1 mt-3 ">
             Password
           </label>
           <input
@@ -102,7 +102,7 @@ function Signup() {
             placeholder="Password"
             className={`${inputCSS}`}
           />
-          <label htmlFor="" className="mb-1 mt-3 font-medium">
+          <label htmlFor="" className="mb-1 mt-3 ">
             Confirm Password
           </label>
           <input

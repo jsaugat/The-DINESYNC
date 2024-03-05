@@ -139,7 +139,7 @@ function HomePage() {
               <Button
                 borderRadius="10rem"
                 className={
-                  "text-[1.11rem] bg-black/[0.0] hover:bg-gradient-to-l hover:from-teal-950 hover:to-black transition-all ease-in-out delay-150 border-onyx"
+                  "text-[1.1rem] bg-transparent hover:bg-gradient-to-l hover:from-teal-950 hover:to-black transition-all ease-in-out delay-150 border-onyx"
                 }
                 duration={"2500"}
               >

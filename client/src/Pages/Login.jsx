@@ -59,7 +59,7 @@ function Login() {
   };
 
   const inputCSS =
-    "rounded-lg px-3 py-1 bg-transparent border border-onyx/70 focus:ring-white/20 focus:border-white/20 w-[350px]";
+    "rounded-lg px-3 py-1 bg-transparent border border-onyx/70 focus:ring-white/20 focus:border-white/20 w-[20rem]";
 
   return (
     <Container>
