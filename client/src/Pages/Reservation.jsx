@@ -5,6 +5,10 @@ import styled from "styled-components";
 import "../Styles/App.scss";
 import { Button } from "../components/ui/moving-border";
 
+// import reactElementToJSXString from "react-element-to-jsx-string";
+// import { toast, Toaster } from "sonner";
+// import { ButtonsCard } from "@/components/ui/tailwindcss-buttons";
+
 // submit button animation
 const StyledBookButton = styled.button`
   position: relative;
@@ -65,7 +69,7 @@ function ReservationPage() {
   return (
     <Container>
       <h3 className="text-4xl my-10 mt-32 text-white">Make a Reservation</h3>
-      <section className="flex justify-center">
+      <section className="flex justify-center mb-12">
         {/* <Calendar /> */}
         <BookingForm
           availableTimes={availableTimes}
@@ -79,13 +83,17 @@ function ReservationPage() {
       >
         Confirm Reservation
       </StyledBookButton> */}
-      <Button
+      {/* <Button
         borderRadius="10rem"
-        // className="bg-white text-xl w-fit text-black dark:text-white border-neutral-200 dark:border-onyx dark:bg-gradient-to-br dark:from-gray-800 dark:to-black transition-all duration-300 hover:dark:bg-gradient-to-bl hover:dark:to-black hover:dark:from-gray-600"
-        className={"text-[1.1rem] bg-black/30 hover:bg-gradient-to-bl hover:from-neutral-800 hover:to-black transition-all ease-in-out delay-150 border-onyx"}
+        className={
+          "text-[1.1rem] bg-black/20 hover:bg-gradient-to-bl hover:from-neutral-800 hover:to-black transition-all ease-in-out delay-150 border-onyx"
+        }
       >
         Confirm Reservation
-      </Button>
+      </Button> */}
+      <button className="animate-shimmer h-12 px-6 py-4 border border-onyx bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium text-white transition-colors hover:shadow-2xl hover:shadow-slate-600 hover:border-slate-500 focus:outline-none focus:ring focus:ring-neutral-800 inline-flex  items-center justify-center rounded-full">
+        Confirm Reservation
+      </button>
     </Container>
   );
 }

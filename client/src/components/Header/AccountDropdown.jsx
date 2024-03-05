@@ -44,11 +44,11 @@ export default function AccountDropdown({ userInfo }) {
         {/* User solid icon */}
         <div className="flex gap-2">
           <UserSolid />
-          <span className="font-normal">{userInfo.name}</span>
+          <span className="text-[.95rem]">{userInfo.name}</span>
         </div>
         {/* Down Arrow */}
         <svg
-          className={`w-3 h-3 ms-3 transition-all ease-in-out ${
+          className={`w-2 h-2 ms-3 transition-all ease-in-out ${
             dropdownOpen ? "rotate-180" : " "
           }`}
           aria-hidden="true"
@@ -69,7 +69,7 @@ export default function AccountDropdown({ userInfo }) {
       <section
         className={`${
           dropdownOpen ? "block" : "opacity-0"
-        } absolute top-[100%] right-20 z-50 text-left bg-white dark:bg-cardBlack divide-y divide-onyx border border-onyx rounded-md w-fit pt-1`}
+        } absolute top-[100%] right-20 z-50 text-[.95rem] text-left bg-white dark:bg-cardBlack divide-y divide-onyx border border-onyx rounded-md w-fit pt-1`}
       >
         <div className="px-6 py-2 text-gray-900 dark:text-white cursor-default">
           <div className="truncate font-medium">My Account</div>

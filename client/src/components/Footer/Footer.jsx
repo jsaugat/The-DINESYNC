@@ -28,7 +28,7 @@ function Footer() {
           {/* Navigation */}
           <div className="nav-menu ">
             <h3 className="text-base font-medium uppercase">Navigation</h3>
-            <ul className="flex flex-col mt-5 gap-2">
+            <ul className="flex flex-col mt-5 gap-1 text-[0.9rem] font-thin">
               <li className="w-fit">
                 <NavLink to="/">Home</NavLink>
               </li>
@@ -46,7 +46,7 @@ function Footer() {
           {/* Contacts */}
           <div>
             <h3 className="text-base font-medium uppercase">Contacts</h3>
-            <ul className="flex flex-col mt-5 ">
+            <ul className="flex flex-col mt-5 text-[0.9rem] font-thin">
               <li>info@dinesync.com</li>
               <li>+977 9841586912</li>
             </ul>
@@ -83,7 +83,7 @@ function Footer() {
           </div>
         </NavLink>
       </div>
-      <div className="text-[0.95rem] text-sonicSilver flex justify-between px-[10.4rem] py-4">
+      <div className="text-[0.8rem] text-sonicSilver flex justify-between px-[10.4rem] py-4">
         <p>&copy;2024. All rights reserved.</p>
         <p>Designed by Saugat Joshi</p>
       </div>

@@ -27,6 +27,10 @@ module.exports = {
       geistSans: ["var(--font-geist-sans)"],
       geistMono: ["var(--font-geist-mono)"],
     },
+    //! This thing when uncommented causes problems in Hero Section. F !
+    // fontSize: {
+    //   "wee": "0.9rem"
+    // },
     container: {
       center: true,
       padding: "2rem",
@@ -115,6 +119,7 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         spotlight: "spotlight 2s ease .75s 1 forwards",
+        shimmer: "shimmer 1.3s linear infinite"
       },
       backgroundImage: {
         "hero-image": "url('/src/assets/hero75.jpg')",
