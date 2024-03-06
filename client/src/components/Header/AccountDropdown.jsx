@@ -35,7 +35,7 @@ export default function AccountDropdown({ userInfo }) {
       <button
         onClick={() => setDropdownOpen(!dropdownOpen)}
         onBlur={() => setDropdownOpen(false)}
-        className={`flex gap-2 items-center justify-between min-w-40 border border-onyx px-4 py-2 text-black rounded-full ${
+        className={`flex gap-2 items-center justify-between min-w-40 border border-onyx px-3 py-1 text-black rounded-full ${
           dropdownOpen
             ? "dark:text-white dark:ring-1 dark:ring-white"
             : "dark:text-white"

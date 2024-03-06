@@ -75,7 +75,7 @@ export default function PersonalInfo() {
 
   return (
     <>
-      <section className="flex flex-col items-start mx-auto">
+      <section className="flex flex-col items-start mx-auto text-[.9rem]">
         <h3 className="text-3xl my-6 mb-4 text-white">Update Details</h3>
         <form
           className="flex flex-col justify-start bg-cardBlack border border-onyx/60 rounded-xl w-fit px-14 py-14"

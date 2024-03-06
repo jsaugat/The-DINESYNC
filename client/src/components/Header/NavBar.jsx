@@ -1,13 +1,28 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Logo } from "/src/master";
 import { Button } from "@/shadcn/ui/button";
+import { useToast } from "@/shadcn/ui/use-toast";
 import { useSelector, useDispatch } from "react-redux";
 import AccountDropdown from "./AccountDropdown";
 
 const NavBar = () => {
   const { userInfo } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleOrdersNavigation = () => {
+    if (userInfo) {
+      navigate("/profile/orders");
+    } else {
+      toast({
+        variant: "minimal",
+        title: "Please Login to check your orders.",
+        description: "Friday, February 10, 2023 at 5:57 PM",
+      });
+      navigate("/login");
+    }
+  };
 
   return (
     <nav className="fixed z-[1000] w-full top-0 nav-menu flex px-[5rem] justify-between items-center py-[.6rem] border-b border-white/10 bg-gradient-to-r from-black/40 to-transparent backdrop-blur-sm">
@@ -18,7 +33,9 @@ const NavBar = () => {
         <li>
           <NavLink
             to=""
-            className={({ isActive }) => isActive ? "text-white" : "text-neutral-400" }
+            className={({ isActive }) =>
+              isActive ? "text-white" : "text-neutral-400"
+            }
           >
             Home
           </NavLink>
@@ -26,7 +43,9 @@ const NavBar = () => {
         <li>
           <NavLink
             to="about"
-            className={({ isActive }) => isActive ? "text-white" : "text-neutral-400" }
+            className={({ isActive }) =>
+              isActive ? "text-white" : "text-neutral-400"
+            }
           >
             About us
           </NavLink>
@@ -34,7 +53,9 @@ const NavBar = () => {
         <li>
           <NavLink
             to="menu"
-            className={({ isActive }) => isActive ? "text-white" : "text-neutral-400" }
+            className={({ isActive }) =>
+              isActive ? "text-white" : "text-neutral-400"
+            }
           >
             The Menu
           </NavLink>
@@ -42,7 +63,9 @@ const NavBar = () => {
         <li>
           <NavLink
             to="booking"
-            className={({ isActive}) => isActive ? "text-white" : "text-neutral-400" }
+            className={({ isActive }) =>
+              isActive ? "text-white" : "text-neutral-400"
+            }
           >
             Reservation
           </NavLink>
@@ -50,7 +73,10 @@ const NavBar = () => {
         <li>
           <NavLink
             to="profile/orders"
-            className={({ isActive }) => isActive ? "text-white" : "text-neutral-400" }
+            onClick={handleOrdersNavigation}
+            className={({ isActive }) =>
+              isActive ? "text-white" : "text-neutral-400"
+            }
           >
             Orders
           </NavLink>

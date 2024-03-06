@@ -42,8 +42,8 @@ function Login() {
       toast({
         variant: "minimal",
         title: `Logged in as ${res.name}`,
-        description: "There was a problem in your request.",
-        action: <ToastAction altText="Try again">Try again</ToastAction>,
+        description: "Your preferences are now personalized.",
+        action: <ToastAction altText="Okay">Okay</ToastAction>,
         className: "px-7 py-4",
       });
     } catch (err) {
