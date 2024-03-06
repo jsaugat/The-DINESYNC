@@ -33,7 +33,7 @@ const tableData = [
   { number: 20, capacity: 4, location: "dining", isReserved: false },
 ]
 
-// Function to seed tables with a specified number of Faker-generated data
+// Function to seed tables with a specified number
 const seedTables = async (tableData) => {
   try {
     // Clear existing data (optional)

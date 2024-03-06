@@ -1,6 +1,4 @@
-//
 //? express app init and config file
-//
 
 import express from "express";
 import cors from "cors";

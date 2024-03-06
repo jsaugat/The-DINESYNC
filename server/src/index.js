@@ -31,7 +31,7 @@ app.use("/api/auth", authRoute);
 // app.use("/api/tables", tablesRoute);
 // app.use("/api/users", usersRoute);
 
-//? 404 and error handler middlewares
+//! 404 and error handler middlewares
 app.use(notFoundHandler);
 app.use(errorHandler);
 
