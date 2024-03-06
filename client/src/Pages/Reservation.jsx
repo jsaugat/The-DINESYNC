@@ -69,10 +69,12 @@ function ReservationPage() {
 
   return (
     <Container className="relative">
+      {/* 
       <Spotlight
         className="absolute -top-40 left-0 md:left-60 md:-top-20 -z-5"
         fill="DarkSlateGray"
       />
+      */}
       <h3 className="text-4xl my-10 mt-32 text-white">Make a Reservation</h3>
       <section className="flex justify-center mb-12">
         {/* <Calendar /> */}

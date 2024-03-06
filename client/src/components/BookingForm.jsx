@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import styled from "styled-components";
 // import { Input } from "@/shadcn/ui/input";
 import { DatePicker, PartySizePicker } from "@/master";
+import { Button } from "@/shadcn/ui/button";
 
 function BookingForm() {
   
@@ -22,6 +23,9 @@ function BookingForm() {
       {/* //? The Party Size Picker */}
       <PartySizePicker />
 
+      <Button variant="antiFlashWhite" type="submit" className="rounded-full my-6 ">
+        Search
+      </Button>
       {/* Table ID
       <div className="w-full text-left space-y-2 flex flex-col mt-2">
         <label>Table Number</label>
