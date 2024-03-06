@@ -104,7 +104,7 @@ function PartySizePicker() {
           <button 
             key={option}
             onClick={() => partySize === option ? setPartySize(null) : setPartySize(option)}
-            className={`${partySize === option ? "bg-antiFlash hover:bg-antiFlash text-black" : null} rounded-full size-5 border border-onyx cursor-pointer hover:bg-neutral-800 flex items-center justify-center p-5 flex-1`}
+            className={`${partySize === option ? "bg-antiFlash hover:bg-white text-black" : null} rounded-full size-5 border border-onyx cursor-pointer hover:bg-neutral-800 flex items-center justify-center p-5 flex-1`}
           >
             {option}
           </button>

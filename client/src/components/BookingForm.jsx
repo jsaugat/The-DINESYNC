@@ -3,10 +3,22 @@ import React, { useState } from "react";
 // import { Input } from "@/shadcn/ui/input";
 import { DatePicker, PartySizePicker } from "@/master";
 import { Button } from "@/shadcn/ui/button";
+// Drawer
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/shadcn/ui/drawer";
+import SearchIcon from '@mui/icons-material/Search';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import ViewComfyIcon from '@mui/icons-material/ViewComfy';
 
 function BookingForm() {
-  
-
   //? Styles
   const boxStyles =
     "px-3 py-1 rounded-md bg-transparent border border-onyx w-full w-[30rem]";
@@ -23,9 +35,32 @@ function BookingForm() {
       {/* //? The Party Size Picker */}
       <PartySizePicker />
 
-      <Button variant="antiFlashWhite" type="submit" className="rounded-full my-6 ">
-        Search
+      <Button
+        variant="antiFlashWhite"
+        type="submit"
+        className=" mt-6 mb-3 flex gap-1"
+      >
+        <SearchIcon fontSize="small"/>
+        <span>Search Table</span>
       </Button>
+
+      <Drawer className="">
+        <Button variant="minimal" className="flex gap-2 items-center justify-center ">
+          <ViewComfyIcon fontSize="small"/>
+          <DrawerTrigger>View Tables Layout</DrawerTrigger>
+        </Button>
+        <DrawerContent>
+          <DrawerHeader className={"flex justify-center"}>
+            <DrawerTitle>Display Tables Layout here</DrawerTitle>
+          </DrawerHeader>
+          <DrawerFooter>
+            <DrawerClose>
+              <Button variant="outline">Okay</Button>
+            </DrawerClose>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+
       {/* Table ID
       <div className="w-full text-left space-y-2 flex flex-col mt-2">
         <label>Table Number</label>

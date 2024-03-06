@@ -6,31 +6,27 @@ dotenv.config();
 
 // Function to generate Faker data for a single table
 const tableData = [
-  // Patio Tables
-  { number: 1, capacity: 4, location: "patio", isReserved: false },
-  { number: 2, capacity: 2, location: "patio", isReserved: false },
-  { number: 3, capacity: 8, location: "patio", isReserved: false },
-  { number: 4, capacity: 4, location: "patio", isReserved: false },
-  { number: 5, capacity: 2, location: "patio", isReserved: false },
-
-  // Bar Tables
-  { number: 6, capacity: 8, location: "bar", isReserved: false },
-  { number: 7, capacity: 4, location: "bar", isReserved: false },
-  { number: 8, capacity: 2, location: "bar", isReserved: false },
-  { number: 9, capacity: 4, location: "bar", isReserved: false },
-  { number: 10, capacity: 8, location: "bar", isReserved: false },
-
-  // Dining Tables
-  { number: 11, capacity: 2, location: "dining", isReserved: false },
-  { number: 12, capacity: 4, location: "dining", isReserved: false },
-  { number: 13, capacity: 8, location: "dining", isReserved: false },
-  { number: 14, capacity: 2, location: "dining", isReserved: false },
-  { number: 15, capacity: 4, location: "dining", isReserved: false },
-  { number: 16, capacity: 8, location: "dining", isReserved: false },
-  { number: 17, capacity: 8, location: "dining", isReserved: false },
-  { number: 18, capacity: 2, location: "dining", isReserved: false },
-  { number: 19, capacity: 2, location: "dining", isReserved: false },
-  { number: 20, capacity: 4, location: "dining", isReserved: false },
+  { number: 1, capacity: 4, isAvailable: true },
+  { number: 2, capacity: 4, isAvailable: true },
+  { number: 3, capacity: 4, isAvailable: true },
+  { number: 4, capacity: 2, isAvailable: true },
+  { number: 5, capacity: 2, isAvailable: true },
+  { number: 6, capacity: 2, isAvailable: true },
+  { number: 7, capacity: 6, isAvailable: true },
+  { number: 8, capacity: 6, isAvailable: true },
+  { number: 9, capacity: 6, isAvailable: true },
+  { number: 10, capacity: 6, isAvailable: true },
+  { number: 11, capacity: 8, isAvailable: true },
+  
+  // { number: 12, capacity: 4, isAvailable: true },
+  // { number: 13, capacity: 8, location: "dining", isAvailable: true },
+  // { number: 14, capacity: 2, location: "dining", isAvailable: true },
+  // { number: 15, capacity: 4, location: "dining", isAvailable: true },
+  // { number: 16, capacity: 8, location: "dining", isAvailable: true },
+  // { number: 17, capacity: 6, location: "dining", isAvailable: true },
+  // { number: 18, capacity: 4, location: "dining", isAvailable: true },
+  // { number: 19, capacity: 6, location: "dining", isAvailable: true },
+  // { number: 20, capacity: 4, location: "dining", isAvailable: true },
 ]
 
 // Function to seed tables with a specified number
