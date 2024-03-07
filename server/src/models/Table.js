@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 import { Schema } from "mongoose";
+import { reservationSchema } from "./Reservation.js";
 
-const tableSchema = new Schema(
+export const tableSchema = new Schema(
   {
     number: {
       type: Number,
@@ -21,12 +22,10 @@ const tableSchema = new Schema(
       type: Boolean,
       default: true,
     },
-    reservations: [
-      {
-        type: mongoose.Schema.Types.ObjectId, // 1:18:53 in lama dev 
-        ref: "Reservation",
-      },
-    ],
+    reservation: {
+      required: false, // 1:18:53 in lama dev
+      type: reservationSchema,
+    },
   },
   { timestamps: true }
 );
@@ -34,4 +33,3 @@ const tableSchema = new Schema(
 const Table = mongoose.model("Table", tableSchema);
 
 export default Table;
-
