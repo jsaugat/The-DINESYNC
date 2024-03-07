@@ -1,9 +1,11 @@
-// import express from "express";
-// import { createTable, getTable, getTables, updateTable, deleteTable } from "../controllers/table.controller.js";
+import express from "express";
+import { createTable, getTable, getTables, updateTable, deleteTable } from "../controllers/table.controller.js";
 // import { verifyAdmin } from "../utils/verifyToken.js";
 
-// const router = express.Router();
+const router = express.Router();
 
+// AVAILABLE TABLES
+router.post("/available-tables")
 // //CREATE
 // router.post("/", verifyAdmin, createTable);
 // //UPDATE, with id
@@ -15,4 +17,4 @@
 // // GET ALL
 // router.get("/", getTables);
 
-// export default router;
+export default router;

@@ -98,7 +98,7 @@ function PartySizePicker() {
   const [partySize, setPartySize] = useState(null);
   return (
     <>
-      <label className="text-[0.9rem] text-googleBlue mt-4">Set a Party Size</label>
+      <label className="text-[0.9rem] text-googleBlue mt-4">Select a Party Size</label>
       <section className="flex justify-center gap-5 border border-neutral-800 p-2 rounded-full mt-2 w-fit">
         {[2, 4, 6, 8].map((option) => (
           <button 
