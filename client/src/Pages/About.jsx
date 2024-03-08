@@ -7,7 +7,7 @@ function AboutPage() {
     <Container>
       <section>
         <Spotlight
-          className="absolute -z-20 -top-40 left-0 md:left-60 md:-top-20"
+          className="-z-20 -top-40 left-0 md:left-60 md:-top-20"
           fill="gray"
         />
         <div className="flex justify-around items-center h-[84vh]">

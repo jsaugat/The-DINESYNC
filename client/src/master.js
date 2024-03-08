@@ -22,6 +22,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import PersonalInfo from "./components/PersonalInfo.jsx";
 import Orders from "./components/Orders.jsx";
 import DatePicker from "./components/DatePicker";
+import TimePicker from "./components/TimePicker";
 import PartySizePicker from "./components/PartySizePicker";
 
 export {
@@ -46,6 +47,7 @@ export {
   PointerBall,
   BookingForm,
   DatePicker,
+  TimePicker,
   PartySizePicker,
   // Route Protector
   PrivateRoute,

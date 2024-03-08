@@ -109,7 +109,7 @@ function Login() {
           </Button>
         </div>
         <div className="mt-12">
-          New Customer ?{" "}
+          Don't have an account?{" "}
           <Link to="/signup" className="text-blue-500 hover:underline">
             Create an account
           </Link>

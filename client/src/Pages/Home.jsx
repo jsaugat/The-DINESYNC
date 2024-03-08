@@ -67,9 +67,10 @@ function HomePage() {
           className={`${sectionStyle} text-center flex justify-evenly items-center h-screen mx-auto`}
         >
           {/* Header z-10 */}
-          <div className="absolute top-10 z-10 w-[56.25rem] text-7xl text-left leading-none pointer-events-none font-montreal tracking-tight">
-            ELEVATE YOUR <br />{" "}
-            <div className="text-right w-full">DINING EXPERIENCE</div>
+          <div className="absolute top-10 z-10 w-[56.25rem] text-7xl text-left leading-none pointer-events-none font-montreal tracking-tight bg-gradient-to-r from-white via-white to-white inline-block text-transparent bg-clip-text">
+            <span>ELEVATE YOUR </span>
+            <br />
+            <span className="text-right w-full inline-block">DINING EXPERIENCE</span>
           </div>
           {/* Hero Image z-none */}
           <figure className="bg-hero-image z-50 h-[25rem] w-[37.5rem] mt-44 mb-16 bg-cover bg-left"></figure>
@@ -139,9 +140,10 @@ function HomePage() {
               <Button
                 borderRadius="10rem"
                 className={
-                  "text-[1.1rem] bg-transparent hover:bg-gradient-to-l hover:from-teal-950 hover:to-black transition-colors ease-in-out delay-150 border-onyx"
+                  "text-[1.1rem] bg-transparent transition-colors ease-in-out delay-150 border-onyx/50"
+                  // hover:bg-gradient-to-l hover:from-teal-950 hover:to-black
                 }
-                duration={"2500"}
+                duration={"4000"}
               >
                 Reserve A Table
               </Button>

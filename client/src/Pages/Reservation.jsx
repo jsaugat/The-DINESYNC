@@ -5,6 +5,7 @@ import styled from "styled-components";
 import "../Styles/App.scss";
 import { Button } from "../components/ui/moving-border";
 import { Spotlight } from "@/components/ui/Spotlight";
+import Tables from "@/components/Tables";
 
 // import reactElementToJSXString from "react-element-to-jsx-string";
 // import { toast, Toaster } from "sonner";
@@ -69,20 +70,21 @@ function ReservationPage() {
 
   return (
     <Container className="relative">
-      {/* 
       <Spotlight
-        className="absolute -top-40 left-0 md:left-60 md:-top-20 -z-5"
-        fill="DarkSlateGray"
+        className="-top-40 left-0 md:left-96 md:-top-20 md:h-[200%] -z-20"
+        fill="#008a8c"
+        // fill="AquaMarine"
       />
-      */}
-      <h3 className="text-4xl my-10 mt-32 text-white">Make a Reservation</h3>
-      <section className="flex justify-center mb-12">
+
+      <h3 className="text-4xl my-10 mt-16 text-white">Make a Reservation</h3>
+      <main className="flex justify-center items-center gap-10 mb-12 relative z-30">
         {/* <Calendar /> */}
         <BookingForm
           availableTimes={availableTimes}
           updateTimes={updateTimes}
         />
-      </section>
+        <Tables />
+      </main>
       {/* submit btn */}
       {/* <StyledBookButton
         type="submit"

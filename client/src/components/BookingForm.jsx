@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 // import styled from "styled-components";
 // import { Input } from "@/shadcn/ui/input";
-import { DatePicker, PartySizePicker } from "@/master";
+import { DatePicker, TimePicker, PartySizePicker } from "@/master";
 import { Button } from "@/shadcn/ui/button";
+import { Cross1Icon } from "@radix-ui/react-icons"
 // Drawer
 import {
   Drawer,
@@ -29,37 +30,35 @@ function BookingForm() {
 
   return (
     <form
-      className="flex flex-col justify-start bg-cardBlack border border-onyx/60 rounded-2xl px-14 py-14 text-left shadow-2xl shadow-black/[0.5]"
+      className="flex flex-col justify-start dark:bg-black/80 border border-onyx rounded-3xl px-12 py-14 text-left shadow-2xl shadow-black/[0.5] w-fit"
       onSubmit={(e) => e.preventDefault()}
     >
-      {/* //? The Date Picker */}
       <DatePicker />
-      {/* //? The Party Size Picker */}
+      <TimePicker />
       <PartySizePicker />
 
       <Button
-        variant="antiFlashWhite"
         type="submit"
-        className=" mt-6 mb-3 flex gap-1"
+        className=" mt-6 mb-3 flex gap-1 rounded-full bg-googleBlue hover:bg-googleBlue/[.8]"
       >
         <SearchIcon fontSize="small" />
-        <span>Search Table</span>
+        <span>Search Tables</span>
       </Button>
 
       <Drawer className="dark">
         <Button
           variant="minimal"
-          className="flex gap-2 items-center justify-center "
+          className="flex gap-2 items-center justify-center"
         >
           <FitScreenIcon fontSize="small" />
           <DrawerTrigger>View Tables Layout</DrawerTrigger>
         </Button>
-        <DrawerContent>
+        <DrawerContent className="bg-black/50 backdrop-blur-sm">
           {/* <DrawerHeader className={"flex justify-center my-4"}>
             <DrawerTitle className="">DineSync Tables Layout</DrawerTitle>
           </DrawerHeader> */}
           {/* Drawer Body */}
-          <main className="relative mx-auto my-4 h-[55vh] w-[50vw] pb-12 border rounded-2xl flex justify-center items-center">
+          <main className="relative mx-auto my-4 h-[55vh] w-[50vw] pb-12 border border-googleBlue/50 rounded-2xl flex justify-center items-center bg-black">
             {/* //? Tables of 4 */}
             <section className={`${tablesColumnStyles}`}>
               {[1, 2, 3].map((tableId) => (
@@ -153,11 +152,12 @@ function BookingForm() {
               ))}
             </section>
             <span className="absolute bottom-2 text-googleBlue">Entrance</span>
-            <div className="absolute bottom-0 w-[4rem] h-[.3rem] bg-onyx"></div>
+            <div className="absolute bottom-0 w-[4rem] h-[.3rem] bg-googleBlue"></div>
           </main>
           <DrawerFooter>
             <DrawerClose>
-              <Button variant="outline" className="rounded-full">Close</Button>
+              <Button variant="outline" className="rounded-full">
+              <Cross1Icon className="mr-2 h-4 w-4" /> Close</Button>
             </DrawerClose>
           </DrawerFooter>
         </DrawerContent>
@@ -192,7 +192,7 @@ export default BookingForm;
 // Components
 // Seat
 function Seat({ className }) {
-  return <div className={`bg-[#232323] ${className}`}></div>;
+  return <div className={`bg-[#232323] border-2 ${className}`}></div>;
 }
 function Table({ children, className }) {
   return (
