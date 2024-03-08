@@ -4,19 +4,19 @@ import Table from "../models/Table.js";
 import dotenv from "dotenv";
 dotenv.config();
 
-// Function to generate Faker data for a single table
-const tableData = [
+export const tableData = [
   { number: 1, capacity: 4, isAvailable: true },
   { number: 2, capacity: 4, isAvailable: true },
   { number: 3, capacity: 4, isAvailable: true },
   { number: 4, capacity: 2, isAvailable: true },
   { number: 5, capacity: 2, isAvailable: true },
   { number: 6, capacity: 2, isAvailable: true },
-  { number: 7, capacity: 6, isAvailable: true },
+  { number: 7, capacity: 2, isAvailable: true },
   { number: 8, capacity: 6, isAvailable: true },
   { number: 9, capacity: 6, isAvailable: true },
-  { number: 10, capacity: 6, isAvailable: true },
+  { number: 10, capacity: 8, isAvailable: true },
   { number: 11, capacity: 8, isAvailable: true },
+  { number: 12, capacity: 8, isAvailable: true },
   
   // { number: 12, capacity: 4, isAvailable: true },
   // { number: 13, capacity: 8, location: "dining", isAvailable: true },

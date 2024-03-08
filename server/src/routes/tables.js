@@ -1,11 +1,20 @@
 import express from "express";
-import { createTable, getTable, getTables, updateTable, deleteTable } from "../controllers/table.controller.js";
+import {
+  createTable,
+  getTable,
+  getTables,
+  updateTable,
+  deleteTable,
+} from "../controllers/table.controller.js";
+import { getAvailableTables, reserveTable } from "../controllers/table.controller.js";
 // import { verifyAdmin } from "../utils/verifyToken.js";
 
 const router = express.Router();
 
 // AVAILABLE TABLES
-router.post("/available-tables")
+router.post("/available", getAvailableTables);
+// RESERVAION
+router.post("/reservation", reserveTable);
 // //CREATE
 // router.post("/", verifyAdmin, createTable);
 // //UPDATE, with id
