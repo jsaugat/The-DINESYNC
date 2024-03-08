@@ -98,7 +98,7 @@ function ReservationPage() {
       >
         Confirm Reservation
       </Button> */}
-      <button className="animate-shimmer h-14 px-6 py-4 border border-onyx bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium text-white transition-colors hover:shadow-lg hover:shadow-slate-800 hover:border-slate-500 focus:outline-none focus:ring focus:ring-neutral-800 inline-flex  items-center justify-center rounded-full">
+      <button className="animate-shimmer h-14 px-6 py-4 border border-onyx bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium text-white transition-colors hover:shadow-[0_0_10px_2px] hover:shadow-slate-800 hover:border-slate-500 focus:outline-none focus:border focus:border-slate-500 inline-flex  items-center justify-center rounded-full">
         Confirm Reservation
       </button>
     </Container>
