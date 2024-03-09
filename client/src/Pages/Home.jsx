@@ -143,7 +143,7 @@ function HomePage() {
                   "text-[1.1rem] bg-transparent transition-colors ease-in-out delay-150 border-onyx/50"
                   // hover:bg-gradient-to-l hover:from-teal-950 hover:to-black
                 }
-                duration={"4000"}
+                duration={"6000"}
               >
                 Reserve A Table
               </Button>

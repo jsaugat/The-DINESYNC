@@ -1,4 +1,6 @@
 import * as React from "react";
+import { setTime } from "@/slices/reservation/selectionSlice";
+
 
 import {
   CaretSortIcon,
