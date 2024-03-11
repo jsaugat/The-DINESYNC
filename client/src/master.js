@@ -17,13 +17,14 @@ import Profile from "./pages/Profile.jsx";
 // components
 import CallToAction from "./components/Button";
 import PointerBall from "./components/Motion/PointerBall";
-import BookingForm from "./components/BookingForm";
 import PrivateRoute from "./components/PrivateRoute";
 import PersonalInfo from "./components/PersonalInfo.jsx";
 import Orders from "./components/Orders.jsx";
 import DatePicker from "./components/DatePicker";
 import TimePicker from "./components/TimePicker";
 import PartySizePicker from "./components/PartySizePicker";
+import BookingForm from "./components/BookingForm";
+import BookingDetails from "./components/BookingDetails";
 
 export {
   // Pages
@@ -45,10 +46,11 @@ export {
   Logo,
   CallToAction,
   PointerBall,
-  BookingForm,
   DatePicker,
   TimePicker,
   PartySizePicker,
+  BookingForm,
+  BookingDetails,
   // Route Protector
   PrivateRoute,
 };

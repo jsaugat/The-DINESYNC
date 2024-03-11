@@ -10,7 +10,7 @@ import { setTime } from "@/slices/reservation/selectionSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function TimePicker() {
-  const selectedTime = useSelector((state) => state.selection.time);
+  // const selectedTime = useSelector((state) => state.selection.time);
   const dispatch = useDispatch();
   const times = [
     "9 AM",

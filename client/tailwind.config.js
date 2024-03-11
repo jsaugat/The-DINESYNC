@@ -40,6 +40,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        dineSync: "#008a8c",
         googleBlue: "#9bbff4",
         onyx: "#383838",
         sonicSilver: "#797979",
