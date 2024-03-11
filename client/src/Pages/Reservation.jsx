@@ -2,9 +2,11 @@ import { BookingDetails, BookingForm, Container } from "../master";
 import React, { useReducer, useState } from "react";
 import "../Styles/App.scss";
 import { Spotlight } from "@/components/ui/Spotlight";
-import Tables from "@/components/Tables";
+import Tables from "@/components/reservation/Tables";
 
 function ReservationPage() {
+  
+
   return (
     <Container className="relative">
       <section>

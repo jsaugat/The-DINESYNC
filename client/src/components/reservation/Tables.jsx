@@ -84,7 +84,7 @@ export default function Tables() {
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={3} className="text-googleBlue">Please Select a Table</TableCell>
+            <TableCell colSpan={3} className="text-white py-3">Please Select a Table</TableCell>
             {/* <TableCell className="text-right">$2,500.00</TableCell> */}
           </TableRow>
         </TableFooter>

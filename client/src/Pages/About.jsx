@@ -8,7 +8,7 @@ function AboutPage() {
       <section>
         <Spotlight
           className="-z-20 -top-40 left-0 md:left-60 md:-top-20"
-          fill="gray"
+          fill="#008a8c"
         />
         <div className="flex justify-around items-center h-[84vh]">
           <h2 className="text-2xl">Who we are</h2>

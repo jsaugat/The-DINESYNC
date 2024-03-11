@@ -20,11 +20,11 @@ import PointerBall from "./components/Motion/PointerBall";
 import PrivateRoute from "./components/PrivateRoute";
 import PersonalInfo from "./components/PersonalInfo.jsx";
 import Orders from "./components/Orders.jsx";
-import DatePicker from "./components/DatePicker";
-import TimePicker from "./components/TimePicker";
-import PartySizePicker from "./components/PartySizePicker";
-import BookingForm from "./components/BookingForm";
-import BookingDetails from "./components/BookingDetails";
+import DatePicker from "./components/reservation/DatePicker";
+import TimePicker from "./components/reservation/TimePicker";
+import PartySizePicker from "./components/reservation/PartySizePicker";
+import BookingForm from "./components/reservation/BookingForm";
+import BookingDetails from "./components/reservation/BookingDetails";
 
 export {
   // Pages
