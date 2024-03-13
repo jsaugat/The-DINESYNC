@@ -12,7 +12,7 @@ import { getAvailableTables, reserveTable } from "../controllers/table.controlle
 const router = express.Router();
 
 // AVAILABLE TABLES
-router.post("/available", getAvailableTables);
+router.post("/availability", getAvailableTables);
 // RESERVAION
 router.post("/reservation", reserveTable);
 // //CREATE

@@ -6,7 +6,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 function BookingDetails() {
   return (
     <main className="relative w-[50vw] bg-black/[0.8] py-[4rem] rounded-3xl mx-auto border flex justify-around items-center overflow-hidden shadow-[0_0_1rem_1rem] shadow-black/50">
-        <div className="absolute pointer-events-none inset-0 bg-gradient-to-bl from-transparent via-transparent to-dineSync/20"></div>
+        <div className="absolute pointer-events-none inset-0 bg-gradient-to-bl from-transparent via-transparent to-dineSync/30"></div>
       <section>
         <h3 className="text-left text-4xl bg-gradient-to-br from-white via-white to-onyx bg-clip-text text-transparent font-medium">
           Confirm <br /> Reservation

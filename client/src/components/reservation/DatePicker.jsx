@@ -1,42 +1,19 @@
 import * as React from "react";
 import { CalendarIcon } from "@radix-ui/react-icons";
 import { format } from "date-fns";
-
 import { cn } from "@/shadcn/lib/utils";
 import { Button } from "@/shadcn/ui/button";
 import { Calendar } from "@/shadcn/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/shadcn/ui/popover";
+import { setDate } from "@/slices/reservation/selectionSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function DatePicker() {
-  const [date, setDate] = React.useState();
-
-  const getFormattedDateTime = () => {
-    const months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-
-    const dateStr = `${
-      months[selection.date.getMonth()]
-    } ${selection.date.getDate()} ${selection.date.getFullYear()}`;
-    let formattedTime = selection.time.slice(0, -2);
-    formattedTime =
-      selection.time > 12
-        ? formattedTime + 12 + ":00"
-        : formattedTime + ":00";
-
-    const formattedDateTime = new Date(`${dateStr} ${formattedTime}`);
-    return formattedDateTime;
+  const dispatch = useDispatch();
+  const date = useSelector((state) => state.selection.date);
+  const handleSelect = (selectedDate) => {
+    console.log("Shadcn selection: ", selectedDate)
+    dispatch(setDate(new Date(selectedDate)));
   };
 
   return (
@@ -61,7 +38,7 @@ export default function DatePicker() {
         <Calendar
           mode="single"
           selected={date}
-          onSelect={setDate}
+          onSelect={handleSelect}
           initialFocus
         />
       </PopoverContent>

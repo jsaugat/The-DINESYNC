@@ -1,11 +1,11 @@
 import Table from "../models/Table.js";
 import Day from "../models/Day.js";
-import { tableData } from "../seeds/tables.js";
+import { tablesData } from "../seeds/tables.js";
 
 // GET Available Tables
 // Params for route : { data: String ("Dec 21 2012 09:00") }
 const getAvailableTables = async (req, res, next) => {
-  const dateTime = new Date(req.body.date);
+  const dateTime = req.body.date;
 
   try {
     // Search for documents in the Day collection with the specified date
@@ -20,8 +20,8 @@ const getAvailableTables = async (req, res, next) => {
       //? If no documents are found
       const day = new Day({
         date: dateTime,
-        // Use predefined tableData from seeds
-        tables: tableData,
+        // Use predefined tablesData from seeds
+        tables: tablesData,
       });
 
       // Save the new document to the database
