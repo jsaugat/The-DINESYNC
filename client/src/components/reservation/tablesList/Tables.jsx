@@ -122,7 +122,6 @@ export default function Tables() {
               <TableHead className="text-center">Status</TableHead>
               <TableHead className="text-center">Table ID</TableHead>
               <TableHead className="text-center">Capacity</TableHead>
-              {/* <TableHead className="text-right">Amount</TableHead> */}
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -130,7 +129,7 @@ export default function Tables() {
               <TableRow
                 key={table.number}
                 className="cursor-pointer"
-                onClick={() => console.log("hi")}
+                onClick={() => console.log(table.number)}
               >
                 <TableCell className="text-center">
                   {table.isAvailable ? (
@@ -160,7 +159,7 @@ export default function Tables() {
         <TableFooter>
           <TableRow>
             <TableCell colSpan={3} className="text-white py-3">
-              Please Select a Table
+              {totalTables.length ? "Please Select a Table" : "Please Select Your Preferences"}
             </TableCell>
             {/* <TableCell className="text-right">$2,500.00</TableCell> */}
           </TableRow>

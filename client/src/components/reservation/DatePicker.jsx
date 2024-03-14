@@ -12,7 +12,7 @@ export default function DatePicker() {
   const dispatch = useDispatch();
   const date = useSelector((state) => state.selection.date);
   const handleSelect = (selectedDate) => {
-    console.log("Shadcn selection: ", selectedDate)
+    console.log("Shadcn selection: ", selectedDate);
     dispatch(setDate(selectedDate.toISOString()));
   };
 
@@ -39,6 +39,9 @@ export default function DatePicker() {
           mode="single"
           selected={date}
           onSelect={handleSelect}
+          disabled={(date) =>
+            date <= new Date(new Date().setDate(new Date().getDate() - 1))
+          }
           initialFocus
         />
       </PopoverContent>
