@@ -1,12 +1,9 @@
 .booked {
-  background-image: linear-gradient(to bottom right, rgb(99, 0, 0), rgb(43, 0, 0));
-  color: white;
+  background-image: linear-gradient(to bottom , rgb(132, 45, 40), transparent);
 }
 .available {
-  // background: linear-gradient(to bottom right,  #025a86, rgb(0, 23, 43));
-  background-image: linear-gradient(to bottom right, rgb(0, 99, 54), rgb(0, 43, 16));
-  color: white;
+  background-image: linear-gradient(to bottom, rgb(40, 132, 112), transparent);
 }
 .statusIndicator {
-  @apply px-2 py-1 rounded-full text-xs font-medium inline-flex items-center gap-2;
+  @apply px-2 py-1 rounded-full text-white text-xs font-medium inline-flex items-center gap-2  backdrop-blur-sm shadow-inner ;
 }

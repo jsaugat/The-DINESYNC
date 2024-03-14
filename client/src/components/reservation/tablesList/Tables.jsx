@@ -15,6 +15,13 @@ import { useEffect } from "react";
 import styles from "./style.module.scss";
 import { ScrollArea } from "@/shadcn/ui/scroll-area";
 import { TablesViewDrawer } from "@/master";
+// shadcn components
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/shadcn/ui/tooltip";
 
 export default function Tables() {
   let {
@@ -134,14 +141,14 @@ export default function Tables() {
                     <div
                       className={`${styles.available} ${styles.statusIndicator}`}
                     >
-                      <span class="rounded-full size-2 bg-green-500"></span>{" "}
+                      <span class="rounded-full size-2 bg-green-500 shadow-md shadow-black"></span>{" "}
                       AVAILABLE
                     </div>
                   ) : (
                     <div
                       className={`${styles.booked} ${styles.statusIndicator}`}
                     >
-                      <span class="rounded-full size-2 bg-red-600"></span>{" "}
+                      <span class="rounded-full size-2 bg-red-600 shadow-sm shadow-black"></span>{" "}
                       BOOKED
                     </div>
                   )}
@@ -159,7 +166,18 @@ export default function Tables() {
           </TableRow>
         </TableFooter>
       </Table>
-      <TablesViewDrawer onlyIcon={true} />
+            <TablesViewDrawer onlyIcon={true} />
+      {/* Table Viewer Drawer */}
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <button>hello</button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Add to library</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
     </main>
   );
 }

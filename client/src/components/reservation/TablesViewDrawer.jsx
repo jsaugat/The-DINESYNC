@@ -11,6 +11,12 @@ import {
 import { Button } from "@/shadcn/ui/button";
 import { Cross1Icon } from "@radix-ui/react-icons";
 import FitScreenIcon from "@mui/icons-material/FitScreen";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/shadcn/ui/tooltip";
 
 const tablesColumnStyles = "flex flex-col w-[9rem] h-[18rem] justify-around";
 
@@ -21,15 +27,32 @@ export default function TablesViewDrawer({ onlyIcon }) {
       <DrawerTrigger>
         <Button
           variant="minimal"
-          className={`flex gap-2 items-center justify-center w-full text-sm ${
+          className={`w-full text-sm ${
             onlyIcon === true &&
-            "fixed top-0 -right-16 z-50 rounded-full aspect-square p-3 size-12"
+            "fixed top-0 -right-16 z-50 rounded-full aspect-square size-12"
           }`}
           size="sm"
-          fixed-bottom
         >
-          <FitScreenIcon fontSize="small" />
-          {onlyIcon === true ? null : <span>View Tables Layout</span>}
+          {onlyIcon === true ? (
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <div className="size-full rounded-full flex gap-2 items-center justify-center">
+                    <FitScreenIcon fontSize="small" />
+                    {onlyIcon === true ? null : <span>View Tables Layout</span>}
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>View Tables Layout</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          ) : (
+            <div className="flex gap-2 items-center justify-center">
+              <FitScreenIcon fontSize="small" />
+              {onlyIcon === true ? null : <span>View Tables Layout</span>}
+            </div>
+          )}
         </Button>
       </DrawerTrigger>
       {/* </button> */}
