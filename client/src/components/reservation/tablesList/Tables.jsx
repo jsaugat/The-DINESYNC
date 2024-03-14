@@ -119,9 +119,9 @@ export default function Tables() {
         <ScrollArea className="w-full h-[18.8rem]">
           <TableHeader>
             <TableRow>
+              <TableHead className="text-center">Status</TableHead>
               <TableHead className="text-center">Table ID</TableHead>
               <TableHead className="text-center">Capacity</TableHead>
-              <TableHead className="text-center">Status</TableHead>
               {/* <TableHead className="text-right">Amount</TableHead> */}
             </TableRow>
           </TableHeader>
@@ -132,10 +132,6 @@ export default function Tables() {
                 className="cursor-pointer"
                 onClick={() => console.log("hi")}
               >
-                <TableCell className="font-medium text-center">
-                  <span>T-{table.number}</span>
-                </TableCell>
-                <TableCell className="text-center">{table.capacity}</TableCell>
                 <TableCell className="text-center">
                   {table.isAvailable ? (
                     <div
@@ -153,6 +149,10 @@ export default function Tables() {
                     </div>
                   )}
                 </TableCell>
+                <TableCell className="font-medium text-center">
+                  <span>T {table.number}</span>
+                </TableCell>
+                <TableCell className="text-center">{table.capacity}</TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -166,18 +166,8 @@ export default function Tables() {
           </TableRow>
         </TableFooter>
       </Table>
-            <TablesViewDrawer onlyIcon={true} />
       {/* Table Viewer Drawer */}
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <button>hello</button>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Add to library</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
+      <TablesViewDrawer onlyIcon={true} />
     </main>
   );
 }
