@@ -16,7 +16,7 @@ function BookingForm() {
 
   return (
     <form
-      className="flex flex-col justify-start dark:bg-black/50 border border-onyx rounded-3xl px-12 py-16 text-left shadow-2xl shadow-black/[0.5] w-fit"
+      className="flex flex-col justify-start dark:bg-black/50 border border-onyx rounded-3xl px-12 py-[4.35rem] text-left shadow-2xl shadow-black/[0.5] w-fit"
       onSubmit={(e) => e.preventDefault()}
     >
       <DatePicker />
