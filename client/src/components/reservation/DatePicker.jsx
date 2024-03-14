@@ -13,7 +13,7 @@ export default function DatePicker() {
   const date = useSelector((state) => state.selection.date);
   const handleSelect = (selectedDate) => {
     console.log("Shadcn selection: ", selectedDate)
-    dispatch(setDate(new Date(selectedDate)));
+    dispatch(setDate(selectedDate.toISOString()));
   };
 
   return (
@@ -22,7 +22,7 @@ export default function DatePicker() {
         <Button
           variant={"minimal"}
           className={cn(
-            "w-full justify-start text-left font-normal",
+            "w-full justify-start text-left font-normal bg-transparent",
             !date && "text-muted-foreground"
           )}
         >

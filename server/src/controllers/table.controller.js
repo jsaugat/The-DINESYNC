@@ -1,6 +1,6 @@
 import Table from "../models/Table.js";
 import Day from "../models/Day.js";
-import { tablesData } from "../seeds/tables.js";
+import { allTables } from "../seeds/allTables.js";
 
 // GET Available Tables
 // Params for route : { data: String ("Dec 21 2012 09:00") }
@@ -10,6 +10,7 @@ const getAvailableTables = async (req, res, next) => {
   try {
     // Search for documents in the Day collection with the specified date
     const docs = await Day.find({ date: dateTime });
+    console.log("docs length: ",docs.length)
 
     //? If documents are found
     if (docs.length > 0) {
@@ -21,7 +22,7 @@ const getAvailableTables = async (req, res, next) => {
       const day = new Day({
         date: dateTime,
         // Use predefined tablesData from seeds
-        tables: tablesData,
+        tables: allTables,
       });
 
       // Save the new document to the database
@@ -30,6 +31,7 @@ const getAvailableTables = async (req, res, next) => {
 
       // Search for the newly created document
       const newDocs = await Day.find({ date: dateTime });
+      console.log("new docs: ", newDocs)
       res.status(200).send(newDocs[0]); // Send the first document
     }
   } catch (err) {

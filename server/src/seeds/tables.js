@@ -4,7 +4,7 @@ import Table from "../models/Table.js";
 import dotenv from "dotenv";
 dotenv.config();
 
-export const tablesData = [
+const tablesData = [
   { number: 1, capacity: 4, isAvailable: true },
   { number: 2, capacity: 4, isAvailable: true },
   { number: 3, capacity: 4, isAvailable: true },
@@ -42,11 +42,15 @@ const seedTables = async (tablesData) => {
 };
 
 //? Connect to the database
-try {
-  await mongoose.connect(process.env.MONGODB_URI);
-  console.log("SEED: MongoDB connected");
-  await seedTables(tableData);
-  await mongoose.disconnect();
-} catch (error) {
-  console.error("SEED: MongoDB connection error:", error);
+if (import.meta.main) {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI);
+    console.log("SEED: MongoDB connected");
+    await seedTables(tablesData);
+    await mongoose.disconnect();
+  } catch (error) {
+    console.error("SEED: MongoDB connection error:", error);
+  }
 }
+
+export { tablesData };

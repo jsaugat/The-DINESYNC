@@ -13,11 +13,6 @@ export const tableSchema = new Schema(
       type: Number,
       required: true,
     },
-    // location: {
-    //   type: String,
-    //   enum: ["patio", "bar", "dining"],
-    //   required: true,
-    // },
     isAvailable: {
       type: Boolean,
       default: true,
