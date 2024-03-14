@@ -1,3 +1,11 @@
+import { useSelector, useDispatch } from "react-redux";
+import { setTable } from "@/slices/reservation/selectionSlice";
+import { setTotalTables } from "@/slices/reservation/totalTablesSlice";
+import { useEffect, useState } from "react";
+// styles
+import styles from "./style.module.scss";
+import { ScrollArea } from "@/shadcn/ui/scroll-area";
+import { TablesViewDrawer } from "@/master";
 import {
   Table,
   TableBody,
@@ -8,65 +16,27 @@ import {
   TableHeader,
   TableRow,
 } from "@/shadcn/ui/table";
-import { useSelector, useDispatch } from "react-redux";
-import { setTotalTables } from "@/slices/reservation/totalTablesSlice";
-import { useEffect, useState } from "react";
-// styles
-import styles from "./style.module.scss";
-import { ScrollArea } from "@/shadcn/ui/scroll-area";
-import { TablesViewDrawer } from "@/master";
-// shadcn components
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/shadcn/ui/tooltip";
 
-export default function Tables({search}) {
+export default function Tables({ search, getFormattedDateTime }) {
   let {
     date: selectedDate,
     time: selectedTime,
-    size: selectedSize,
+    size: selectedSize
   } = useSelector((state) => state.selection);
   const totalTables = useSelector((state) => state.totalTables);
   const dispatch = useDispatch();
-  const getFormattedDateTime = () => {
-    const months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-    selectedDate = new Date(selectedDate);
-    const formattedDate = `${
-      months[selectedDate.getMonth()]
-    } ${selectedDate.getDate()} ${selectedDate.getFullYear()}`;
 
-    let hours = parseInt(selectedTime.slice(0, -2));
-    const isPM = selectedTime.endsWith("PM");
+  /**
+   * @function getFormattedDateTime
+   * @desc Format together the date and time selected by the user.
+   */
+  
 
-    if (isPM && hours !== 12) {
-      hours += 12;
-    } else if (!isPM && hours === 12) {
-      hours = 0;
-    }
-
-    const formattedTime = `${hours.toString().padStart(2, "0")}:00`;
-
-    const selectedDateTime = new Date(`${formattedDate} ${formattedTime}`);
-    console.log("Selected Date Time: ", selectedDateTime);
-    return selectedDateTime;
-  };
   useEffect(() => {
+    /**
+     * @function fetchTableAvailability
+     * @desc Fetch tables availability from the server using formattedDateTime (date, time) and size picked by the user.
+     */
     const fetchTableAvailability = async () => {
       // if date or time is not selected
       if (!selectedDate || !selectedTime) return;
@@ -106,7 +76,7 @@ export default function Tables({search}) {
     };
     fetchTableAvailability();
   }, [search]);
-  // }, [selectedTime, selectedDate, selectedSize]);
+
   return (
     /**
      * go to @/shadcn/table.jsx to style the table, for e.g. TableCell > <td className="w-1/5"></td>
@@ -128,8 +98,10 @@ export default function Tables({search}) {
             {totalTables.map((table) => (
               <TableRow
                 key={table.number}
-                className={`cursor-pointer ${table.isAvailable ? "" : "text-neutral-500 hover:bg-black"}`}
-                onClick={() => console.log(table.number)}
+                className={`cursor-pointer ${
+                  table.isAvailable ? "" : "text-neutral-500 hover:bg-black"
+                }`}
+                onClick={() => dispatch(setTable(table.number))}
               >
                 <TableCell className="text-center">
                   {table.isAvailable ? (
@@ -159,7 +131,9 @@ export default function Tables({search}) {
         <TableFooter>
           <TableRow>
             <TableCell colSpan={3} className="text-white bg-transparent py-3">
-              {totalTables.length ? "Please Select a Table" : "Please Select Your Preferences"}
+              {totalTables.length
+                ? "Please Select a Table"
+                : "Please Select Your Preferences"}
             </TableCell>
             {/* <TableCell className="text-right">$2,500.00</TableCell> */}
           </TableRow>

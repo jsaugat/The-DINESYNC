@@ -1,11 +1,53 @@
-import { BookingDetails, BookingForm, Container, TablesViewDrawer } from "../master";
-import React, { useReducer, useState } from "react";
+import {
+  BookingDetails,
+  BookingForm,
+  Container,
+  TablesViewDrawer,
+} from "../master";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import "../Styles/App.scss";
 import { Spotlight } from "@/components/ui/Spotlight";
 import Tables from "@/components/reservation/tablesList/Tables";
 
 function ReservationPage() {
   const [search, setSearch] = useState(false);
+  let { date: selectedDate, time: selectedTime } = useSelector((state) => state.selection)
+  const getFormattedDateTime = () => {
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    selectedDate = new Date(selectedDate);
+    const formattedDate = `${
+      months[selectedDate.getMonth()]
+    } ${selectedDate.getDate()} ${selectedDate.getFullYear()}`;
+
+    let hours = parseInt(selectedTime.slice(0, -2));
+    const isPM = selectedTime.endsWith("PM");
+
+    if (isPM && hours !== 12) {
+      hours += 12;
+    } else if (!isPM && hours === 12) {
+      hours = 0;
+    }
+
+    const formattedTime = `${hours.toString().padStart(2, "0")}:00`;
+
+    const selectedDateTime = new Date(`${formattedDate} ${formattedTime}`);
+    console.log("Selected Date Time: ", selectedDateTime);
+    return selectedDateTime;
+  };
   return (
     <Container className="relative">
       <section>
@@ -14,7 +56,7 @@ function ReservationPage() {
         </h3>
         <section className="flex justify-center items-start gap-10 mb-12 relative z-30">
           <BookingForm setSearch={setSearch} />
-          <Tables search={search} />
+          <Tables search={search} getFormattedDateTime={getFormattedDateTime} />
         </section>
         <Spotlight
           className="-top-40 left-0 md:left-96 md:-top-20 md:h-[200%] -z-20"

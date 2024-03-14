@@ -4,12 +4,10 @@ export const selectionSlice = createSlice({
   name: "selection",
   initialState: {
     table: {
-      name: null,
-      id: null,
+      number: null,
     },
     date: null,
     time: null,
-    location: "Any Location",
     size: 0,
   },
   reducers: {
@@ -22,9 +20,12 @@ export const selectionSlice = createSlice({
     setSize: (state, action) => {
       state.size = action.payload;
     },
+    setTable: (state, action) => {
+      state.table.number = action.payload;
+    }
   },
 });
 
-export const { setSize, setTime, setDate } = selectionSlice.actions;
+export const { setSize, setTime, setDate, setTable } = selectionSlice.actions;
 
 export default selectionSlice.reducer; // export for store
