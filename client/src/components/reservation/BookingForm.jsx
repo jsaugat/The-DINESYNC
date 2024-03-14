@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import styled from "styled-components";
 // import { Input } from "@/shadcn/ui/input";
-import { DatePicker, TimePicker, PartySizePicker } from "@/master";
+import { DatePicker, TimePicker, PartySizePicker, TablesViewDrawer } from "@/master";
 import { Button } from "@/shadcn/ui/button";
 
 import SearchIcon from "@mui/icons-material/Search";
@@ -30,7 +30,7 @@ function BookingForm() {
         <SearchIcon fontSize="small" />
         <span>Search Tables</span>
       </Button>
-
+      <TablesViewDrawer/>
       
 
       {/* Table ID

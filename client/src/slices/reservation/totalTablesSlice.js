@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
   { number: 1, capacity: 4, isAvailable: true },
-  { number: 2, capacity: 4, isAvailable: true },
+  { number: 2, capacity: 4, isAvailable: false },
   { number: 3, capacity: 4, isAvailable: true },
 
   { number: 4, capacity: 2, isAvailable: true },

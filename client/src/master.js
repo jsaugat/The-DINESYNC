@@ -25,6 +25,7 @@ import TimePicker from "./components/reservation/TimePicker";
 import PartySizePicker from "./components/reservation/PartySizePicker";
 import BookingForm from "./components/reservation/BookingForm";
 import BookingDetails from "./components/reservation/BookingDetails";
+import TablesViewDrawer from "./components/reservation/TablesViewDrawer";
 
 export {
   // Pages
@@ -51,6 +52,7 @@ export {
   PartySizePicker,
   BookingForm,
   BookingDetails,
+  TablesViewDrawer,
   // Route Protector
   PrivateRoute,
 };

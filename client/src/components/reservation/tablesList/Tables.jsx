@@ -14,6 +14,7 @@ import { useEffect } from "react";
 // styles
 import styles from "./style.module.scss";
 import { ScrollArea } from "@/shadcn/ui/scroll-area";
+import { TablesViewDrawer } from "@/master";
 
 export default function Tables() {
   let {
@@ -109,17 +110,21 @@ export default function Tables() {
           A list of available tables based on your selection.
         </TableCaption>
         <ScrollArea className="w-full h-[18.8rem]">
-        <TableHeader>
-          <TableRow>
-            <TableHead className="text-center">Table ID</TableHead>
-            <TableHead className="text-center">Capacity</TableHead>
-            <TableHead className="text-center">Status</TableHead>
-            {/* <TableHead className="text-right">Amount</TableHead> */}
-          </TableRow>
-        </TableHeader>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="text-center">Table ID</TableHead>
+              <TableHead className="text-center">Capacity</TableHead>
+              <TableHead className="text-center">Status</TableHead>
+              {/* <TableHead className="text-right">Amount</TableHead> */}
+            </TableRow>
+          </TableHeader>
           <TableBody>
             {totalTables.map((table) => (
-              <TableRow key={table.number} className="cursor-pointer" onClick={()=> console.log('hi')}>
+              <TableRow
+                key={table.number}
+                className="cursor-pointer"
+                onClick={() => console.log("hi")}
+              >
                 <TableCell className="font-medium text-center">
                   <span>T-{table.number}</span>
                 </TableCell>
@@ -154,6 +159,7 @@ export default function Tables() {
           </TableRow>
         </TableFooter>
       </Table>
+      <TablesViewDrawer onlyIcon={true} />
     </main>
   );
 }
