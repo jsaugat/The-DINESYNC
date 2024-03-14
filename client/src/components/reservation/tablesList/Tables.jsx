@@ -10,7 +10,7 @@ import {
 } from "@/shadcn/ui/table";
 import { useSelector, useDispatch } from "react-redux";
 import { setTotalTables } from "@/slices/reservation/totalTablesSlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // styles
 import styles from "./style.module.scss";
 import { ScrollArea } from "@/shadcn/ui/scroll-area";
@@ -23,7 +23,7 @@ import {
   TooltipTrigger,
 } from "@/shadcn/ui/tooltip";
 
-export default function Tables() {
+export default function Tables({search}) {
   let {
     date: selectedDate,
     time: selectedTime,
@@ -81,8 +81,7 @@ export default function Tables() {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              // date: selectedDateTime,
-              date: new Date("March 12, 2024 15:30:00 UTC"),
+              date: selectedDateTime,
             }),
           }
         );
@@ -106,7 +105,8 @@ export default function Tables() {
       }
     };
     fetchTableAvailability();
-  }, [selectedTime, selectedDate, selectedSize]);
+  }, [search]);
+  // }, [selectedTime, selectedDate, selectedSize]);
   return (
     /**
      * go to @/shadcn/table.jsx to style the table, for e.g. TableCell > <td className="w-1/5"></td>
@@ -128,7 +128,7 @@ export default function Tables() {
             {totalTables.map((table) => (
               <TableRow
                 key={table.number}
-                className="cursor-pointer"
+                className={`cursor-pointer ${table.isAvailable ? "" : "text-neutral-500 hover:bg-black"}`}
                 onClick={() => console.log(table.number)}
               >
                 <TableCell className="text-center">
@@ -158,7 +158,7 @@ export default function Tables() {
         </ScrollArea>
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={3} className="text-white py-3">
+            <TableCell colSpan={3} className="text-white bg-transparent py-3">
               {totalTables.length ? "Please Select a Table" : "Please Select Your Preferences"}
             </TableCell>
             {/* <TableCell className="text-right">$2,500.00</TableCell> */}

@@ -1,44 +1,59 @@
 import Table from "../models/Table.js";
 import Day from "../models/Day.js";
 import { allTables } from "../seeds/allTables.js";
+import { tablesData } from "../seeds/tables.js";
 
 // GET Available Tables
 // Params for route : { data: String ("Dec 21 2012 09:00") }
-const getAvailableTables = async (req, res, next) => {
-  const dateTime = req.body.date;
+// const getAvailableTables = async (req, res, next) => {
+//   const dateTime = new Date(req.body.date);
+//   console.log("Request Body:", dateTime);
+
+//   try {
+//     const existingDocs = await Day.find({ date: dateTime });
+//     if (existingDocs.length > 0) {
+//       console.log("Record exists. Sent docs.");
+//       res.status(200).send(existingDocs[0]);
+//     } else {
+//       // Use create method directly (assuming available)
+//       const newDay = await Day.create({ date: dateTime, tables: tablesData });
+//       console.log("docs? : ", newDay);
+//       console.log("dont fuck this error");
+//       console.log("Created new datetime. Sent default docs.");
+//       res.status(200).send(newDay);
+//     }
+//   } catch (err) {
+//     console.log("fuck this error");
+//     next(err);
+//   }
+// };
+
+async function getAvailableTables(req, res, next) {
+  console.log("Request attempted");
 
   try {
-    // Search for documents in the Day collection with the specified date
-    const docs = await Day.find({ date: dateTime });
-    console.log("docs length: ",docs.length)
+    const dateTime = new Date(req.body.date);
 
-    //? If documents are found
-    if (docs.length > 0) {
+    // Find documents with the specified date
+    const existingDocs = await Day.find({ date: dateTime });
+
+    if (existingDocs.length) {
       console.log("Record exists. Sent docs.");
-      // Send the first document as a response with a status code of 200
-      res.status(200).send(docs[0]);
+      res.status(200).send(existingDocs[0]);
     } else {
-      //? If no documents are found
-      const day = new Day({
-        date: dateTime,
-        // Use predefined tablesData from seeds
-        tables: allTables,
-      });
+      // Create a new document with the searched date and default tables
+      const newDay = new Day({ date: dateTime, tables: allTables });
+      await newDay.save();
+      console.log("Created new datetime. Sent default docs.");
 
-      // Save the new document to the database
-      await day.save();
-      console.log("Created new datetime. Here are the default docs.");
-
-      // Search for the newly created document
-      const newDocs = await Day.find({ date: dateTime });
-      console.log("new docs: ", newDocs)
-      res.status(200).send(newDocs[0]); // Send the first document
+      // Retrieve the newly created document
+      const createdDoc = await Day.findOne({ date: dateTime });
+      res.status(200).send(createdDoc);
     }
   } catch (err) {
-    // If an error occurs during the try block, pass it to the error handling middleware
-    next(err);
+    next(err)
   }
-};
+}
 
 // RESERVE
 /**

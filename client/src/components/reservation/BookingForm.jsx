@@ -1,18 +1,22 @@
 import React, { useState } from "react";
 // import styled from "styled-components";
 // import { Input } from "@/shadcn/ui/input";
-import { DatePicker, TimePicker, PartySizePicker, TablesViewDrawer } from "@/master";
+import {
+  DatePicker,
+  TimePicker,
+  PartySizePicker,
+  TablesViewDrawer,
+} from "@/master";
 import { Button } from "@/shadcn/ui/button";
 
 import SearchIcon from "@mui/icons-material/Search";
 
-function BookingForm() {
+function BookingForm({ setSearch }) {
   //? Styles
   const boxStyles =
     "px-3 py-1 rounded-md bg-transparent border border-onyx w-full w-[30rem]";
   // const mtSection = "mt-4"
   // const mtBelowLabel = "mb-2"
-  
 
   return (
     <form
@@ -25,13 +29,13 @@ function BookingForm() {
 
       <Button
         type="submit"
+        onClick={() => setSearch((prev) => !prev)}
         className=" mt-6 mb-3 flex gap-1 rounded-full bg-googleBlue hover:bg-googleBlue/[.8]"
       >
         <SearchIcon fontSize="small" />
         <span>Search Tables</span>
       </Button>
-      <TablesViewDrawer/>
-      
+      <TablesViewDrawer />
 
       {/* Table ID
       <div className="w-full text-left space-y-2 flex flex-col mt-2">
@@ -58,4 +62,3 @@ function BookingForm() {
 }
 
 export default BookingForm;
-

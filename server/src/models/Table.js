@@ -4,19 +4,9 @@ import { reservationSchema } from "./Reservation.js";
 
 export const tableSchema = new Schema(
   {
-    number: {
-      type: Number,
-      required: true,
-      unique: true,
-    },
-    capacity: {
-      type: Number,
-      required: true,
-    },
-    isAvailable: {
-      type: Boolean,
-      default: true,
-    },
+    number: Number,
+    capacity: Number,
+    isAvailable: Boolean,
     reservation: {
       required: false, // 1:18:53 in lama dev
       type: reservationSchema,

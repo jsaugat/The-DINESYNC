@@ -5,6 +5,7 @@ import { Spotlight } from "@/components/ui/Spotlight";
 import Tables from "@/components/reservation/tablesList/Tables";
 
 function ReservationPage() {
+  const [search, setSearch] = useState(false);
   return (
     <Container className="relative">
       <section>
@@ -12,8 +13,8 @@ function ReservationPage() {
           Make a Reservation
         </h3>
         <section className="flex justify-center items-start gap-10 mb-12 relative z-30">
-          <BookingForm />
-          <Tables />
+          <BookingForm setSearch={setSearch} />
+          <Tables search={search} />
         </section>
         <Spotlight
           className="-top-40 left-0 md:left-96 md:-top-20 md:h-[200%] -z-20"
