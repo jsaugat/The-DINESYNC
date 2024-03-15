@@ -20,7 +20,7 @@ const initialState = [
 
 const totalTablesSlice = createSlice({
   name: "totalTables",
-  initialState,
+  initialState: [],
   reducers: {
     setTotalTables: (state, action) => {
       return action.payload; // assuming payload is an array of tables

@@ -1,26 +1,116 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Input } from "@/shadcn/ui/input";
 import { Label } from "@/shadcn/ui/label";
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { toast } from "@/shadcn/ui/use-toast";
+// redux
+import {
+  setBookingName,
+  setBookingEmail,
+  setBookingPhone,
+  resetBooking,
+} from "@/slices/reservation/reservationSlice";
 
-function BookingDetails() {
+function BookingDetails({ getFormattedDateTime }) {
+  // RTK slices
+  const { name, phone, email } = useSelector((state) => state.reservation);
+  const {
+    table: { number: tableNumber },
+  } = useSelector((state) => state.selection);
+  const dispatch = useDispatch();
+
+  // Make a reservation request to the backend api.
+  const makeReservationRequest = async () => {
+    const incompleteDetails =
+      name.length === 0 || phone.length === 0 || email.length === 0;
+
+    if (incompleteDetails) {
+      toast({
+        variant: "minimal",
+        title: "Incomplete Details",
+        description: "Please fill in all details.",
+        action: <ToastAction altText="Try again">Okay</ToastAction>,
+        className: "px-7 py-4",
+      });
+      return;
+    } else {
+      // Proceed with reservation.
+      const selectedDateTime = getFormattedDateTime(); // Get the combined date and time from user selection.
+      try {
+        // Send a POST request to reserve the table
+        const response = await fetch(
+          "http://localhost:6900/api/tables/reservation",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name,
+              phone,
+              email,
+              date: selectedDateTime,
+              table: tableNumber,
+            }),
+          }
+        );
+        if (response.ok) {
+          // If reservation is successful, log the response and update page
+          const reservationResponse = await response.text();
+          console.log("Reserved: " + reservationResponse);
+        } else {
+          // If reservation fails, handle error appropriately
+          console.error("Reservation failed:", response.statusText);
+        }
+      } catch (err) {
+        console.error("Reservation error:", err.message);
+      }
+    }
+  };
+
   return (
     <main className="relative w-[50vw] bg-black/[0.8] py-[4rem] rounded-3xl mx-auto border flex justify-around items-center overflow-hidden shadow-[0_0_1rem_1rem] shadow-black/50">
-        <div className="absolute pointer-events-none inset-0 bg-gradient-to-bl from-transparent via-transparent to-dineSync/30"></div>
+      <div className="absolute pointer-events-none inset-0 bg-gradient-to-bl from-transparent via-transparent to-dineSync/30"></div>
       <section>
         <h3 className="text-left text-4xl bg-gradient-to-br from-white via-white to-onyx bg-clip-text text-transparent font-medium">
           Confirm <br /> Reservation
         </h3>
-        <p className="text-neutral-500 text-sm text-left mt-4 leading-[0.9rem]" >Ensure all information is accurate.</p>
+        <p className="text-neutral-500 text-sm text-left mt-4 leading-[0.9rem]">
+          Ensure all information is accurate.
+        </p>
       </section>
       <section className="text-left">
         <Label htmlFor="email">Name</Label>
-        <Input id="name" placeholder="Your Name" className="mb-3 mt-1 w-[16rem]" />
-        <Label htmlFor="email" >Email</Label>
-        <Input type="email" id="email" placeholder="Email" className="mb-3 mt-1" />
-        <Label htmlFor="phone" >Contact</Label>
-        <Input type="tel" id="phone" placeholder="Phone" className="mb-3 mt-1" />
-        <button className="animate-shimmer mt-8 h-14 px-6 py-2 border border-onyx bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium text-white transition-colors hover:shadow-[0_0_10px_2px] hover:shadow-slate-800 hover:border-slate-500 focus:outline-none focus:border focus:border-slate-500 inline-flex  items-center justify-center rounded-full  gap-3">
+        <Input
+          id="name"
+          placeholder="Your Name"
+          value={name}
+          onChange={(e) => dispatch(setBookingName(e.target.value))}
+          className="mb-3 mt-1 w-[16rem]"
+        />
+        <Label htmlFor="email">Email</Label>
+        <Input
+          type="email"
+          id="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => dispatch(setBookingEmail(e.target.value))}
+          className="mb-3 mt-1"
+        />
+        <Label htmlFor="phone">Contact</Label>
+        <Input
+          type="tel"
+          id="phone"
+          placeholder="Phone"
+          value={phone}
+          onChange={(e) => dispatch(setBookingPhone(e.target.value))}
+          className="mb-3 mt-1"
+        />
+        <button
+          type="submit"
+          onClick={makeReservationRequest} 
+          className="animate-shimmer mt-8 h-14 px-6 py-2 border border-onyx bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium text-white transition-colors hover:shadow-[0_0_10px_2px] hover:shadow-slate-800 hover:border-slate-500 focus:outline-none focus:border focus:border-slate-500 inline-flex  items-center justify-center rounded-full  gap-3">
           <span>Book Now</span>
           <ArrowForwardIcon fontSize="small" />
         </button>

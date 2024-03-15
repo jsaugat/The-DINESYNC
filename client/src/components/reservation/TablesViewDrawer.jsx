@@ -20,17 +20,18 @@ import {
 
 const tablesColumnStyles = "flex flex-col w-[9rem] h-[18rem] justify-around";
 
-export default function TablesViewDrawer({ onlyIcon }) {
+export default function TablesViewDrawer({ onlyIcon, className }) {
   return (
     <Drawer className="dark">
       {/* <button className={`${onlyIcon === true ? " " : "" }`}> */}
       <DrawerTrigger>
         <Button
           variant="minimal"
-          className={`w-full text-sm ${
-            onlyIcon === true &&
-            "fixed top-0 -right-16 z-50 rounded-full aspect-square size-12"
-          }`}
+          className={`w-full text-sm rounded-full  ${
+            onlyIcon ?
+            "fixed top-0 -right-16 z-50 aspect-square size-12"
+            : "bg-googleBlue text-black hover:bg-googleBlue/80"
+          } ${className} `}
           size="sm"
         >
           {onlyIcon === true ? (

@@ -12,7 +12,9 @@ import Tables from "@/components/reservation/tablesList/Tables";
 
 function ReservationPage() {
   const [search, setSearch] = useState(false);
-  let { date: selectedDate, time: selectedTime } = useSelector((state) => state.selection)
+  let { date: selectedDate, time: selectedTime } = useSelector(
+    (state) => state.selection
+  );
   const getFormattedDateTime = () => {
     const months = [
       "January",
@@ -54,6 +56,10 @@ function ReservationPage() {
         <h3 className="text-4xl my-10 mt-16 bg-gradient-to-br from-white via-white to-onyx bg-clip-text text-transparent font-medium">
           Make a Reservation
         </h3>
+        {/* <section className="p-3 text-left text-sm rounded-full border w-fit mx-auto mb-6 text-teal-200">
+          Please refine your selection using the form on the left to display the
+          corresponding tables on the right.
+        </section> */}
         <section className="flex justify-center items-start gap-10 mb-12 relative z-30">
           <BookingForm setSearch={setSearch} />
           <Tables search={search} getFormattedDateTime={getFormattedDateTime} />
@@ -64,7 +70,7 @@ function ReservationPage() {
         />
       </section>
       {/* BOOKING DETAILS Form */}
-      <BookingDetails />
+      <BookingDetails getFormattedDateTime={getFormattedDateTime} />
       {/* DRAWER TRIGGER */}
     </Container>
   );
@@ -72,10 +78,10 @@ function ReservationPage() {
 export default ReservationPage;
 
 /**
-   * RESERVATION Page
+ * RESERVATION Page
     |-- section I
     |   |-- BOOKING FORM
     |   |-- TABLES
     |-- section II
     |   |-- BOOKING DETAILS
-   */
+ */

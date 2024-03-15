@@ -21,7 +21,8 @@ export default function Tables({ search, getFormattedDateTime }) {
   let {
     date: selectedDate,
     time: selectedTime,
-    size: selectedSize
+    size: selectedSize,
+    table: { number: tableNumber },
   } = useSelector((state) => state.selection);
   const totalTables = useSelector((state) => state.totalTables);
   const dispatch = useDispatch();
@@ -30,7 +31,6 @@ export default function Tables({ search, getFormattedDateTime }) {
    * @function getFormattedDateTime
    * @desc Format together the date and time selected by the user.
    */
-  
 
   useEffect(() => {
     /**
@@ -60,10 +60,11 @@ export default function Tables({ search, getFormattedDateTime }) {
           console.log("Tables fetched successfully");
           const { tables } = await response.json();
           console.log("Tables: ", tables);
-          // Filter available tables with location and group size criteria
-          const filteredTables = tables.filter(
-            (table) => table.capacity == selectedSize
-          );
+          // Filter available tables with party size criteria.
+          // if size is not selected, return all tables
+          const filteredTables = !selectedSize
+            ? tables
+            : tables.filter((table) => table.capacity == selectedSize);
           dispatch(setTotalTables(filteredTables));
         } else {
           console.log(
@@ -75,7 +76,7 @@ export default function Tables({ search, getFormattedDateTime }) {
       }
     };
     fetchTableAvailability();
-  }, [search]);
+  }, [selectedDate, selectedTime, getFormattedDateTime, totalTables]);
 
   return (
     /**
@@ -86,7 +87,7 @@ export default function Tables({ search, getFormattedDateTime }) {
         <TableCaption>
           A list of available tables based on your selection.
         </TableCaption>
-        <ScrollArea className="w-full h-[18.8rem]">
+        <ScrollArea className="w-full h-[19.2rem]">
           <TableHeader>
             <TableRow>
               <TableHead className="text-center">Status</TableHead>
@@ -95,7 +96,7 @@ export default function Tables({ search, getFormattedDateTime }) {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {totalTables.map((table) => (
+            {totalTables?.map((table) => (
               <TableRow
                 key={table.number}
                 className={`cursor-pointer ${
@@ -121,7 +122,7 @@ export default function Tables({ search, getFormattedDateTime }) {
                   )}
                 </TableCell>
                 <TableCell className="font-medium text-center">
-                  <span>T {table.number}</span>
+                  <span>T-{table.number}</span>
                 </TableCell>
                 <TableCell className="text-center">{table.capacity}</TableCell>
               </TableRow>
@@ -131,9 +132,17 @@ export default function Tables({ search, getFormattedDateTime }) {
         <TableFooter>
           <TableRow>
             <TableCell colSpan={3} className="text-white bg-transparent py-3">
-              {totalTables.length
-                ? "Please Select a Table"
-                : "Please Select Your Preferences"}
+              {totalTables.length ? (
+                tableNumber ? (
+                  <span>Table <span className="text-googleBlue">T-{tableNumber}</span> is currently selected.</span>
+                ) : (
+                  <span>Please Select a Table</span>
+                )
+              ) : (
+                <span className="text-orange-500">
+                  * Select preferences to reveal tables.
+                </span>
+              )}
             </TableCell>
             {/* <TableCell className="text-right">$2,500.00</TableCell> */}
           </TableRow>

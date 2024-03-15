@@ -2,6 +2,7 @@ import Table from "../models/Table.js";
 import Day from "../models/Day.js";
 import { allTables } from "../seeds/allTables.js";
 import { tablesData } from "../seeds/tables.js";
+import Reservation from "../models/Reservation.js";
 
 // GET Available Tables
 // Params for route : { data: String ("Dec 21 2012 09:00") }
@@ -28,7 +29,7 @@ import { tablesData } from "../seeds/tables.js";
 //   }
 // };
 
-async function getAvailableTables(req, res, next) {
+const getAvailableTables = async (req, res, next) => {
   console.log("Request attempted");
 
   try {
@@ -57,12 +58,14 @@ async function getAvailableTables(req, res, next) {
 
 // RESERVE
 /**
- *  reservation @param { data, table, name, phone, email }
+ *  reservation @param { name, phone, email, date, tableNumber, }
  */
 const reserveTable = async (req, res, next) => {
+  console.log("Reservation Submitted")
   try {
+    const selectedDateTime = req.body.date;
     // 1. Find all days matching the requested date:
-    const days = await Day.find({ date: req.body.date });
+    const days = await Day.find({ date: selectedDateTime });
 
     // 2. Check if any day records were found for the requested date:
     if (days.length > 0) {
@@ -70,11 +73,11 @@ const reserveTable = async (req, res, next) => {
 
       // 3. Find the requested table within the day's tables:
       /**
-       ** Does req.body.table return an id ? (because it's being compared to t._id)
+       ** req.body.table return a tableNumber ? (it's being compared to t.number)
        *  it's common in web apps to send the unique identifier (ID) of an entity as part of the request body when performing operations like creating, updating, or deleting.
-       * customer chooses a table -> sending its id to backend probably...
+       * customer chooses a table -> sending its id/ number to backend.
        */
-      const table = day.tables.find((t) => t._id === req.body.table);
+      const table = day.tables.find((t) => t.number === req.body.table);
 
       // 4. Check if the requested table exists within the day:
       if (table) {
