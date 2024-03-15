@@ -76,7 +76,7 @@ export default function Tables({ search, getFormattedDateTime }) {
       }
     };
     fetchTableAvailability();
-  }, [selectedDate, selectedTime, getFormattedDateTime, totalTables]);
+  }, [selectedDate, selectedTime, getFormattedDateTime]);
 
   return (
     /**
@@ -134,7 +134,7 @@ export default function Tables({ search, getFormattedDateTime }) {
             <TableCell colSpan={3} className="text-white bg-transparent py-3">
               {totalTables.length ? (
                 tableNumber ? (
-                  <span>Table <span className="text-googleBlue">T-{tableNumber}</span> is currently selected.</span>
+                  <span>Current Selection : Table <span className="text-green-500">T-{tableNumber}</span></span>
                 ) : (
                   <span>Please Select a Table</span>
                 )

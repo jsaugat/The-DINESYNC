@@ -6,6 +6,7 @@ import {
   Home,
   About,
   Reservation,
+  Thanks,
   Menu,
   Login,
   Signup,
@@ -30,6 +31,7 @@ const routes = createRoutesFromElements(
     <Route path="about" element={<About />} />
     <Route path="menu" element={<Menu />} />
     <Route path="booking" element={<Reservation />} />
+    <Route path="booking/thanks" element={<Thanks />} />
     <Route path="login" element={<Login />} />
     <Route path="signup" element={<Signup />} />
     {/* Private Route */}

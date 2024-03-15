@@ -10,6 +10,7 @@ import Container from "./components/Container";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Reservation from "./pages/Reservation";
+import Thanks from "./pages/Thanks";
 import Menu from "./pages/Menu";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
@@ -32,6 +33,7 @@ export {
   Home,
   About,
   Reservation,
+  Thanks,
   Menu,
   Login,
   Signup,

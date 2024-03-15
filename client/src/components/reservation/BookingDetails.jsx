@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { Input } from "@/shadcn/ui/input";
 import { Label } from "@/shadcn/ui/label";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -19,6 +20,7 @@ function BookingDetails({ getFormattedDateTime }) {
     table: { number: tableNumber },
   } = useSelector((state) => state.selection);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // Make a reservation request to the backend api.
   const makeReservationRequest = async () => {
@@ -59,6 +61,7 @@ function BookingDetails({ getFormattedDateTime }) {
           // If reservation is successful, log the response and update page
           const reservationResponse = await response.text();
           console.log("Reserved: " + reservationResponse);
+          navigate('/booking/thanks');
         } else {
           // If reservation fails, handle error appropriately
           console.error("Reservation failed:", response.statusText);

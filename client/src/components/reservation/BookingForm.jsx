@@ -19,7 +19,6 @@ function BookingForm({ setSearch }) {
       <DatePicker />
       <TimePicker />
       <PartySizePicker />
-
       {/* <Button
         type="submit"
         onClick={() => setSearch((prev) => !prev)}
