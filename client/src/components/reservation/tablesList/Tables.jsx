@@ -16,6 +16,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/shadcn/ui/table";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+
 
 export default function Tables({ search, getFormattedDateTime }) {
   let {
@@ -82,7 +84,7 @@ export default function Tables({ search, getFormattedDateTime }) {
     /**
      * go to @/shadcn/table.jsx to style the table, for e.g. TableCell > <td className="w-1/5"></td>
      */
-    <main className="dark:bg-black/20 backdrop-blur-md rounded-3xl p-4 border border-onyx w-[24rem] table-auto">
+    <main className="dark:bg-black/20 backdrop-blur-md rounded-3xl p-4 border border-onyx w-[24rem] table-auto shadow-2xl shadow-black">
       <Table>
         <TableCaption>
           A list of available tables based on your selection.
@@ -134,13 +136,20 @@ export default function Tables({ search, getFormattedDateTime }) {
             <TableCell colSpan={3} className="text-white bg-transparent py-3">
               {totalTables.length ? (
                 tableNumber ? (
-                  <span>Current Selection : Table <span className="text-green-500">T-{tableNumber}</span></span>
+                  <span className="flex gap-2 justify-center">
+                    <CheckCircleIcon
+                      fontSize="small"
+                      className="rounded-full size-0"
+                    />{" "}
+                    <span>Table <span className="text-googleBlue">T-{tableNumber}</span> is selected.</span>
+                  </span>
                 ) : (
                   <span>Please Select a Table</span>
                 )
               ) : (
-                <span className="text-orange-500">
-                  * Select preferences to reveal tables.
+                <span className="text-googleBlue">
+                  <span>&#8592; &#xa0;</span> Select preferences to reveal
+                  tables.
                 </span>
               )}
             </TableCell>

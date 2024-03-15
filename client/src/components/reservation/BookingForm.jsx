@@ -14,7 +14,7 @@ function BookingForm({ setSearch }) {
   return (
     <form
       onSubmit={(e) => e.preventDefault()}
-      className="flex flex-col justify-start dark:bg-black/50 border border-onyx rounded-3xl px-12 py-[4.3rem] text-left shadow-2xl shadow-black/[0.5] w-fit"
+      className="flex flex-col justify-start dark:bg-black/100 border border-onyx rounded-3xl px-12 py-[4.3rem] text-left shadow-2xl shadow-black w-fit"
     >
       <DatePicker />
       <TimePicker />
@@ -27,7 +27,7 @@ function BookingForm({ setSearch }) {
         <SearchIcon fontSize="small" />
         <span>Search Tables</span>
       </Button> */}
-      <TablesViewDrawer className="mt-20" />
+      <TablesViewDrawer className="mt-[4.5rem]" />
     </form>
   );
 }

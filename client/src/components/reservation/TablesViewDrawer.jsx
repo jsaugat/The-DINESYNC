@@ -30,7 +30,7 @@ export default function TablesViewDrawer({ onlyIcon, className }) {
           className={`w-full text-sm rounded-full  ${
             onlyIcon ?
             "fixed top-0 -right-16 z-50 aspect-square size-12"
-            : "bg-googleBlue text-black hover:bg-googleBlue/80"
+            : "py-5"
           } ${className} `}
           size="sm"
         >
@@ -93,7 +93,7 @@ export default function TablesViewDrawer({ onlyIcon, className }) {
                   <Seat className="w-[.6rem] h-[1.5rem] rounded-tl-full rounded-bl-full" />
                 </div>
                 {/* the table */}
-                <Table className="h-[3rem] w-[3rem] rounded-xl">
+                <Table className="size-[3.23rem] rounded-xl">
                   <TableId tableId={tableId} />
                 </Table>
                 {/* seats */}
@@ -182,9 +182,9 @@ function Table({ children, className }) {
 }
 function TableId({ tableId }) {
   return (
-    <div className="rounded-full size-7 bg-[#494949] flex justify-center items-center p-2">
+    <div className="rounded-full flex justify-center items-center">
       <span className="text-googleBlue text-[.9rem] font-medium">
-        T{tableId}
+        T-{tableId}
       </span>
     </div>
   );

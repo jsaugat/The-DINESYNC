@@ -15,8 +15,8 @@ export default function Thanks() {
           </h4>
         </div>
         <div className="my-6 flex gap-6 text-sm">
-          <Link className="rounded-full border border-onyx px-3 py-2">Back to Home</Link>
-          <Link className="rounded-full border border-onyx px-3 py-2">My Orders</Link>
+          <Link to={"/"} className="rounded-full border border-onyx px-3 py-2">Back to Home</Link>
+          <Link to={"/profile/orders"} className="rounded-full border border-onyx px-3 py-2">See My Orders</Link>
         </div>
       </main>
     </Container>
