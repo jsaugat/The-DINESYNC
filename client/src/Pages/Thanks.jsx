@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Thanks() {
   return (
     <Container>
-      <main className="h-[82vh] flex flex-col items-center justify-center">
+      <main className="h-[82vh] flex flex-col items-center justify-center bg-black">
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-5xl my-6">Thank you for choosing us !</h1>
           <h3 className="">We received your order. We will reach out to you shortly.</h3>
