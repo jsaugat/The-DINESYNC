@@ -10,6 +10,7 @@ const NavBar = () => {
   const { userInfo } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const toast = useToast();
 
   const handleOrdersNavigation = () => {
     if (userInfo) {

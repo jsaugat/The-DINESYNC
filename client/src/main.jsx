@@ -30,12 +30,12 @@ const routes = createRoutesFromElements(
     <Route path="" element={<Home />} />
     <Route path="about" element={<About />} />
     <Route path="menu" element={<Menu />} />
-    <Route path="booking" element={<Reservation />} />
-    <Route path="booking/thanks" element={<Thanks />} />
     <Route path="login" element={<Login />} />
     <Route path="signup" element={<Signup />} />
     {/* Private Route */}
     <Route path="" element={<PrivateRoute />}>
+      <Route path="booking" element={<Reservation />} />
+      <Route path="booking/thanks" element={<Thanks />} />
       <Route path="profile" element={<Profile />}>
         <Route path="personal-info" element={<PersonalInfo />} />
         <Route path="orders" element={<Orders />} />
