@@ -5,8 +5,8 @@ import { Input } from "@/shadcn/ui/input";
 import { Label } from "@/shadcn/ui/label";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { toast } from "@/shadcn/ui/use-toast";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Separator } from "@/shadcn/ui/separator";
+import Check from "../Check";
 
 // redux
 import {
@@ -90,10 +90,7 @@ function BookingDetails({ getFormattedDateTime }) {
         {tableNumber && (
           <div className="mb-7">
             <span className=" my-1 flex items-center gap-2 mx-auto">
-              <CheckCircleIcon
-                fontSize="small"
-                className="rounded-full size-0"
-              />
+              <Check />
               <span>
                 Table <span className="text-googleBlue">T-{tableNumber}</span> is
                 selected.

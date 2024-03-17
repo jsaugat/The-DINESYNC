@@ -86,6 +86,7 @@ const reserveTable = async (req, res, next) => {
           name: req.body.name,
           phone: req.body.phone,
           email: req.body.email,
+          userId: req.body.userId,
         });
 
         // 6. Mark the table as unavailable:

@@ -27,6 +27,7 @@ import PartySizePicker from "./components/reservation/PartySizePicker";
 import BookingForm from "./components/reservation/BookingForm";
 import BookingDetails from "./components/reservation/BookingDetails";
 import TablesViewDrawer from "./components/reservation/TablesViewDrawer";
+import Check from "./components/Check"
 
 export {
   // Pages
@@ -55,6 +56,7 @@ export {
   BookingForm,
   BookingDetails,
   TablesViewDrawer,
+  Check,
   // Route Protector
   PrivateRoute,
 };

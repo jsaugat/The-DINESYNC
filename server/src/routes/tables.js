@@ -11,6 +11,7 @@ import { getAvailableTables, reserveTable } from "../controllers/table.controlle
 
 const router = express.Router();
 
+
 // AVAILABLE TABLES
 router.post("/availability", getAvailableTables);
 // RESERVAION
