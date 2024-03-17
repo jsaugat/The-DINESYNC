@@ -47,11 +47,11 @@ const routes = createRoutesFromElements(
 const router = createBrowserRouter(routes);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Provider store={store}>
       <RouterProvider router={router} />
     </Provider>
-  </React.StrictMode>
+  // </React.StrictMode> 
 );
 
 // document.documentElement.classList.add('dark:bg-grid-white/[0.08]', 'bg-grid-black/[0.2]');

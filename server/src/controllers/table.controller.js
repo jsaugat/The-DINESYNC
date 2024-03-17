@@ -1,34 +1,9 @@
 import Table from "../models/Table.js";
 import Day from "../models/Day.js";
 import { allTables } from "../seeds/allTables.js";
-import { tablesData } from "../seeds/tables.js";
-import Reservation from "../models/Reservation.js";
 
 // GET Available Tables
 // Params for route : { data: String ("Dec 21 2012 09:00") }
-// const getAvailableTables = async (req, res, next) => {
-//   const dateTime = new Date(req.body.date);
-//   console.log("Request Body:", dateTime);
-
-//   try {
-//     const existingDocs = await Day.find({ date: dateTime });
-//     if (existingDocs.length > 0) {
-//       console.log("Record exists. Sent docs.");
-//       res.status(200).send(existingDocs[0]);
-//     } else {
-//       // Use create method directly (assuming available)
-//       const newDay = await Day.create({ date: dateTime, tables: tablesData });
-//       console.log("docs? : ", newDay);
-//       console.log("dont fuck this error");
-//       console.log("Created new datetime. Sent default docs.");
-//       res.status(200).send(newDay);
-//     }
-//   } catch (err) {
-//     console.log("fuck this error");
-//     next(err);
-//   }
-// };
-
 const getAvailableTables = async (req, res, next) => {
   console.log("Request attempted");
 
@@ -52,16 +27,16 @@ const getAvailableTables = async (req, res, next) => {
       res.status(200).send(createdDoc);
     }
   } catch (err) {
-    next(err)
+    next(err);
   }
-}
+};
 
 // RESERVE
 /**
  *  reservation @param { name, phone, email, date, tableNumber, }
  */
 const reserveTable = async (req, res, next) => {
-  console.log("Reservation Submitted")
+  console.log("Reservation Submitted");
   try {
     const selectedDateTime = req.body.date;
     // 1. Find all days matching the requested date:
@@ -105,6 +80,34 @@ const reserveTable = async (req, res, next) => {
   } catch (err) {
     // 8. Catch any potential errors during the process:
     next(err); // Pass the error to the next error handler
+  }
+};
+
+// GET My Orders
+const getMyOrders = async (req, res, next) => {
+  try {
+    const days = await Day.find({});
+    const reservedTables = []
+    // Iterate over each day
+    days.forEach((day) => {
+      // Iterate over each table in the day
+      day.tables.forEach((table) => {
+        // Check if the table is reserved by John
+        if (table.reservation && table.reservation.userId === req.query.userId) {
+          reservedTables.push({
+            reservedDate: day.date, // date and time the table is reserved for
+            number: table.number, // the table
+            capacity: table.capacity, // the table capacity
+            id: table.id, // the table id
+            createdDate: table.createdAt
+          });
+        }
+      });
+    });
+    console.log(reservedTables);
+    res.status(200).json(reservedTables);
+  } catch (err) {
+    next(err);
   }
 };
 
@@ -173,4 +176,5 @@ export {
   deleteTable,
   getAvailableTables,
   reserveTable,
+  getMyOrders,
 };

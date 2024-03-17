@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
+import Reservation from "./Reservation.js";
 
 const userSchema = new mongoose.Schema(
   {
@@ -46,6 +47,18 @@ userSchema.pre("save", async function (next) {
 userSchema.methods.passwordMatches = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
+
+//? Define middleware to update user's reservations after a reservation is made
+userSchema.post('save', async function(doc, next) {
+  try {
+    const reservations = await Reservation.findById({ userId: doc._id });
+    doc.reservations = reservations;
+    doc.save();
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
 
 const User = mongoose.model("User", userSchema);
 export default User;
