@@ -8,7 +8,7 @@ export const tableSchema = new Schema(
     capacity: Number,
     isAvailable: Boolean,
     reservation: {
-      required: false, // 1:18:53 in lama dev
+      required: false, 
       type: reservationSchema,
     },
   },

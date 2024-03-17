@@ -19,6 +19,7 @@ import {
 function BookingDetails({ getFormattedDateTime }) {
   // RTK slices
   const { name, phone, email } = useSelector((state) => state.reservation);
+  const userId = useSelector(state => state.auth.userInfo._id);
   const {
     table: { number: tableNumber },
   } = useSelector((state) => state.selection);
@@ -45,7 +46,7 @@ function BookingDetails({ getFormattedDateTime }) {
       try {
         // Send a POST request to reserve the table
         const response = await fetch(
-          "http://localhost:6900/api/tables/reservation",
+          `http://localhost:6900/api/tables/reservation?userId=${userId}`,
           {
             method: "POST",
             headers: {

@@ -77,7 +77,7 @@ const reserveTable = async (req, res, next) => {
        *  it's common in web apps to send the unique identifier (ID) of an entity as part of the request body when performing operations like creating, updating, or deleting.
        * customer chooses a table -> sending its id/ number to backend.
        */
-      const table = day.tables.find((t) => t.number === req.body.table);
+      const table = day.tables.find((table) => table.number === req.body.table);
 
       // 4. Check if the requested table exists within the day:
       if (table) {
@@ -86,7 +86,7 @@ const reserveTable = async (req, res, next) => {
           name: req.body.name,
           phone: req.body.phone,
           email: req.body.email,
-          userId: req.body.userId,
+          userId: req.query.userId,
         });
 
         // 6. Mark the table as unavailable:

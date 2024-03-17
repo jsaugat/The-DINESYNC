@@ -20,7 +20,9 @@ function Login() {
     ref.current.focus();
   }, []);
 
-  const { userInfo } = useSelector((state) => state.auth); // check auth state in devtools (https://shorturl.at/eDKZ0)
+  const { userInfo } = useSelector((state) => state.auth); 
+  // check auth state in devtools 
+  // (notion: https://shorturl.at/eDKZ0)
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [login, { isLoading }] = useLoginMutation();
