@@ -74,8 +74,8 @@ export default function PersonalInfo() {
     "rounded-lg px-4 py-2 bg-transparent border border-onyx/70 focus:ring-white/20 focus:border-white/20 w-[350px]";
 
   return (
-    <>
-      <section className="flex flex-col items-start mx-auto text-[.9rem]">
+    <div className="w-1/3">
+      <main className="flex flex-col items-start text-[.9rem]">
         <h3 className="text-3xl my-6 mb-4 text-white">Update Details</h3>
         <form
           className="flex flex-col justify-start bg-cardBlack border border-onyx/60 rounded-xl w-fit px-14 py-14"
@@ -133,8 +133,8 @@ export default function PersonalInfo() {
             </Button>
           </div>
         </form>
-      </section>
+      </main>
       <div></div>
-    </>
+    </div>
   );
 }
