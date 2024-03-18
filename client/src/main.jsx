@@ -36,7 +36,7 @@ const routes = createRoutesFromElements(
     <Route path="" element={<PrivateRoute />}>
       <Route path="booking" element={<Reservation />} />
       <Route path="booking/thanks" element={<Thanks />} />
-      <Route path="profile" element={<Profile />}>
+      <Route path="profile/*" element={<Profile />}>
         <Route path="personal-info" element={<PersonalInfo />} />
         <Route path="orders" element={<Orders />} />
       </Route>
@@ -48,10 +48,10 @@ const router = createBrowserRouter(routes);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
-  // </React.StrictMode> 
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
+  // </React.StrictMode>
 );
 
 // document.documentElement.classList.add('dark:bg-grid-white/[0.08]', 'bg-grid-black/[0.2]');

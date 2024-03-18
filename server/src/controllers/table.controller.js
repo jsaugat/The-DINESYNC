@@ -92,14 +92,19 @@ const getMyOrders = async (req, res, next) => {
     days.forEach((day) => {
       // Iterate over each table in the day
       day.tables.forEach((table) => {
-        // Check if the table is reserved by John
+        //? Check if the table is reserved by the logged in user , whose id is passed as query.
         if (table.reservation && table.reservation.userId === req.query.userId) {
+          const { name, phone, email  } = table.reservation;
           reservedTables.push({
             reservedDate: day.date, // date and time the table is reserved for
             number: table.number, // the table
             capacity: table.capacity, // the table capacity
             id: table.id, // the table id
-            createdDate: table.createdAt
+            createdDate: table.createdAt,
+            // table.reservation properties
+            bookerName: name,
+            bookerPhone: phone,
+            bookerEmail: email
           });
         }
       });
